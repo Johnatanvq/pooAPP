@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>608</width>
-    <height>447</height>
+    <width>612</width>
+    <height>456</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -442,6 +442,9 @@ color: rgb(255,255,254);
 font: 12pt &quot;Arial&quot;;
 }</string>
                 </property>
+                <property name="maxLength">
+                 <number>20</number>
+                </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
                 </property>
@@ -469,6 +472,15 @@ font: 12pt &quot;Arial&quot;;
 color: rgb(255,255,254);
 font: 12pt &quot;Arial&quot;;
 }</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="maxLength">
+                 <number>20</number>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>

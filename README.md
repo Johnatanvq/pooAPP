@@ -12,6 +12,9 @@ ACLARACIONES
 
 PENDIENTES
 
--back del login no está terminado, falta definir el botón de limpiar qué es lo que va hacer, redirigir a siguiente pantalla, cambios funcionales, faltan métodos subclase del admin, posibles pequeños cambios estéticos
+-back del login no está terminado, falta definir el botón de limpiar qué es lo que va hacer, redirigir a siguiente pantalla, se hicieron algunos cambios funcionales, subclase crearUsuario costruida (posibles cambios), falta subclase eliminarUsuario()
 
 
+CAMBIOS:
+- ya aparece un label cuando el usuario o contraseña no son correctos, se ocultó la contraseña, el limite max de los input es 20 carácteres (se puede modificar a gusto)
+- clases definidas con sus constructos y atributos, aún no hay métodos

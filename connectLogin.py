@@ -1,17 +1,26 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtCore import QRegularExpression
+from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class loginGUI(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("../pooAPP/frontend/login.ui", self)
+        uic.loadUi("../pooAPP/frontend/vistas/login/login.ui", self)
         
         self.usuario = Usuario()
-        self.login_bt_ingresar.clicked.connect(self.autenticar)
+
+        #para email
+        regex = QRegularExpression(r'^[\w\.-]+@[\w\.-]+\.\w+$')
         
+        # Aplicar el validador al campo 'login_in_usuario'
+        email_validator = QRegularExpressionValidator(regex)
+        self.login_in_usuario.setValidator(email_validator)
+        
+        self.login_bt_ingresar.clicked.connect(self.autenticar)
         self.login_in_usuario.textChanged.connect(self.limpiar_error)
         self.login_in_contrasena.textChanged.connect(self.limpiar_error)
 
@@ -32,14 +41,6 @@ class loginGUI(QMainWindow):
         else:
             self.mostrar_error()
 
-    def closeEvent(self, event):
-        # Cerrar la conexión a la base de datos al cerrar la ventana
-        if self.cursor:
-            self.cursor.close()
-        if self.conexion:
-            self.conexion.close()
-        print("Conexión a la base de datos cerrada")
-    
     def mostrar_error(self):
         # Cambiar el texto y el color del label de error a rojo
         self.error_label.setText("Usuario o contraseña\n incorrectos.\nPor favor, inténtelo de nuevo.")
@@ -49,6 +50,14 @@ class loginGUI(QMainWindow):
         # Limpiar el texto y el estilo del label de error
         self.error_label.setText("")
         self.error_label.setStyleSheet("")
+        
+    # def closeEvent(self, event):
+    #     # Cerrar la conexión a la base de datos al cerrar la ventana
+    #     if self.cursor:
+    #         self.cursor.close()
+    #     if self.conexion:
+    #         self.conexion.close()
+    #     print("Conexión a la base de datos cerrada")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

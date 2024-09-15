@@ -23,7 +23,7 @@ class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(608, 447)
+        Login.resize(612, 456)
         self.centralwidget = QWidget(Login)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -252,6 +252,7 @@ class Ui_Login(object):
 "color: rgb(255,255,254);\n"
 "font: 12pt \"Arial\";\n"
 "}")
+        self.login_in_usuario.setMaxLength(20)
         self.login_in_usuario.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_3.addWidget(self.login_in_usuario)
@@ -264,6 +265,8 @@ class Ui_Login(object):
 "color: rgb(255,255,254);\n"
 "font: 12pt \"Arial\";\n"
 "}")
+        self.login_in_contrasena.setMaxLength(15)
+        self.login_in_contrasena.setEchoMode(QLineEdit.Password)
         self.login_in_contrasena.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_3.addWidget(self.login_in_contrasena)
@@ -324,6 +327,7 @@ class Ui_Login(object):
         self.login_bt_limpiar.setText(QCoreApplication.translate("Login", u"LIMPIAR", None))
         self.login_bt_ingresar.setText(QCoreApplication.translate("Login", u"INGRESAR", None))
         self.login_in_usuario.setPlaceholderText(QCoreApplication.translate("Login", u"Usuario", None))
+        self.login_in_contrasena.setText("")
         self.login_in_contrasena.setPlaceholderText(QCoreApplication.translate("Login", u"Contrase\u00f1a", None))
         self.error_label.setText("")
         self.login_imageninstitucional.setText("")
