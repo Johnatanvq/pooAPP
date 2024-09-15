@@ -18,3 +18,5 @@ PENDIENTES
 CAMBIOS:
 - ya aparece un label cuando el usuario o contraseña no son correctos, se ocultó la contraseña, el limite max de los input es 20 carácteres (se puede modificar a gusto)
 - clases definidas con sus constructos y atributos, aún no hay métodos
+
+- se añadió e integró una pantalla de bienvenida que redirige al login respectivamente
