@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame{
+background-color: rgb(22,26,23);
+border-radius: 10px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>791</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="input_usuario">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>40</y>
+       <width>259</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+color: black
+font: 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Usuario</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_correo">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>320</y>
+       <width>259</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+color: black
+font: 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>correo</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_nombre">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>40</y>
+       <width>259</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+color: black
+font: 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Nombre</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_ro">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>150</y>
+       <width>259</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+color: black
+font: 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="maxLength">
+      <number>20</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>rol</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_contrasena">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>160</y>
+       <width>259</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+color: black
+font: 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>contraseña</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_cedula">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>240</y>
+       <width>259</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+color: black
+font: 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="maxLength">
+      <number>20</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>cedula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="crear_bt_usuario">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>530</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>crear usuarion</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_telefono">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>260</y>
+       <width>259</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+color: black
+font: 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="maxLength">
+      <number>20</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>telefono</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="error_label_correo">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>380</y>
+       <width>281</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	background: blue;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="error_label_contrasena">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>410</y>
+       <width>331</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	background: blue;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="input_rol">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>350</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Administrador</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Estuditante</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Profeso</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="error_campo_vacio">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>450</y>
+       <width>221</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	background: blue;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

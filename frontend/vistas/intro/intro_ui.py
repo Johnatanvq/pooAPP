@@ -34,7 +34,7 @@ class Ui_intro(object):
         self.intro_gif.setAlignment(Qt.AlignCenter)
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(230, 190, 211, 41))
+        self.label.setGeometry(QRect(220, 190, 221, 41))
         self.label.setStyleSheet(u"QLabel{\n"
 "	background: #000000;\n"
 "	color: #FFFFFF;\n"

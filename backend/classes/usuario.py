@@ -8,7 +8,7 @@ class Usuario():
     contrasena = ""
     cedula = None
     email = ""
-    rol = bool()
+    rol = None
     telefono = None
     
     def __init__(self):
@@ -25,7 +25,12 @@ class Usuario():
         
         #objeto que representa la conexion a la base de datos
         if self.conexion:
-            self.cursor = self.conexion.cursor()  
+            self.cursor = self.conexion.cursor()
+            print('Base de datos online')
+        else: 
+            print('Sin conexión')
+        
+        self.verificar_y_crear_tabla_usuarios()
             
     def autenticarUsuario(self):
         if self.nombre and self.contrasena:
@@ -51,7 +56,25 @@ class Usuario():
                 self.conexion.rollback() 
         else:
             print("No hay datos para autenticar")
-    
+            
+            
+    def verificar_y_crear_tabla_usuarios(self):
+        try:
+            # Verificar si la tabla ya existe
+            self.cursor.execute("""
+                SELECT EXISTS (
+                    SELECT FROM pg_tables
+                    WHERE tablename = 'usuarios'
+                );
+            """)
+            tabla_existe = self.cursor.fetchone()[0]
+
+            if not tabla_existe:
+                self.crear_tabla_usuarios()
+
+        except psycopg2.Error as e:
+            print(f"Error al verificar si la tabla existe: {e}")
+            self.conexion.rollback()
     #CREAR LA TABLA EN LA DB
     def crear_tabla_usuarios(self):
         try:
@@ -59,12 +82,13 @@ class Usuario():
             query = """
             CREATE TABLE IF NOT EXISTS usuarios (
                 id SERIAL PRIMARY KEY,            -- ID auto-incrementable y clave primaria
-                usuario VARCHAR(50) NOT NULL,     -- Nombre de usuario
-                contrasena VARCHAR(255) NOT NULL, -- Contraseña
-                cedula VARCHAR(20),               -- Cédula o identificación del usuario
-                email VARCHAR(100),               -- Correo electrónico
-                rol BOOLEAN NOT NULL,             -- Rol (TRUE para admin, FALSE para usuario regular)
-                telefono VARCHAR(20)              -- Teléfono del usuario
+                nombre VARCHAR(255),     -- Nombre de usuario
+                usuario VARCHAR(255),     -- Nombre de usuario
+                contrasena VARCHAR(255), -- Contraseña
+                cedula VARCHAR(255),               -- Cédula o identificación del usuario
+                email VARCHAR(255),               -- Correo electrónico
+                rol VARCHAR(255),             -- Rol (TRUE para admin, FALSE para usuario regular)
+                telefono VARCHAR(255)              -- Teléfono del usuario
             );
             """
             # Ejecutar la consulta para crear la tabla
@@ -81,27 +105,28 @@ class Usuario():
 
 class adminUsuario(Usuario):
                     
-    def crearUsuario(self, nombre, contrasena, cedula, email, rol, telefono):
+    def crearUsuario(self, nombre, usuario, contrasena, cedula, email, rol, telefono):
         # Capturamos los datos recibidos desde la pantalla (inputs y dropdowns)
         self.nombre = nombre
+        self.usuario = usuario
         self.contrasena = contrasena
         self.cedula = cedula
         self.email = email
-        self.rol = rol  # Booleano: True si es admin, False si es usuario regular
+        self.rol = rol 
         self.telefono = telefono
 
         # Verificamos si todos los campos esenciales tienen datos
-        if self.nombre and self.contrasena and self.cedula and self.email and self.telefono:
+        if self.nombre and self.usuario and self.contrasena and self.cedula and self.email and self.telefono:
             try:
                 # Consulta SQL para insertar los datos del nuevo usuario
                 query = """
-                INSERT INTO usuarios (usuario, contrasena, cedula, email, rol, telefono)
-                VALUES (%s, %s, %s, %s, %s, %s)
+                INSERT INTO usuarios (nombre, usuario, contrasena, cedula, email, rol, telefono)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
                 RETURNING id;
                 """
                 
                 # Asignamos los valores capturados de los inputs y dropdowns
-                values = (self.nombre, self.contrasena, self.cedula, self.email, self.rol, self.telefono)
+                values = (self.nombre, self.usuario, self.contrasena, self.cedula, self.email, self.rol, self.telefono)
                 
                 # Ejecutamos la consulta y obtenemos el ID generado
                 self.cursor.execute(query, values)
