@@ -17,13 +17,13 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QVBoxLayout, QWidget)
+    QVBoxLayout, QWidget)
 
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(612, 456)
+        Login.resize(608, 447)
         self.centralwidget = QWidget(Login)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -83,10 +83,6 @@ class Ui_Login(object):
 "}")
 
         self.horizontalLayout.addWidget(self.login_label)
-
-        self.login_horizontalSpacer = QSpacerItem(102, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout.addItem(self.login_horizontalSpacer)
 
         self.login_bt_minimizar = QPushButton(self.frame_superior)
         self.login_bt_minimizar.setObjectName(u"login_bt_minimizar")
@@ -190,34 +186,12 @@ class Ui_Login(object):
         self.login_lb_ingresousuario.setMaximumSize(QSize(16777215, 40))
         self.login_lb_ingresousuario.setLineWidth(1)
         self.login_lb_ingresousuario.setAlignment(Qt.AlignCenter)
-        self.login_label_recuperacioncontrasena = QLabel(self.frame_ingreso)
-        self.login_label_recuperacioncontrasena.setObjectName(u"login_label_recuperacioncontrasena")
-        self.login_label_recuperacioncontrasena.setGeometry(QRect(30, 230, 231, 21))
-        self.login_label_recuperacioncontrasena.setMaximumSize(QSize(16777215, 40))
         self.layoutWidget = QWidget(self.frame_ingreso)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(10, 260, 261, 61))
         self.horizontalLayout_3 = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.login_bt_limpiar = QPushButton(self.layoutWidget)
-        self.login_bt_limpiar.setObjectName(u"login_bt_limpiar")
-        self.login_bt_limpiar.setMinimumSize(QSize(0, 30))
-        self.login_bt_limpiar.setStyleSheet(u"QPushButton{\n"
-"border-top-left-radius: 0 px;\n"
-"border-bottom-left-radius: 30px;\n"
-"border-top-right-radius: 30px;\n"
-"border-bottom-right-radius: 0px\n"
-"}\n"
-"QPushButton:hover{\n"
-"border-top-left-radius: 0 px;\n"
-"border-bottom-left-radius: 30px;\n"
-"border-top-right-radius: 30px;\n"
-"border-bottom-right-radius: 0px\n"
-"}")
-
-        self.horizontalLayout_3.addWidget(self.login_bt_limpiar)
-
         self.login_bt_ingresar = QPushButton(self.layoutWidget)
         self.login_bt_ingresar.setObjectName(u"login_bt_ingresar")
         self.login_bt_ingresar.setMinimumSize(QSize(0, 30))
@@ -237,7 +211,6 @@ class Ui_Login(object):
         self.horizontalLayout_3.addWidget(self.login_bt_ingresar)
 
         self.horizontalLayout_3.setStretch(0, 1)
-        self.horizontalLayout_3.setStretch(1, 1)
         self.layoutWidget1 = QWidget(self.frame_ingreso)
         self.layoutWidget1.setObjectName(u"layoutWidget1")
         self.layoutWidget1.setGeometry(QRect(10, 70, 261, 68))
@@ -265,7 +238,7 @@ class Ui_Login(object):
 "color: rgb(255,255,254);\n"
 "font: 12pt \"Arial\";\n"
 "}")
-        self.login_in_contrasena.setMaxLength(15)
+        self.login_in_contrasena.setMaxLength(20)
         self.login_in_contrasena.setEchoMode(QLineEdit.Password)
         self.login_in_contrasena.setAlignment(Qt.AlignCenter)
 
@@ -318,13 +291,11 @@ class Ui_Login(object):
 
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"MainWindow", None))
-        self.login_label.setText(QCoreApplication.translate("Login", u"FORMULARIO CON BASE DE DATOS SQLITE", None))
+        self.login_label.setText(QCoreApplication.translate("Login", u"FORMULARIO", None))
         self.login_bt_minimizar.setText("")
         self.login_bt_maximizar.setText("")
         self.login_bt_cerrar.setText("")
         self.login_lb_ingresousuario.setText(QCoreApplication.translate("Login", u"INGRESO USUARIOS", None))
-        self.login_label_recuperacioncontrasena.setText(QCoreApplication.translate("Login", u"\u00bfOlvidaste tu contrase\u00f1a?", None))
-        self.login_bt_limpiar.setText(QCoreApplication.translate("Login", u"LIMPIAR", None))
         self.login_bt_ingresar.setText(QCoreApplication.translate("Login", u"INGRESAR", None))
         self.login_in_usuario.setPlaceholderText(QCoreApplication.translate("Login", u"Usuario", None))
         self.login_in_contrasena.setText("")

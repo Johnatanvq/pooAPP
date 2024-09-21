@@ -12,19 +12,11 @@ class loginGUI(QMainWindow):
         uic.loadUi("../pooAPP/frontend/vistas/login/login.ui", self)
         
         self.usuario = Usuario()
-
-        #para email
-        regex = QRegularExpression(r'^[\w\.-]+@[\w\.-]+\.\w+$')
-        
-        # Aplicar el validador al campo 'login_in_usuario'
-        email_validator = QRegularExpressionValidator(regex)
-        self.login_in_usuario.setValidator(email_validator)
-        
         self.login_bt_ingresar.clicked.connect(self.autenticar)
-        self.login_in_usuario.textChanged.connect(self.limpiar_error)
-        self.login_in_contrasena.textChanged.connect(self.limpiar_error)
+        self.login_in_usuario.textChanged.connect(self.limpiarError)
+        self.login_in_contrasena.textChanged.connect(self.limpiarError)
 
-    def capturar_texto(self):
+    def capturarTexto(self):
         # Capturar el texto de los campos de entrada
         self.usuario.nombre = self.login_in_usuario.text()  # Asigna el valor al atributo de la clase Usuario
         self.usuario.contrasena = self.login_in_contrasena.text()
@@ -32,21 +24,20 @@ class loginGUI(QMainWindow):
         print(f"Texto capturado de la contraseña: {self.usuario.contrasena}")
 
     def autenticar(self):
-        # Capturar el texto antes de autenticar
-        self.capturar_texto()
+        self.capturarTexto() # Capturar el texto antes de autenticar
 
         # Llamar al método de autenticación de la clase Usuario
         if self.usuario.autenticarUsuario():
-            self.limpiar_error()
+            self.limpiarError()
         else:
-            self.mostrar_error()
+            self.mostrarError()
 
-    def mostrar_error(self):
+    def mostrarError(self):
         # Cambiar el texto y el color del label de error a rojo
         self.error_label.setText("Usuario o contraseña\n incorrectos.\nPor favor, inténtelo de nuevo.")
-        self.error_label.setStyleSheet("color: red")  # Cambia el color a rojo
+        self.error_label.setStyleSheet("color: red")
 
-    def limpiar_error(self):
+    def limpiarError(self):
         # Limpiar el texto y el estilo del label de error
         self.error_label.setText("")
         self.error_label.setStyleSheet("")

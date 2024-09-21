@@ -26,11 +26,10 @@ class Usuario():
         #objeto que representa la conexion a la base de datos
         if self.conexion:
             self.cursor = self.conexion.cursor()
-            print('Base de datos online')
         else: 
             print('Sin conexión')
         
-        self.verificar_y_crear_tabla_usuarios()
+        self.verificarCrearTablaUsuarios()
             
     def autenticarUsuario(self):
         if self.nombre and self.contrasena:
@@ -58,7 +57,7 @@ class Usuario():
             print("No hay datos para autenticar")
             
             
-    def verificar_y_crear_tabla_usuarios(self):
+    def verificarCrearTablaUsuarios(self):
         try:
             # Verificar si la tabla ya existe
             self.cursor.execute("""
@@ -70,13 +69,14 @@ class Usuario():
             tabla_existe = self.cursor.fetchone()[0]
 
             if not tabla_existe:
-                self.crear_tabla_usuarios()
+                self.crearTablaUsuarios()
 
         except psycopg2.Error as e:
             print(f"Error al verificar si la tabla existe: {e}")
             self.conexion.rollback()
+            
     #CREAR LA TABLA EN LA DB
-    def crear_tabla_usuarios(self):
+    def crearTablaUsuarios(self):
         try:
             # Consulta SQL para crear la tabla 'usuarios'
             query = """
@@ -101,8 +101,6 @@ class Usuario():
             print(f"Error al crear la tabla: {e}")
 
 
-
-
 class adminUsuario(Usuario):
                     
     def crearUsuario(self, nombre, usuario, contrasena, cedula, email, rol, telefono):
@@ -115,10 +113,10 @@ class adminUsuario(Usuario):
         self.rol = rol 
         self.telefono = telefono
 
-        # Verificamos si todos los campos esenciales tienen datos
+        # Verificamos si todos los campos tienen datos
         if self.nombre and self.usuario and self.contrasena and self.cedula and self.email and self.telefono:
             try:
-                # Consulta SQL para insertar los datos del nuevo usuario
+                # Consulta SQL insertar datos
                 query = """
                 INSERT INTO usuarios (nombre, usuario, contrasena, cedula, email, rol, telefono)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)

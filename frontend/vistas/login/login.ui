@@ -120,7 +120,7 @@ font: 12pt &quot;Arial&quot;;
 }</string>
             </property>
             <property name="text">
-             <string>FORMULARIO CON BASE DE DATOS SQLITE</string>
+             <string>FORMULARIO</string>
             </property>
            </widget>
           </item>
