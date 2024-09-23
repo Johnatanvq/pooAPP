@@ -3,7 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator, QValidator
-from pooAPP.backend.classes.usuario import adminUsuario
+from backend.classes.usuario import adminUsuario
 import re
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
@@ -19,9 +19,12 @@ class nuevoUsuarioGUI(QMainWindow):
         self.contrasenaRegex = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{1,}$'
 
         self.crear_bt_usuario.clicked.connect(self.crearUsuario)
+        self.bt_logout_mm.clicked.connect(self.cerrarSesion)
         self.input_correo.textChanged.connect(self.limpiar_error_correo)
         self.input_contrasena.textChanged.connect(self.limpiar_error_contrasena)
-
+        
+        self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
+        
     def capturarTexto(self):
         #se asocian atributos de la clase Usuario a las capturas de inputs en la UI
         self.nuevoUsuario.nombre = self.input_nombre.text()
@@ -84,15 +87,24 @@ class nuevoUsuarioGUI(QMainWindow):
     def mostrar_error_correo(self):
         # Cambiar el texto y el color del label de error a rojo
         self.error_label_correo.setText("Ingrese un correo válido")
-        self.error_label_correo.setStyleSheet("color: red")
+        self.error_label_correo.setStyleSheet(("""
+                                                    color: red;
+                                                    font-size: 8pt;
+                                                """))
     
     def mostrar_error_contrasena(self):
-        self.error_label_contrasena.setText("La contraseña debe contener mayúsculas,\n minúsculas y carácteres especiales: @#$%^&+=")
-        self.error_label_contrasena.setStyleSheet("color: red")
+        self.error_label_contrasena.setText("La contraseña debe\n contener mayúsculas,\n minúsculas y carácteres\n especiales: @#$%^&+=")
+        self.error_label_contrasena.setStyleSheet("""
+                                                    color: red;
+                                                    font-size: 8pt;
+                                                """)
     
     def mostrar_error_campoVacio(self):
         self.error_campo_vacio.setText("Debe llenar todos los campos")
-        self.error_campo_vacio.setStyleSheet("color: yellow")
+        self.error_campo_vacio.setStyleSheet("""
+                                                color: yellow;
+                                                text-decoration: bold;
+                                            """)
 
     def limpiar_error_contrasena(self):
         # Limpiar el texto y el estilo del label de error
@@ -107,13 +119,25 @@ class nuevoUsuarioGUI(QMainWindow):
         self.error_campo_vacio.setText("")
         self.error_campo_vacio.setStyleSheet("")
         
-    def closeEvent(self, event):
-        # Cerrar la conexión a la base de datos al cerrar la ventana
-        if self.cursor:
-            self.cursor.close()
-        if self.conexion:
-            self.conexion.close()
+    def menuPrincipalGUI(self):
+        from conectarMenuPrincipal import menuPrincipalGUI
+        self.close()
+        self.login_window = menuPrincipalGUI()
+        self.login_window.show()
+        
+    def cerrarSesion(self):
+        from pooAPP.conectarLogin import loginGUI
+        #se cierra la conexión a la base de datos desde la clase Usuario
+        if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
+            self.nuevoUsuario.cursor.close()
+        if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
+            self.nuevoUsuario.conexion.close()
         print("Conexión a la base de datos cerrada")
+        
+        #redirigir login
+        self.close()
+        self.login_window = loginGUI()
+        self.login_window.show() 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

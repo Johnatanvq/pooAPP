@@ -75,10 +75,9 @@ class Usuario():
             print(f"Error al verificar si la tabla existe: {e}")
             self.conexion.rollback()
             
-    #CREAR LA TABLA EN LA DB
     def crearTablaUsuarios(self):
         try:
-            # Consulta SQL para crear la tabla 'usuarios'
+            #SQL para crear la tabla 'usuarios'
             query = """
             CREATE TABLE IF NOT EXISTS usuarios (
                 id SERIAL PRIMARY KEY,            -- ID auto-incrementable y clave primaria
@@ -91,7 +90,7 @@ class Usuario():
                 telefono VARCHAR(255)              -- Teléfono del usuario
             );
             """
-            # Ejecutar la consulta para crear la tabla
+            #consulta para crear la tabla
             self.cursor.execute(query)
             self.conexion.commit()
             print("Tabla 'usuarios' creada correctamente.")
@@ -104,7 +103,7 @@ class Usuario():
 class adminUsuario(Usuario):
                     
     def crearUsuario(self, nombre, usuario, contrasena, cedula, email, rol, telefono):
-        # Capturamos los datos recibidos desde la pantalla (inputs y dropdowns)
+        #capturar datos recibidos de inputs
         self.nombre = nombre
         self.usuario = usuario
         self.contrasena = contrasena
@@ -113,26 +112,26 @@ class adminUsuario(Usuario):
         self.rol = rol 
         self.telefono = telefono
 
-        # Verificamos si todos los campos tienen datos
+        #verificar si todos los campos tienen datos
         if self.nombre and self.usuario and self.contrasena and self.cedula and self.email and self.telefono:
             try:
-                # Consulta SQL insertar datos
+                #SQL insertar datos
                 query = """
                 INSERT INTO usuarios (nombre, usuario, contrasena, cedula, email, rol, telefono)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
                 RETURNING id;
                 """
                 
-                # Asignamos los valores capturados de los inputs y dropdowns
+                #asigna valores capturados de entradas
                 values = (self.nombre, self.usuario, self.contrasena, self.cedula, self.email, self.rol, self.telefono)
                 
-                # Ejecutamos la consulta y obtenemos el ID generado
+                #consulta y obtenemos el ID generado
                 self.cursor.execute(query, values)
                 
-                # Recuperamos el ID del nuevo usuario
+                # recuperar ID del nuevo usuario
                 new_user_id = self.cursor.fetchone()[0]
 
-                # Hacemos commit para guardar los cambios
+                #guardar los cambios
                 self.conexion.commit()
 
                 print(f"Usuario creado correctamente con ID: {new_user_id}")

@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
+from conectarMenuPrincipal import menuPrincipalGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class loginGUI(QMainWindow):
@@ -26,21 +27,27 @@ class loginGUI(QMainWindow):
     def autenticar(self):
         self.capturarTexto() # Capturar el texto antes de autenticar
 
-        # Llamar al método de autenticación de la clase Usuario
+        # llama al método de autenticación de la clase Usuario
         if self.usuario.autenticarUsuario():
             self.limpiarError()
+            self.abrirMenuPrincipal()
         else:
             self.mostrarError()
 
     def mostrarError(self):
-        # Cambiar el texto y el color del label de error a rojo
+        # Cambiar texto y estilos
         self.error_label.setText("Usuario o contraseña\n incorrectos.\nPor favor, inténtelo de nuevo.")
         self.error_label.setStyleSheet("color: red")
 
     def limpiarError(self):
-        # Limpiar el texto y el estilo del label de error
+        # Limpiar texto y estilos
         self.error_label.setText("")
         self.error_label.setStyleSheet("")
+        
+    def abrirMenuPrincipal(self):
+        self.close()
+        self.login_window = menuPrincipalGUI()
+        self.login_window.show()
         
     # def closeEvent(self, event):
     #     # Cerrar la conexión a la base de datos al cerrar la ventana
