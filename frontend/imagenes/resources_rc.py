@@ -1,0 +1,1077 @@
+# Resource object code (Python 3)
+# Created by: object code
+# Created by: The Resource Compiler for Qt version 6.7.2
+# WARNING! All changes made in this file will be lost!
+
+from PySide6 import QtCore
+
+qt_resource_data = b"\
+\x00\x00\x01\x22\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-filte\
+r\x22><polygon poin\
+ts=\x2222 3 2 3 10 \
+12.46 10 19 14 2\
+1 14 12.46 22 3\x22\
+></polygon></svg\
+>\
+\x00\x00\x014\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-minus\
+-circle\x22><circle\
+ cx=\x2212\x22 cy=\x2212\x22\
+ r=\x2210\x22></circle\
+><line x1=\x228\x22 y1\
+=\x2212\x22 x2=\x2216\x22 y2\
+=\x2212\x22></line></s\
+vg>\
+\x00\x00\x01Z\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-x-cir\
+cle\x22><circle cx=\
+\x2212\x22 cy=\x2212\x22 r=\x22\
+10\x22></circle><li\
+ne x1=\x2215\x22 y1=\x229\
+\x22 x2=\x229\x22 y2=\x2215\x22\
+></line><line x1\
+=\x229\x22 y1=\x229\x22 x2=\x22\
+15\x22 y2=\x2215\x22></li\
+ne></svg>\
+\x00\x00\x01K\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-maxim\
+ize\x22><path d=\x22M8\
+ 3H5a2 2 0 0 0-2\
+ 2v3m18 0V5a2 2 \
+0 0 0-2-2h-3m0 1\
+8h3a2 2 0 0 0 2-\
+2v-3M3 16v3a2 2 \
+0 0 0 2 2h3\x22></p\
+ath></svg>\
+\x00\x00\x01I\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-video\
+\x22><polygon point\
+s=\x2223 7 16 12 23\
+ 17 23 7\x22></poly\
+gon><rect x=\x221\x22 \
+y=\x225\x22 width=\x2215\x22\
+ height=\x2214\x22 rx=\
+\x222\x22 ry=\x222\x22></rec\
+t></svg>\
+\x00\x00\x01\x1f\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-bookm\
+ark\x22><path d=\x22M1\
+9 21l-7-5-7 5V5a\
+2 2 0 0 1 2-2h10\
+a2 2 0 0 1 2 2z\x22\
+></path></svg>\
+\x00\x00\x01U\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-more-\
+vertical\x22><circl\
+e cx=\x2212\x22 cy=\x2212\
+\x22 r=\x221\x22></circle\
+><circle cx=\x2212\x22\
+ cy=\x225\x22 r=\x221\x22></\
+circle><circle c\
+x=\x2212\x22 cy=\x2219\x22 r\
+=\x221\x22></circle></\
+svg>\
+\x00\x00\x01o\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-user-\
+check\x22><path d=\x22\
+M16 21v-2a4 4 0 \
+0 0-4-4H5a4 4 0 \
+0 0-4 4v2\x22></pat\
+h><circle cx=\x228.\
+5\x22 cy=\x227\x22 r=\x224\x22>\
+</circle><polyli\
+ne points=\x2217 11\
+ 19 13 23 9\x22></p\
+olyline></svg>\
+\x00\x00\x01t\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-shopp\
+ing-bag\x22><path d\
+=\x22M6 2L3 6v14a2 \
+2 0 0 0 2 2h14a2\
+ 2 0 0 0 2-2V6l-\
+3-4z\x22></path><li\
+ne x1=\x223\x22 y1=\x226\x22\
+ x2=\x2221\x22 y2=\x226\x22>\
+</line><path d=\x22\
+M16 10a4 4 0 0 1\
+-8 0\x22></path></s\
+vg>\
+\x00\x00\x01`\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-key\x22>\
+<path d=\x22M21 2l-\
+2 2m-7.61 7.61a5\
+.5 5.5 0 1 1-7.7\
+78 7.778 5.5 5.5\
+ 0 0 1 7.777-7.7\
+77zm0 0L15.5 7.5\
+m0 0l3 3L22 7l-3\
+-3m-3.5 3.5L19 4\
+\x22></path></svg>\
+\x00\x00\x03\xf3\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-setti\
+ngs\x22><circle cx=\
+\x2212\x22 cy=\x2212\x22 r=\x22\
+3\x22></circle><pat\
+h d=\x22M19.4 15a1.\
+65 1.65 0 0 0 .3\
+3 1.82l.06.06a2 \
+2 0 0 1 0 2.83 2\
+ 2 0 0 1-2.83 0l\
+-.06-.06a1.65 1.\
+65 0 0 0-1.82-.3\
+3 1.65 1.65 0 0 \
+0-1 1.51V21a2 2 \
+0 0 1-2 2 2 2 0 \
+0 1-2-2v-.09A1.6\
+5 1.65 0 0 0 9 1\
+9.4a1.65 1.65 0 \
+0 0-1.82.33l-.06\
+.06a2 2 0 0 1-2.\
+83 0 2 2 0 0 1 0\
+-2.83l.06-.06a1.\
+65 1.65 0 0 0 .3\
+3-1.82 1.65 1.65\
+ 0 0 0-1.51-1H3a\
+2 2 0 0 1-2-2 2 \
+2 0 0 1 2-2h.09A\
+1.65 1.65 0 0 0 \
+4.6 9a1.65 1.65 \
+0 0 0-.33-1.82l-\
+.06-.06a2 2 0 0 \
+1 0-2.83 2 2 0 0\
+ 1 2.83 0l.06.06\
+a1.65 1.65 0 0 0\
+ 1.82.33H9a1.65 \
+1.65 0 0 0 1-1.5\
+1V3a2 2 0 0 1 2-\
+2 2 2 0 0 1 2 2v\
+.09a1.65 1.65 0 \
+0 0 1 1.51 1.65 \
+1.65 0 0 0 1.82-\
+.33l.06-.06a2 2 \
+0 0 1 2.83 0 2 2\
+ 0 0 1 0 2.83l-.\
+06.06a1.65 1.65 \
+0 0 0-.33 1.82V9\
+a1.65 1.65 0 0 0\
+ 1.51 1H21a2 2 0\
+ 0 1 2 2 2 2 0 0\
+ 1-2 2h-.09a1.65\
+ 1.65 0 0 0-1.51\
+ 1z\x22></path></sv\
+g>\
+\x00\x00\x01_\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-plus-\
+circle\x22><circle \
+cx=\x2212\x22 cy=\x2212\x22 \
+r=\x2210\x22></circle>\
+<line x1=\x2212\x22 y1\
+=\x228\x22 x2=\x2212\x22 y2=\
+\x2216\x22></line><lin\
+e x1=\x228\x22 y1=\x2212\x22\
+ x2=\x2216\x22 y2=\x2212\x22\
+></line></svg>\
+\x00\x00\x01o\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-log-o\
+ut\x22><path d=\x22M9 \
+21H5a2 2 0 0 1-2\
+-2V5a2 2 0 0 1 2\
+-2h4\x22></path><po\
+lyline points=\x221\
+6 17 21 12 16 7\x22\
+></polyline><lin\
+e x1=\x2221\x22 y1=\x2212\
+\x22 x2=\x229\x22 y2=\x2212\x22\
+></line></svg>\
+\x00\x00\x01s\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-clipb\
+oard\x22><path d=\x22M\
+16 4h2a2 2 0 0 1\
+ 2 2v14a2 2 0 0 \
+1-2 2H6a2 2 0 0 \
+1-2-2V6a2 2 0 0 \
+1 2-2h2\x22></path>\
+<rect x=\x228\x22 y=\x222\
+\x22 width=\x228\x22 heig\
+ht=\x224\x22 rx=\x221\x22 ry\
+=\x221\x22></rect></sv\
+g>\
+\x00\x00\x01L\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-smart\
+phone\x22><rect x=\x22\
+5\x22 y=\x222\x22 width=\x22\
+14\x22 height=\x2220\x22 \
+rx=\x222\x22 ry=\x222\x22></\
+rect><line x1=\x221\
+2\x22 y1=\x2218\x22 x2=\x221\
+2.01\x22 y2=\x2218\x22></\
+line></svg>\
+\x00\x00\x01\x90\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-users\
+\x22><path d=\x22M17 2\
+1v-2a4 4 0 0 0-4\
+-4H5a4 4 0 0 0-4\
+ 4v2\x22></path><ci\
+rcle cx=\x229\x22 cy=\x22\
+7\x22 r=\x224\x22></circl\
+e><path d=\x22M23 2\
+1v-2a4 4 0 0 0-3\
+-3.87\x22></path><p\
+ath d=\x22M16 3.13a\
+4 4 0 0 1 0 7.75\
+\x22></path></svg>\
+\x00\x00\x010\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-clock\
+\x22><circle cx=\x2212\
+\x22 cy=\x2212\x22 r=\x2210\x22\
+></circle><polyl\
+ine points=\x2212 6\
+ 12 12 16 14\x22></\
+polyline></svg>\
+\x00\x00\x01\x98\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-user-\
+plus\x22><path d=\x22M\
+16 21v-2a4 4 0 0\
+ 0-4-4H5a4 4 0 0\
+ 0-4 4v2\x22></path\
+><circle cx=\x228.5\
+\x22 cy=\x227\x22 r=\x224\x22><\
+/circle><line x1\
+=\x2220\x22 y1=\x228\x22 x2=\
+\x2220\x22 y2=\x2214\x22></l\
+ine><line x1=\x2223\
+\x22 y1=\x2211\x22 x2=\x2217\
+\x22 y2=\x2211\x22></line\
+></svg>\
+\x00\x00\x01r\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-monit\
+or\x22><rect x=\x222\x22 \
+y=\x223\x22 width=\x2220\x22\
+ height=\x2214\x22 rx=\
+\x222\x22 ry=\x222\x22></rec\
+t><line x1=\x228\x22 y\
+1=\x2221\x22 x2=\x2216\x22 y\
+2=\x2221\x22></line><l\
+ine x1=\x2212\x22 y1=\x22\
+17\x22 x2=\x2212\x22 y2=\x22\
+21\x22></line></svg\
+>\
+\x00\x00\x01\x9a\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-calen\
+dar\x22><rect x=\x223\x22\
+ y=\x224\x22 width=\x2218\
+\x22 height=\x2218\x22 rx\
+=\x222\x22 ry=\x222\x22></re\
+ct><line x1=\x2216\x22\
+ y1=\x222\x22 x2=\x2216\x22 \
+y2=\x226\x22></line><l\
+ine x1=\x228\x22 y1=\x222\
+\x22 x2=\x228\x22 y2=\x226\x22>\
+</line><line x1=\
+\x223\x22 y1=\x2210\x22 x2=\x22\
+21\x22 y2=\x2210\x22></li\
+ne></svg>\
+\x00\x00\x019\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-user\x22\
+><path d=\x22M20 21\
+v-2a4 4 0 0 0-4-\
+4H8a4 4 0 0 0-4 \
+4v2\x22></path><cir\
+cle cx=\x2212\x22 cy=\x22\
+7\x22 r=\x224\x22></circl\
+e></svg>\
+\x00\x00\x01H\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-table\
+t\x22><rect x=\x224\x22 y\
+=\x222\x22 width=\x2216\x22 \
+height=\x2220\x22 rx=\x22\
+2\x22 ry=\x222\x22></rect\
+><line x1=\x2212\x22 y\
+1=\x2218\x22 x2=\x2212.01\
+\x22 y2=\x2218\x22></line\
+></svg>\
+\x00\x00\x01\x82\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-tool\x22\
+><path d=\x22M14.7 \
+6.3a1 1 0 0 0 0 \
+1.4l1.6 1.6a1 1 \
+0 0 0 1.4 0l3.77\
+-3.77a6 6 0 0 1-\
+7.94 7.94l-6.91 \
+6.91a2.12 2.12 0\
+ 0 1-3-3l6.91-6.\
+91a6 6 0 0 1 7.9\
+4-7.94l-3.76 3.7\
+6z\x22></path></svg\
+>\
+\x00\x00\x01@\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-tv\x22><\
+rect x=\x222\x22 y=\x227\x22\
+ width=\x2220\x22 heig\
+ht=\x2215\x22 rx=\x222\x22 r\
+y=\x222\x22></rect><po\
+lyline points=\x221\
+7 2 12 7 7 2\x22></\
+polyline></svg>\
+\x00\x00\x01+\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-x\x22><l\
+ine x1=\x2218\x22 y1=\x22\
+6\x22 x2=\x226\x22 y2=\x2218\
+\x22></line><line x\
+1=\x226\x22 y1=\x226\x22 x2=\
+\x2218\x22 y2=\x2218\x22></l\
+ine></svg>\
+\x00\x00\x01n\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-speak\
+er\x22><rect x=\x224\x22 \
+y=\x222\x22 width=\x2216\x22\
+ height=\x2220\x22 rx=\
+\x222\x22 ry=\x222\x22></rec\
+t><circle cx=\x2212\
+\x22 cy=\x2214\x22 r=\x224\x22>\
+</circle><line x\
+1=\x2212\x22 y1=\x226\x22 x2\
+=\x2212.01\x22 y2=\x226\x22>\
+</line></svg>\
+\x00\x00\x01Z\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-menu\x22\
+><line x1=\x223\x22 y1\
+=\x2212\x22 x2=\x2221\x22 y2\
+=\x2212\x22></line><li\
+ne x1=\x223\x22 y1=\x226\x22\
+ x2=\x2221\x22 y2=\x226\x22>\
+</line><line x1=\
+\x223\x22 y1=\x2218\x22 x2=\x22\
+21\x22 y2=\x2218\x22></li\
+ne></svg>\
+\x00\x00\x01\xc0\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-trash\
+-2\x22><polyline po\
+ints=\x223 6 5 6 21\
+ 6\x22></polyline><\
+path d=\x22M19 6v14\
+a2 2 0 0 1-2 2H7\
+a2 2 0 0 1-2-2V6\
+m3 0V4a2 2 0 0 1\
+ 2-2h4a2 2 0 0 1\
+ 2 2v2\x22></path><\
+line x1=\x2210\x22 y1=\
+\x2211\x22 x2=\x2210\x22 y2=\
+\x2217\x22></line><lin\
+e x1=\x2214\x22 y1=\x2211\
+\x22 x2=\x2214\x22 y2=\x2217\
+\x22></line></svg>\
+\x00\x00\x01L\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-home\x22\
+><path d=\x22M3 9l9\
+-7 9 7v11a2 2 0 \
+0 1-2 2H5a2 2 0 \
+0 1-2-2z\x22></path\
+><polyline point\
+s=\x229 22 9 12 15 \
+12 15 22\x22></poly\
+line></svg>\
+\x00\x00\x01S\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-book-\
+open\x22><path d=\x22M\
+2 3h6a4 4 0 0 1 \
+4 4v14a3 3 0 0 0\
+-3-3H2z\x22></path>\
+<path d=\x22M22 3h-\
+6a4 4 0 0 0-4 4v\
+14a3 3 0 0 1 3-3\
+h7z\x22></path></sv\
+g>\
+\x00\x00\x01m\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-user-\
+minus\x22><path d=\x22\
+M16 21v-2a4 4 0 \
+0 0-4-4H5a4 4 0 \
+0 0-4 4v2\x22></pat\
+h><circle cx=\x228.\
+5\x22 cy=\x227\x22 r=\x224\x22>\
+</circle><line x\
+1=\x2223\x22 y1=\x2211\x22 x\
+2=\x2217\x22 y2=\x2211\x22><\
+/line></svg>\
+\x00\x00\x01\x88\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-save\x22\
+><path d=\x22M19 21\
+H5a2 2 0 0 1-2-2\
+V5a2 2 0 0 1 2-2\
+h11l5 5v11a2 2 0\
+ 0 1-2 2z\x22></pat\
+h><polyline poin\
+ts=\x2217 21 17 13 \
+7 13 7 21\x22></pol\
+yline><polyline \
+points=\x227 3 7 8 \
+15 8\x22></polyline\
+></svg>\
+\x00\x00\x01\x94\
+<\
+svg xmlns=\x22http:\
+//www.w3.org/200\
+0/svg\x22 width=\x2224\
+\x22 height=\x2224\x22 vi\
+ewBox=\x220 0 24 24\
+\x22 fill=\x22none\x22 st\
+roke=\x22currentCol\
+or\x22 stroke-width\
+=\x222\x22 stroke-line\
+cap=\x22round\x22 stro\
+ke-linejoin=\x22rou\
+nd\x22 class=\x22feath\
+er feather-user-\
+x\x22><path d=\x22M16 \
+21v-2a4 4 0 0 0-\
+4-4H5a4 4 0 0 0-\
+4 4v2\x22></path><c\
+ircle cx=\x228.5\x22 c\
+y=\x227\x22 r=\x224\x22></ci\
+rcle><line x1=\x221\
+8\x22 y1=\x228\x22 x2=\x2223\
+\x22 y2=\x2213\x22></line\
+><line x1=\x2223\x22 y\
+1=\x228\x22 x2=\x2218\x22 y2\
+=\x2213\x22></line></s\
+vg>\
+"
+
+qt_resource_name = b"\
+\x00\x09\
+\x0cxT\x88\
+\x00n\
+\x00e\x00w\x00P\x00r\x00e\x00f\x00i\x00x\
+\x00\x0a\
+\x0a\xc8\xfa\xa7\
+\x00f\
+\x00i\x00l\x00t\x00e\x00r\x00.\x00s\x00v\x00g\
+\x00\x10\
+\x02\xfe\x1a\xa7\
+\x00m\
+\x00i\x00n\x00u\x00s\x00-\x00c\x00i\x00r\x00c\x00l\x00e\x00.\x00s\x00v\x00g\
+\x00\x0c\
+\x09C\x1b\xc7\
+\x00x\
+\x00-\x00c\x00i\x00r\x00c\x00l\x00e\x00.\x00s\x00v\x00g\
+\x00\x0c\
+\x0fy\xbaG\
+\x00m\
+\x00a\x00x\x00i\x00m\x00i\x00z\x00e\x00.\x00s\x00v\x00g\
+\x00\x09\
+\x0a\xc2\xa3'\
+\x00v\
+\x00i\x00d\x00e\x00o\x00.\x00s\x00v\x00g\
+\x00\x0c\
+\x05\xa2\x9e\xa7\
+\x00b\
+\x00o\x00o\x00k\x00m\x00a\x00r\x00k\x00.\x00s\x00v\x00g\
+\x00\x11\
+\x017\xcd'\
+\x00m\
+\x00o\x00r\x00e\x00-\x00v\x00e\x00r\x00t\x00i\x00c\x00a\x00l\x00.\x00s\x00v\x00g\
+\
+\x00\x0e\
+\x08\x186'\
+\x00u\
+\x00s\x00e\x00r\x00-\x00c\x00h\x00e\x00c\x00k\x00.\x00s\x00v\x00g\
+\x00\x10\
+\x06\xc0\xab'\
+\x00s\
+\x00h\x00o\x00p\x00p\x00i\x00n\x00g\x00-\x00b\x00a\x00g\x00.\x00s\x00v\x00g\
+\x00\x07\
+\x01\xccZ'\
+\x00k\
+\x00e\x00y\x00.\x00s\x00v\x00g\
+\x00\x0c\
+\x0b\xdf,\xc7\
+\x00s\
+\x00e\x00t\x00t\x00i\x00n\x00g\x00s\x00.\x00s\x00v\x00g\
+\x00\x0f\
+\x02\xe3G'\
+\x00p\
+\x00l\x00u\x00s\x00-\x00c\x00i\x00r\x00c\x00l\x00e\x00.\x00s\x00v\x00g\
+\x00\x0b\
+\x06!\xeeG\
+\x00l\
+\x00o\x00g\x00-\x00o\x00u\x00t\x00.\x00s\x00v\x00g\
+\x00\x0d\
+\x0c\xe7\x89\xc7\
+\x00c\
+\x00l\x00i\x00p\x00b\x00o\x00a\x00r\x00d\x00.\x00s\x00v\x00g\
+\x00\x0e\
+\x05W)\xa7\
+\x00s\
+\x00m\x00a\x00r\x00t\x00p\x00h\x00o\x00n\x00e\x00.\x00s\x00v\x00g\
+\x00\x09\
+\x0c\x96\xa3\xe7\
+\x00u\
+\x00s\x00e\x00r\x00s\x00.\x00s\x00v\x00g\
+\x00\x09\
+\x05\x9e\x8e\xa7\
+\x00c\
+\x00l\x00o\x00c\x00k\x00.\x00s\x00v\x00g\
+\x00\x0d\
+\x0a\xfe\xf3\xc7\
+\x00u\
+\x00s\x00e\x00r\x00-\x00p\x00l\x00u\x00s\x00.\x00s\x00v\x00g\
+\x00\x0b\
+\x0b\x8d\x90\xc7\
+\x00m\
+\x00o\x00n\x00i\x00t\x00o\x00r\x00.\x00s\x00v\x00g\
+\x00\x0c\
+\x07\xb5\x02G\
+\x00c\
+\x00a\x00l\x00e\x00n\x00d\x00a\x00r\x00.\x00s\x00v\x00g\
+\x00\x08\
+\x09\xc5UG\
+\x00u\
+\x00s\x00e\x00r\x00.\x00s\x00v\x00g\
+\x00\x0a\
+\x02\xc8\x15\xe7\
+\x00t\
+\x00a\x00b\x00l\x00e\x00t\x00.\x00s\x00v\x00g\
+\x00\x08\
+\x06_U\xa7\
+\x00t\
+\x00o\x00o\x00l\x00.\x00s\x00v\x00g\
+\x00\x06\
+\x07\xb9Z\xc7\
+\x00t\
+\x00v\x00.\x00s\x00v\x00g\
+\x00\x05\
+\x00{Z\xc7\
+\x00x\
+\x00.\x00s\x00v\x00g\
+\x00\x0b\
+\x011\x8d\xc7\
+\x00s\
+\x00p\x00e\x00a\x00k\x00e\x00r\x00.\x00s\x00v\x00g\
+\x00\x08\
+\x0cXT\xa7\
+\x00m\
+\x00e\x00n\x00u\x00.\x00s\x00v\x00g\
+\x00\x0b\
+\x0b\xf2K\xe7\
+\x00t\
+\x00r\x00a\x00s\x00h\x00-\x002\x00.\x00s\x00v\x00g\
+\x00\x08\
+\x068W'\
+\x00h\
+\x00o\x00m\x00e\x00.\x00s\x00v\x00g\
+\x00\x0d\
+\x04\x8a\x93\xa7\
+\x00b\
+\x00o\x00o\x00k\x00-\x00o\x00p\x00e\x00n\x00.\x00s\x00v\x00g\
+\x00\x0e\
+\x06P\xc3\xe7\
+\x00u\
+\x00s\x00e\x00r\x00-\x00m\x00i\x00n\x00u\x00s\x00.\x00s\x00v\x00g\
+\x00\x08\
+\x08\xc8U\xe7\
+\x00s\
+\x00a\x00v\x00e\x00.\x00s\x00v\x00g\
+\x00\x0a\
+\x05D\xc9G\
+\x00u\
+\x00s\x00e\x00r\x00-\x00x\x00.\x00s\x00v\x00g\
+"
+
+qt_resource_struct = b"\
+\x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x01\
+\x00\x00\x00\x00\x00\x00\x00\x00\
+\x00\x00\x00\x00\x00\x02\x00\x00\x00!\x00\x00\x00\x02\
+\x00\x00\x00\x00\x00\x00\x00\x00\
+\x00\x00\x02\xd0\x00\x00\x00\x00\x00\x01\x00\x00#\x82\
+\x00\x00\x01\x91\xcb\x1d\xf5\xc0\
+\x00\x00\x02\xe0\x00\x00\x00\x00\x00\x01\x00\x00$\xb1\
+\x00\x00\x01\x92\x15\xf3\x14h\
+\x00\x00\x00\xca\x00\x00\x00\x00\x00\x01\x00\x00\x07{\
+\x00\x00\x01\x91\xce\xc6H\xf8\
+\x00\x00\x01:\x00\x00\x00\x00\x00\x01\x00\x00\x0b\xbf\
+\x00\x00\x01\x92\x15\xf2M0\
+\x00\x00\x02\x8e\x00\x00\x00\x00\x00\x01\x00\x00\x1fl\
+\x00\x00\x01\x92\x15\xf33\xa8\
+\x00\x00\x01l\x00\x00\x00\x00\x00\x01\x00\x00\x11\x1a\
+\x00\x00\x01\x91\xcb\x8f\x80(\
+\x00\x00\x002\x00\x00\x00\x00\x00\x01\x00\x00\x01&\
+\x00\x00\x01\x91\xcb\x8eG\xa8\
+\x00\x00\x03D\x00\x00\x00\x00\x00\x01\x00\x00*\x95\
+\x00\x00\x01\x91\xcfG\x83\x00\
+\x00\x00\x03\x9c\x00\x00\x00\x00\x00\x01\x00\x00.\xe9\
+\x00\x00\x01\x92\x15\xf3\xa4\xf0\
+\x00\x00\x01\xcc\x00\x00\x00\x00\x00\x01\x00\x00\x15g\
+\x00\x00\x01\x92\x15\xf3\x18P\
+\x00\x00\x02\x06\x00\x00\x00\x00\x00\x01\x00\x00\x18K\
+\x00\x00\x01\x91\xce\xc5b\x80\
+\x00\x00\x00\xac\x00\x00\x00\x00\x00\x01\x00\x00\x06X\
+\x00\x00\x01\x91\xcfGox\
+\x00\x00\x01\x90\x00\x00\x00\x00\x00\x01\x00\x00\x12}\
+\x00\x00\x01\x91\xce\xc6\x1a\x18\
+\x00\x00\x03.\x00\x00\x00\x00\x00\x01\x00\x00)E\
+\x00\x00\x01\x91\xce\xc5\xf6\xf0\
+\x00\x00\x03d\x00\x00\x00\x00\x00\x01\x00\x00+\xec\
+\x00\x00\x01\x92\x15\xf3\x95P\
+\x00\x00\x02\xa8\x00\x00\x00\x00\x00\x01\x00\x00 \xb8\
+\x00\x00\x01\x92\x15\xf3^\xa0\
+\x00\x00\x01\x14\x00\x00\x00\x00\x00\x01\x00\x00\x0aG\
+\x00\x00\x01\x92\x15\xf2\xf9\x10\
+\x00\x00\x02Z\x00\x00\x00\x00\x00\x01\x00\x00\x1c\x91\
+\x00\x00\x01\x91\xce\xc53\xa0\
+\x00\x00\x02\xbe\x00\x00\x00\x00\x00\x01\x00\x00\x22>\
+\x00\x00\x01\x92\x15\xf3y\xf8\
+\x00\x00\x00\xf2\x00\x00\x00\x00\x00\x01\x00\x00\x08\xd4\
+\x00\x00\x01\x92\x15\xf3\x91h\
+\x00\x00\x03\x86\x00\x00\x00\x00\x00\x01\x00\x00-]\
+\x00\x00\x01\x92\x15\xf2\xd2\x00\
+\x00\x00\x00X\x00\x00\x00\x00\x00\x01\x00\x00\x02^\
+\x00\x00\x01\x91\xcb\x1e\xa1\xa0\
+\x00\x00\x02x\x00\x00\x00\x00\x00\x01\x00\x00\x1e/\
+\x00\x00\x01\x92\x15\xf3\xa4\xf0\
+\x00\x00\x00\x94\x00\x00\x00\x00\x00\x01\x00\x00\x05\x0b\
+\x00\x00\x01\x92\x15\xf3\xac\xc0\
+\x00\x00\x00\x18\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\
+\x00\x00\x01\x91\xce\xc5\xb8p\
+\x00\x00\x02\x1e\x00\x00\x00\x00\x00\x01\x00\x00\x19\x7f\
+\x00\x00\x01\x92\x15\xf3\x998\
+\x00\x00\x02>\x00\x00\x00\x00\x00\x01\x00\x00\x1b\x1b\
+\x00\x00\x01\x92\x15\xf2\x97h\
+\x00\x00\x01N\x00\x00\x00\x00\x00\x01\x00\x00\x0d#\
+\x00\x00\x01\x91\xce\xc6\xae\x88\
+\x00\x00\x03\x12\x00\x00\x00\x00\x00\x01\x00\x00'\x81\
+\x00\x00\x01\x92\x15\xf3R\xe8\
+\x00\x00\x02\xfc\x00\x00\x00\x00\x00\x01\x00\x00&#\
+\x00\x00\x01\x91\xce\xc4\xba\x88\
+\x00\x00\x01\xee\x00\x00\x00\x00\x00\x01\x00\x00\x16\xb7\
+\x00\x00\x01\x92\x15\xf3\xa1\x08\
+\x00\x00\x01\xac\x00\x00\x00\x00\x00\x01\x00\x00\x13\xf0\
+\x00\x00\x01\x91\xcfGT \
+\x00\x00\x00v\x00\x00\x00\x00\x00\x01\x00\x00\x03\xbc\
+\x00\x00\x01\x91\xcb\x8e\xa5h\
+"
+
+def qInitResources():
+    QtCore.qRegisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)
+
+def qCleanupResources():
+    QtCore.qUnregisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)
+
+qInitResources()

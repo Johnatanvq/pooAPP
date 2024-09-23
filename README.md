@@ -10,13 +10,36 @@ ACLARACIONES
 -en front va estar la carpeta para las imagenes, y la carpeta para cada una de las vistas, tanto el ejecutable .py como el .ui
 
 
-PENDIENTES
-
--back del login no está terminado, falta definir el botón de limpiar qué es lo que va hacer, redirigir a siguiente pantalla, se hicieron algunos cambios funcionales, subclase crearUsuario costruida (posibles cambios), falta subclase eliminarUsuario()
-
-
 CAMBIOS:
-- ya aparece un label cuando el usuario o contraseña no son correctos, se ocultó la contraseña, el limite max de los input es 20 carácteres (se puede modificar a gusto)
+- pantallas de la app agregadas
+
+- frontend inicial agregado
+
+- se hizo refactoring a crear usuario y login funcionalities, 
+
+- nuevas rutas
+
+todas las vistas redirigen a pantalla principal.
+
+- pantalla principal añadida, redirige a todas las vistas.
+
 - clases definidas con sus constructos y atributos, aún no hay métodos
 
-- se añadió e integró una pantalla de bienvenida que redirige al login respectivamente
+- pantalla de login lista, falta agregar funcionalidad para validar admin user o normal user
+
+- pantalla de usuario con funcionalidad de crear usuario lista, falta funcionalidades eliminar/editar
+
+
+PENDIENTES
+
+-back del login no está terminado, se hicieron algunos cambios funcionales, clase usuario lista, faltan métodos de clase adminUsuario
+
+- falta el backend de las demás clases
+
+-refactoring front de las vistas
+
+-autenticar admin y/o usuario normal
+
+- menu principal no funciona todavía como dinámico
+
+- OPTIMIZACIÓN de código

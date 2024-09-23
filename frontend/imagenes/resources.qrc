@@ -1,0 +1,37 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>bookmark.svg</file>
+    <file>book-open.svg</file>
+    <file>calendar.svg</file>
+    <file>clipboard.svg</file>
+    <file>clock.svg</file>
+    <file>filter.svg</file>
+    <file>home.svg</file>
+    <file>key.svg</file>
+    <file>log-out.svg</file>
+    <file>maximize.svg</file>
+    <file>menu.svg</file>
+    <file>minus-circle.svg</file>
+    <file>monitor.svg</file>
+    <file>more-vertical.svg</file>
+    <file>plus-circle.svg</file>
+    <file>save.svg</file>
+    <file>settings.svg</file>
+    <file>shopping-bag.svg</file>
+    <file>smartphone.svg</file>
+    <file>speaker.svg</file>
+    <file>tablet.svg</file>
+    <file>tool.svg</file>
+    <file>trash-2.svg</file>
+    <file>tv.svg</file>
+    <file>user.svg</file>
+    <file>user-check.svg</file>
+    <file>user-minus.svg</file>
+    <file>user-plus.svg</file>
+    <file>users.svg</file>
+    <file>user-x.svg</file>
+    <file>video.svg</file>
+    <file>x.svg</file>
+    <file>x-circle.svg</file>
+  </qresource>
+</RCC>
