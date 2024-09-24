@@ -1,3 +1,4 @@
+#SE CONSUME ARCHIVO CONEXIÓN A DB, CONSTRUIDO POR EL PROFESOR JUAN CAMILO
 import psycopg2
 
 class Database():

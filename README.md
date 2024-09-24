@@ -43,3 +43,5 @@ PENDIENTES
 - menu principal no funciona todavía como dinámico
 
 - OPTIMIZACIÓN de código
+
+- ajustar estructura de app, falta un folder para las vistas
