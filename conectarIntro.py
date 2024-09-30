@@ -13,9 +13,9 @@ class introGUI(QMainWindow):
         self.intro_gif.setMovie(self.movie)
         self.movie.start()  # Inicia animación GIF
         
-        self.intro_bt.clicked.connect(self.open_login)
+        self.intro_bt.clicked.connect(self.inicioLogin)
 
-    def open_login(self):
+    def inicioLogin(self):
         self.close()
         self.login_window = loginGUI()
         self.login_window.show()

@@ -6,7 +6,7 @@ from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
 from conectarReservas import reservasGUI
 from conectarMisReservas import misReservasGUI
-from connectNuevoUsuario import nuevoUsuarioGUI
+from connectarNuevoUsuario import nuevoUsuarioGUI
 from conectarEspacios import espaciosGUI
 from conectarUtileria import utileriaGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante

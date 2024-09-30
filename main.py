@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from connectarIntro import introGUI
+from conectarIntro import introGUI
 
 class main(QMainWindow):
     def __init__(self):
