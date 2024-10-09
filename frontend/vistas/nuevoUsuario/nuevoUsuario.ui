@@ -531,7 +531,7 @@ QLabel {
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="crear_bt_usuario_3">
+      <widget class="QPushButton" name="guardar_bt_usuario">
        <property name="geometry">
         <rect>
          <x>330</x>
@@ -611,6 +611,48 @@ QLabel {
         <string/>
        </property>
       </widget>
+      <widget class="QPushButton" name="eliminar_bt_usuario">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>0</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>Eliminar</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../imagenes/resources.qrc">
+         <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="layoutWidget_7">
       <property name="geometry">
@@ -653,7 +695,7 @@ QLabel {
        </item>
       </layout>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="input_filtro_usuarios">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -689,7 +731,7 @@ QLineEdit:focus {
        <string>Buscar Usuario</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="crear_bt_usuario_2">
+     <widget class="QPushButton" name="editar_bt_usuario">
       <property name="geometry">
        <rect>
         <x>380</x>
@@ -1410,7 +1452,7 @@ QLabel {
        <rect>
         <x>10</x>
         <y>290</y>
-        <width>30</width>
+        <width>34</width>
         <height>112</height>
        </rect>
       </property>
@@ -1488,7 +1530,7 @@ QLabel {
        <rect>
         <x>10</x>
         <y>111</y>
-        <width>22</width>
+        <width>34</width>
         <height>171</height>
        </rect>
       </property>
@@ -1969,7 +2011,6 @@ QLabel {
  </widget>
  <resources>
   <include location="../../imagenes/resources.qrc"/>
-  <include location="Imagenes/resources.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -2037,7 +2078,7 @@ QLabel {
    </hints>
   </connection>
   <connection>
-   <sender>crear_bt_usuario_2</sender>
+   <sender>editar_bt_usuario</sender>
    <signal>toggled(bool)</signal>
    <receiver>crear_bt_usuario</receiver>
    <slot>setDisabled(bool)</slot>
@@ -2055,7 +2096,7 @@ QLabel {
   <connection>
    <sender>crear_bt_usuario</sender>
    <signal>toggled(bool)</signal>
-   <receiver>crear_bt_usuario_2</receiver>
+   <receiver>editar_bt_usuario</receiver>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

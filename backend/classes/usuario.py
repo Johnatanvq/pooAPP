@@ -149,7 +149,58 @@ class adminUsuario(Usuario):
         # Este método puede acceder a los valores asignados anteriormente
         print(f"Usuario: {self.nombre}, Rol: {self.rol}")
         
+    def actualizarUsuario(self, ident, nombre, usuario, contrasena, cedula, email, rol, telefono):
+        try:
+            query = """
+            UPDATE usuarios SET 
+                nombre = %s, 
+                usuario = %s, 
+                contrasena = %s, 
+                cedula = %s, 
+                email = %s, 
+                rol = %s, 
+                telefono = %s
+            WHERE id = %s
+            """
+            values = (nombre, usuario, contrasena, cedula, email, rol, telefono, ident)
+            self.cursor.execute(query, values)
+            self.conexion.commit()
+            return True
+        except psycopg2.Error as e:
+            self.conexion.rollback()
+            print(f"Error al actualizar usuario: {e}")
+            return False
 
+    def eliminarUsuario(self, ident):
+        try:
+            query = "DELETE FROM usuarios WHERE id = %s"
+            self.cursor.execute(query, (ident,))
+            self.conexion.commit()
+            return True
+        except psycopg2.Error as e:
+            self.conexion.rollback()
+            print(f"Error al eliminar usuario: {e}")
+            return False
+
+    def cargarUsuarios(self):
+        try:
+            query = "SELECT nombre FROM usuarios"
+            self.cursor.execute(query)
+            usuarios = self.cursor.fetchall()
+            return [usuario[0] for usuario in usuarios]
+        except psycopg2.Error as e:
+            print(f"Error al cargar los usuarios: {e}")
+            return []
+
+    def cargarDetallesUsuario(self, nombre_usuario):
+        try:
+            query = "SELECT id, nombre, usuario, contrasena, cedula, email, rol, telefono FROM usuarios WHERE nombre = %s"
+            self.cursor.execute(query, (nombre_usuario,))
+            return self.cursor.fetchone()
+        except psycopg2.Error as e:
+            print(f"Error al cargar detalles del usuario: {e}")
+            return None
+        
     # def closeEvent(self, event):
         # # Cerrar la conexión a la base de datos al cerrar la ventana
         # if self.cursor:

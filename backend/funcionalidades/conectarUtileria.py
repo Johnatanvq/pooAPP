@@ -4,6 +4,9 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
+from backend.funcionalidades.conectarLogin import loginGUI
+# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MPGUI
+
 # from conectarLogin import loginGUI
 
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
@@ -15,12 +18,14 @@ class utileriaGUI(QMainWindow):
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         
     def menuPrincipalGUI(self):
-        from conectarMenuPrincipal import menuPrincipalGUI
+        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
+
         self.close()
         self.login_window = menuPrincipalGUI()
         self.login_window.show()
         
     def cerrarSesion(self):
+        
         #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
             self.nuevoUsuario.cursor.close()

@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
-from conectarMenuPrincipal import menuPrincipalGUI
+# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MPGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class loginGUI(QMainWindow):
@@ -45,8 +45,10 @@ class loginGUI(QMainWindow):
         self.error_label.setStyleSheet("")
         
     def abrirMenuPrincipal(self):
+        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MPGUI
+
         self.close()
-        self.login_window = menuPrincipalGUI()
+        self.login_window = MPGUI()
         self.login_window.show()
         
     # def closeEvent(self, event):

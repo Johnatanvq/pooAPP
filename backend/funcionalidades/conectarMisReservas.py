@@ -4,22 +4,25 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
+# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
+
 # from conectarLogin import loginGUI
 
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
-class reservasGUI(QMainWindow):
+class misReservasGUI(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("../pooAPP/frontend/vistas/reservas/reservas.ui", self)
+        uic.loadUi("../pooAPP/frontend/vistas/misReservas/misReservas.ui", self)
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         
     def menuPrincipalGUI(self):
-        from conectarMenuPrincipal import menuPrincipalGUI
+        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
+
         self.close()
-        self.login_window = menuPrincipalGUI()
+        self.login_window = MenuPrincipalGui()
         self.login_window.show()
-        
+
     def cerrarSesion(self):
         #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
@@ -36,6 +39,6 @@ class reservasGUI(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    GUI = reservasGUI()
+    GUI = misReservasGUI()
     GUI.show()
     sys.exit(app.exec_())

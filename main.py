@@ -1,6 +1,11 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from conectarIntro import introGUI
+from backend.funcionalidades.conectarIntro import introGUI
+from backend.funcionalidades.conectarNuevaReserva import nuevaReservaGUI
+from backend.funcionalidades.conectarCalendario import calendarioGUI
+from backend.funcionalidades.conectarLogin import loginGUI
+from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
+from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
 
 class main(QMainWindow):
     def __init__(self):
@@ -8,7 +13,11 @@ class main(QMainWindow):
         self.inicioAPP()
 
     def inicioAPP(self):
-        self.intro_window = introGUI()
+        # self.intro_window = nuevaReservaGUI()
+        # self.intro_window = menuPrincipalGUI()
+        # self.intro_window = loginGUI()
+        self.intro_window = nuevoUsuarioGUI()
+        # self.intro_window = introGUI()
         self.intro_window.show()
 
 if __name__ == "__main__":

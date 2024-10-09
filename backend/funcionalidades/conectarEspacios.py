@@ -4,8 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
-# from conectarLogin import loginGUI
-
+# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class espaciosGUI(QMainWindow):
@@ -15,9 +14,8 @@ class espaciosGUI(QMainWindow):
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         
     def menuPrincipalGUI(self):
-        from conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        self.login_window = menuPrincipalGUI()
+        # self.login_window = menuPrincipalGUI()
         self.login_window.show()
         
     def cerrarSesion(self):

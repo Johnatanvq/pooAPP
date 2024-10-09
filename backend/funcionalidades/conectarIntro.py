@@ -2,7 +2,7 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtGui import QMovie
-from conectarLogin import loginGUI
+from backend.funcionalidades.conectarLogin import loginGUI 
 
 class introGUI(QMainWindow):
     def __init__(self):
@@ -11,7 +11,7 @@ class introGUI(QMainWindow):
         
         self.movie = QMovie("../pooAPP/frontend/imagenes/intro.gif")
         self.intro_gif.setMovie(self.movie)
-        self.movie.start()  # Inicia animación GIF
+        self.movie.start()
         
         self.intro_bt.clicked.connect(self.inicioLogin)
 

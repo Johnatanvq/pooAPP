@@ -4,11 +4,12 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
-from conectarReservas import reservasGUI
-from conectarMisReservas import misReservasGUI
-from connectarNuevoUsuario import nuevoUsuarioGUI
-from conectarEspacios import espaciosGUI
-from conectarUtileria import utileriaGUI
+from backend.funcionalidades.conectarReservas import reservasGUI
+from backend.funcionalidades.conectarMisReservas import misReservasGUI
+from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
+from backend.funcionalidades.conectarUtileria import utileriaGUI
+from backend.funcionalidades.conectarEspacios import espaciosGUI
+from backend.funcionalidades.conectarLogin import loginGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class menuPrincipalGUI(QMainWindow):
@@ -25,7 +26,7 @@ class menuPrincipalGUI(QMainWindow):
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
 
     def menuPrincipalGUI(self):
-        from conectarMenuPrincipal import menuPrincipalGUI
+        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
         self.login_window = menuPrincipalGUI()
         self.login_window.show()
@@ -57,7 +58,7 @@ class menuPrincipalGUI(QMainWindow):
         self.login_window.show()
         
     def cerrarSesion(self):
-        from conectarLogin import loginGUI
+        # from conectarLogin import loginGUI
         
         #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:

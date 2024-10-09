@@ -1,27 +1,35 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5.QtCore import QRegularExpression
-from PyQt5.QtGui import QRegularExpressionValidator
-from backend.classes.usuario import Usuario, adminUsuario
-# from conectarLogin import loginGUI
+from backend.classes.usuario import Usuario
+from datetime import datetime
+# from conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
+from backend.funcionalidades.conectarNuevaReserva import nuevaReservaGUI
 
+import time
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
-class misReservasGUI(QMainWindow):
+class calendarioGUI(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("../pooAPP/frontend/vistas/misReservas/misReservas.ui", self)
-        self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
+        uic.loadUi("../pooAPP/frontend/vistas/calendario/calendario.ui", self)
         
-    def menuPrincipalGUI(self):
-        from conectarMenuPrincipal import menuPrincipalGUI
+        
+        
+        self.calendario.selectionChanged.connect(self.capturarFecha)
+        
+    def capturarFecha(self):
+        fechaSeleccionada = self.calendario.selectedDate().toPyDate()
+        print(fechaSeleccionada)
+        fecha_ordenada = datetime.strftime(fechaSeleccionada, '%d-%m-%Y')
+        print(type(fecha_ordenada))
         self.close()
-        self.login_window = menuPrincipalGUI()
+        self.login_window = nuevaReservaGUI()  # Instanciar la ventana de login
         self.login_window.show()
 
-    def cerrarSesion(self):
+    def cerrarSesion(self): 
         from conectarLogin import loginGUI
+
         #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
             self.nuevoUsuario.cursor.close()
@@ -37,6 +45,6 @@ class misReservasGUI(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    GUI = misReservasGUI()
+    GUI = calendarioGUI()
     GUI.show()
     sys.exit(app.exec_())

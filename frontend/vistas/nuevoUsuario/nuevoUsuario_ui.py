@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QLabel, QLineEdit, QMainWindow, QPushButton,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 import resources_rc
-import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -355,10 +354,10 @@ class Ui_MainWindow(object):
         icon1.addFile(u":/newPrefix/user-plus.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.crear_bt_usuario.setIcon(icon1)
         self.crear_bt_usuario.setCheckable(True)
-        self.crear_bt_usuario_3 = QPushButton(self.frame_ingreso)
-        self.crear_bt_usuario_3.setObjectName(u"crear_bt_usuario_3")
-        self.crear_bt_usuario_3.setGeometry(QRect(330, 50, 75, 23))
-        self.crear_bt_usuario_3.setStyleSheet(u"QPushButton {\n"
+        self.guardar_bt_usuario = QPushButton(self.frame_ingreso)
+        self.guardar_bt_usuario.setObjectName(u"guardar_bt_usuario")
+        self.guardar_bt_usuario.setGeometry(QRect(330, 50, 75, 23))
+        self.guardar_bt_usuario.setStyleSheet(u"QPushButton {\n"
 "    border-radius: 10px;\n"
 "     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
 "                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
@@ -383,7 +382,7 @@ class Ui_MainWindow(object):
 "}")
         icon2 = QIcon()
         icon2.addFile(u":/newPrefix/save.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.crear_bt_usuario_3.setIcon(icon2)
+        self.guardar_bt_usuario.setIcon(icon2)
         self.error_label_contrasena = QLabel(self.frame_ingreso)
         self.error_label_contrasena.setObjectName(u"error_label_contrasena")
         self.error_label_contrasena.setGeometry(QRect(280, 80, 151, 111))
@@ -398,6 +397,33 @@ class Ui_MainWindow(object):
 "    color: rgb(0, 0, 0);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
+        self.eliminar_bt_usuario = QPushButton(self.frame_ingreso)
+        self.eliminar_bt_usuario.setObjectName(u"eliminar_bt_usuario")
+        self.eliminar_bt_usuario.setGeometry(QRect(360, 0, 75, 23))
+        self.eliminar_bt_usuario.setStyleSheet(u"QPushButton {\n"
+"    border-radius: 10px;\n"
+"     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
+"                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
+"                                      stop:1 rgb(255,255,255)); /* Cian claro */\n"
+"}   \n"
+"\n"
+"QPushButton:hover {\n"
+"	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
+"                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
+"                                      stop:0.369469 rgba(0,128,0,255), \n"
+"                                      stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
+"}\n"
+"   \n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: rgb(225, 225, 224);\n"
+"    font: 12pt \"Arial\";\n"
+"}")
+        self.eliminar_bt_usuario.setIcon(icon2)
         self.layoutWidget_7 = QWidget(self.main_menu)
         self.layoutWidget_7.setObjectName(u"layoutWidget_7")
         self.layoutWidget_7.setGeometry(QRect(330, 10, 133, 26))
@@ -423,10 +449,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.lb_indicador_mreservas_2)
 
-        self.lineEdit = QLineEdit(self.main_menu)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(130, 50, 241, 20))
-        self.lineEdit.setStyleSheet(u"QLineEdit {\n"
+        self.input_filtro_usuarios = QLineEdit(self.main_menu)
+        self.input_filtro_usuarios.setObjectName(u"input_filtro_usuarios")
+        self.input_filtro_usuarios.setGeometry(QRect(130, 50, 241, 20))
+        self.input_filtro_usuarios.setStyleSheet(u"QLineEdit {\n"
 "    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
 "    border-radius: 10px;\n"
 "    font: 12pt \"Arial\";\n"
@@ -447,10 +473,10 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
 "}\n"
 "")
-        self.crear_bt_usuario_2 = QPushButton(self.main_menu)
-        self.crear_bt_usuario_2.setObjectName(u"crear_bt_usuario_2")
-        self.crear_bt_usuario_2.setGeometry(QRect(380, 50, 75, 23))
-        self.crear_bt_usuario_2.setStyleSheet(u"QPushButton {\n"
+        self.editar_bt_usuario = QPushButton(self.main_menu)
+        self.editar_bt_usuario.setObjectName(u"editar_bt_usuario")
+        self.editar_bt_usuario.setGeometry(QRect(380, 50, 75, 23))
+        self.editar_bt_usuario.setStyleSheet(u"QPushButton {\n"
 "    border-radius: 10px;\n"
 "     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
 "                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
@@ -475,8 +501,8 @@ class Ui_MainWindow(object):
 "}")
         icon3 = QIcon()
         icon3.addFile(u":/newPrefix/user.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.crear_bt_usuario_2.setIcon(icon3)
-        self.crear_bt_usuario_2.setCheckable(True)
+        self.editar_bt_usuario.setIcon(icon3)
+        self.editar_bt_usuario.setCheckable(True)
         self.error_campo_vacio = QLabel(self.main_menu)
         self.error_campo_vacio.setObjectName(u"error_campo_vacio")
         self.error_campo_vacio.setGeometry(QRect(30, 380, 401, 41))
@@ -990,7 +1016,7 @@ class Ui_MainWindow(object):
         self.icon_solamente_widget.setStyleSheet(u"")
         self.layoutWidget_3 = QWidget(self.icon_solamente_widget)
         self.layoutWidget_3.setObjectName(u"layoutWidget_3")
-        self.layoutWidget_3.setGeometry(QRect(10, 290, 30, 112))
+        self.layoutWidget_3.setGeometry(QRect(10, 290, 34, 112))
         self.verticalLayout_2 = QVBoxLayout(self.layoutWidget_3)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -1043,7 +1069,7 @@ class Ui_MainWindow(object):
 
         self.layoutWidget_4 = QWidget(self.icon_solamente_widget)
         self.layoutWidget_4.setObjectName(u"layoutWidget_4")
-        self.layoutWidget_4.setGeometry(QRect(10, 111, 22, 171))
+        self.layoutWidget_4.setGeometry(QRect(10, 111, 34, 171))
         self.verticalLayout = QVBoxLayout(self.layoutWidget_4)
         self.verticalLayout.setSpacing(7)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -1402,8 +1428,8 @@ class Ui_MainWindow(object):
         self.bt_cerrarlistado_mm.toggled.connect(self.icon_texto_widget_2.setVisible)
         self.bt_icono_configuraciones_mm.toggled.connect(self.widget_2.setVisible)
         self.bt_configuraciones_mm.toggled.connect(self.widget.setVisible)
-        self.crear_bt_usuario_2.toggled.connect(self.crear_bt_usuario.setDisabled)
-        self.crear_bt_usuario.toggled.connect(self.crear_bt_usuario_2.setDisabled)
+        self.editar_bt_usuario.toggled.connect(self.crear_bt_usuario.setDisabled)
+        self.crear_bt_usuario.toggled.connect(self.editar_bt_usuario.setDisabled)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -1425,13 +1451,14 @@ class Ui_MainWindow(object):
         self.input_telefono.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Tel\u00e9fono", None))
         self.input_correo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Correo", None))
         self.crear_bt_usuario.setText(QCoreApplication.translate("MainWindow", u"Crear", None))
-        self.crear_bt_usuario_3.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
+        self.guardar_bt_usuario.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
         self.error_label_contrasena.setText("")
         self.error_label_correo.setText("")
+        self.eliminar_bt_usuario.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
         self.lb_indicador_mreservas_3.setText("")
         self.lb_indicador_mreservas_2.setText(QCoreApplication.translate("MainWindow", u"USUARIOS", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Buscar Usuario", None))
-        self.crear_bt_usuario_2.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
+        self.input_filtro_usuarios.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Buscar Usuario", None))
+        self.editar_bt_usuario.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
         self.error_campo_vacio.setText("")
         self.bt_logout_mm.setText(QCoreApplication.translate("MainWindow", u"Cerrar Sesi\u00f3n", None))
         self.label_3.setText("")
