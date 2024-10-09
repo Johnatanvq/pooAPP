@@ -5,7 +5,7 @@ Notas:
 
 ACLARACIONES
 
--El login no le va funcionar porque la base de datos es local entonces las credenciales son distintas
+-para visualizar la app, corra el .main.py, y desde ahi importa la vista que quiere trabajar
 
 -en front va estar la carpeta para las imagenes, y la carpeta para cada una de las vistas, tanto el ejecutable .py como el .ui
 
@@ -15,9 +15,9 @@ CAMBIOS:
 
 - frontend inicial agregado
 
-- se hizo refactoring a crear usuario y login funcionalities, 
+- nuevousuario back listo
 
-- nuevas rutas
+- importación circular se ha resuelto de manera temporal
 
 todas las vistas redirigen a pantalla principal.
 
@@ -32,16 +32,14 @@ todas las vistas redirigen a pantalla principal.
 
 PENDIENTES
 
--back del login no está terminado, se hicieron algunos cambios funcionales, clase usuario lista, faltan métodos de clase adminUsuario
+-back del login no está terminado, se hicieron algunos cambios funcionales
 
 - falta el backend de las demás clases
 
--refactoring front de las vistas
+- refactoring front de las vistas
 
--autenticar admin y/o usuario normal
+- autenticar admin y/o usuario normal
 
 - menu principal no funciona todavía como dinámico
 
 - OPTIMIZACIÓN de código
-
-- ajustar estructura de app, falta un folder para las vistas
