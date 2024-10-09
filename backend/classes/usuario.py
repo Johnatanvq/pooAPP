@@ -1,5 +1,4 @@
 from backend.database import Database
-
 import psycopg2
 
 class Usuario():
@@ -31,6 +30,7 @@ class Usuario():
         
         self.verificarCrearTablaUsuarios()
             
+    #método para autenticar el usuario y contraseña
     def autenticarUsuario(self):
         if self.nombre and self.contrasena:
             try:
@@ -57,9 +57,9 @@ class Usuario():
             print("No hay datos para autenticar")
             
             
+    #método para verificar si la tabla de 'usuarios' existe en la base de datos
     def verificarCrearTablaUsuarios(self):
         try:
-            # Verificar si la tabla ya existe
             self.cursor.execute("""
                 SELECT EXISTS (
                     SELECT FROM pg_tables
@@ -75,9 +75,9 @@ class Usuario():
             print(f"Error al verificar si la tabla existe: {e}")
             self.conexion.rollback()
             
+    #metodo para crear la tabla 'usuarios' en la base de datos
     def crearTablaUsuarios(self):
         try:
-            #SQL para crear la tabla 'usuarios'
             query = """
             CREATE TABLE IF NOT EXISTS usuarios (
                 id SERIAL PRIMARY KEY,            -- ID auto-incrementable y clave primaria
@@ -144,11 +144,8 @@ class adminUsuario(Usuario):
         else:
             print("Faltan datos para crear el usuario. Asegúrate de que todos los campos estén llenos.")
             return False
-
-    def mostrarUsuario(self):
-        # Este método puede acceder a los valores asignados anteriormente
-        print(f"Usuario: {self.nombre}, Rol: {self.rol}")
         
+    # método para actualizar los datos del usuario en la base de datos
     def actualizarUsuario(self, ident, nombre, usuario, contrasena, cedula, email, rol, telefono):
         try:
             query = """
@@ -171,6 +168,7 @@ class adminUsuario(Usuario):
             print(f"Error al actualizar usuario: {e}")
             return False
 
+    #metodo para eliminar el usuario por completo
     def eliminarUsuario(self, ident):
         try:
             query = "DELETE FROM usuarios WHERE id = %s"
@@ -181,7 +179,8 @@ class adminUsuario(Usuario):
             self.conexion.rollback()
             print(f"Error al eliminar usuario: {e}")
             return False
-
+        
+    #metodo para cargar los nombres existentes en la base de datos
     def cargarUsuarios(self):
         try:
             query = "SELECT nombre FROM usuarios"
@@ -191,7 +190,8 @@ class adminUsuario(Usuario):
         except psycopg2.Error as e:
             print(f"Error al cargar los usuarios: {e}")
             return []
-
+        
+    #metodo para cargar los datos de cada usuario existentes en la base de datos
     def cargarDetallesUsuario(self, nombre_usuario):
         try:
             query = "SELECT id, nombre, usuario, contrasena, cedula, email, rol, telefono FROM usuarios WHERE nombre = %s"
@@ -200,6 +200,9 @@ class adminUsuario(Usuario):
         except psycopg2.Error as e:
             print(f"Error al cargar detalles del usuario: {e}")
             return None
+        
+    def mostrarUsuario(self):
+        print(f"Usuario: {self.nombre}, Rol: {self.rol}")
         
     # def closeEvent(self, event):
         # # Cerrar la conexión a la base de datos al cerrar la ventana

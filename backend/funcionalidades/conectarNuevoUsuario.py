@@ -27,8 +27,8 @@ class nuevoUsuarioGUI(QMainWindow):
         self.configurarCompleter()
         
         #se asocia cada elementos con sus funcionalidades
-        self.input_correo.textChanged.connect(self.limpiar_error_correo)
-        self.input_contrasena.textChanged.connect(self.limpiar_error_contrasena)
+        self.input_correo.textChanged.connect(self.limpiarErrorCorreo)
+        self.input_contrasena.textChanged.connect(self.limpiarErrorContrasena)
         self.crear_bt_usuario.clicked.connect(self.crearUsuario)
         self.guardar_bt_usuario.clicked.connect(self.actualizarUsuario)
         self.eliminar_bt_usuario.clicked.connect(self.eliminarUsuario)
@@ -37,8 +37,8 @@ class nuevoUsuarioGUI(QMainWindow):
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         
+    #se asocian atributos de la clase Usuario a las capturas de inputs en la UI
     def capturarTexto(self):
-        #se asocian atributos de la clase Usuario a las capturas de inputs en la UI
         self.nuevoUsuario.nombre = self.input_nombre.text()
         self.nuevoUsuario.usuario = self.input_usuario.text()
         self.nuevoUsuario.contrasena = self.input_contrasena.text()
@@ -47,11 +47,13 @@ class nuevoUsuarioGUI(QMainWindow):
         self.nuevoUsuario.telefono = self.input_telefono.text()
         self.nuevoUsuario.rol = self.input_rol.currentText().lower()
     
+    #método para validar las expresiones regulares
     def validarTexto(self, regex):
         regularExpression = QRegularExpression(regex)
         regexValidated = QRegularExpressionValidator(regularExpression)
         return regexValidated
         
+    #método para crear el usuario
     def crearUsuario(self):
         self.capturarTexto()
         self.input_correo.setValidator(self.validarTexto(self.emailRegex))
@@ -67,19 +69,19 @@ class nuevoUsuarioGUI(QMainWindow):
                     self.nuevoUsuario.email and
                     self.nuevoUsuario.telefono
                 ):
-                self.mostrar_error_campoVacio()
+                self.mostrarErrorCampoVacio()
             else:
-                self.limpiar_error_campo_vacio()
+                self.limpiarErrorCampoVacio()
                 
             if not correo_valido:
                 self.mostrarErrorCorreo()
             else:
-                self.limpiar_error_correo()
+                self.limpiarErrorCorreo()
             
             if not contrasena_valida:
-                self.mostrar_error_contrasena()
+                self.mostrarErrorContrasena()
             else:
-                self.limpiar_error_contrasena()
+                self.limpiarErrorContrasena()
 
             return  #parar si alguna validación falla
 
@@ -92,42 +94,41 @@ class nuevoUsuarioGUI(QMainWindow):
                 rol=self.nuevoUsuario.rol, 
                 telefono=self.nuevoUsuario.telefono
             ):
-            self.limpiar_error_correo()
-            self.limpiar_error_contrasena()
+            self.limpiarErrorCorreo()
+            self.limpiarErrorContrasena()
             
-            
+    # métodos para cambiar el texto y el color del label de error a rojo
     def mostrarErrorCorreo(self):
-        # Cambiar el texto y el color del label de error a rojo
         self.error_label_correo.setText("Ingrese un correo válido")
         self.error_label_correo.setStyleSheet(("""
                                                     color: red;
                                                     font-size: 8pt;
                                                 """))
     
-    def mostrar_error_contrasena(self):
+    def mostrarErrorContrasena(self):
         self.error_label_contrasena.setText("La contraseña debe\n contener mayúsculas,\n minúsculas y carácteres\n especiales: @#$%^&+=")
         self.error_label_contrasena.setStyleSheet("""
                                                     color: red;
                                                     font-size: 8pt;
                                                 """)
     
-    def mostrar_error_campoVacio(self):
+    def mostrarErrorCampoVacio(self):
         self.error_campo_vacio.setText("Debe llenar todos los campos")
         self.error_campo_vacio.setStyleSheet("""
                                                 color: yellow;
                                                 text-decoration: bold;
                                             """)
-
-    def limpiar_error_contrasena(self):
-        # Limpiar el texto y el estilo del label de error
+        
+    #métodos para limpiar el texto y el estilo del label de error
+    def limpiarErrorContrasena(self):
         self.error_label_contrasena.setText("")
         self.error_label_contrasena.setStyleSheet("")
     
-    def limpiar_error_correo(self):
+    def limpiarErrorCorreo(self):
         self.error_label_correo.setText("")
         self.error_label_correo.setStyleSheet("")
     
-    def limpiar_error_campo_vacio(self):
+    def limpiarErrorCampoVacio(self):
         self.error_campo_vacio.setText("")
         self.error_campo_vacio.setStyleSheet("")
         
@@ -141,13 +142,14 @@ class nuevoUsuarioGUI(QMainWindow):
         if actualizado:
             print(f"Usuario con ID {self.nuevoUsuario.ident} actualizado correctamente")
 
+    #método para eliminar el usuario, limpia los campos de los input y actualiza el filtro de búsqueda
     def eliminarUsuario(self):
         if self.nuevoUsuario.ident:
             eliminado = self.nuevoUsuario.eliminarUsuario(self.nuevoUsuario.ident)
             if eliminado:
                 print(f"Usuario con ID {self.nuevoUsuario.ident} eliminado correctamente")
-                self.limpiarCampos()  # Limpiar campos de entrada
-                self.configurarCompleter()  # Actualizar el filtro de autocompletar
+                self.limpiarCampos()
+                self.configurarCompleter()
 
     def limpiarCampos(self):
         self.input_nombre.clear()
@@ -157,7 +159,7 @@ class nuevoUsuarioGUI(QMainWindow):
         self.input_correo.clear()
         self.input_telefono.clear()
         self.input_rol.setCurrentIndex(0)
-        self.nuevoUsuario.ident = None  # Resetear el ID del usuario
+        self.nuevoUsuario.ident = None
 
     def configurarCompleter(self):
         usuarios = self.nuevoUsuario.cargarUsuarios()
@@ -179,9 +181,9 @@ class nuevoUsuarioGUI(QMainWindow):
             self.input_telefono.setText(detalles_usuario[7])
 
             # Desactivar edición
-            self.habilitarLectura()
+            self.desabilitarEdicion()
 
-    def habilitarLectura(self):
+    def desabilitarEdicion(self):
         self.input_nombre.setReadOnly(True)
         self.input_usuario.setReadOnly(True)
         self.input_contrasena.setReadOnly(True)
