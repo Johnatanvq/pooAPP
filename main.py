@@ -6,6 +6,11 @@ from backend.funcionalidades.conectarCalendario import calendarioGUI
 from backend.funcionalidades.conectarLogin import loginGUI
 from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
+from backend.funcionalidades.conectarReservas import reservasGUI
+from backend.funcionalidades.conectarMisReservas import misReservasGUI
+from backend.funcionalidades.conectarUtileria import utileriaGUI
+from backend.funcionalidades.conectarEspacios import espaciosGUI
+from backend.funcionalidades.conectarNuevaReserva import nuevaReservaGUI
 
 class main(QMainWindow):
     def __init__(self):
@@ -16,8 +21,9 @@ class main(QMainWindow):
         # self.intro_window = nuevaReservaGUI()
         # self.intro_window = menuPrincipalGUI()
         # self.intro_window = loginGUI()
-        self.intro_window = nuevoUsuarioGUI()
+        # self.intro_window = nuevoUsuarioGUI()
         # self.intro_window = introGUI()
+        # self.intro_window = reservasGUI()
         self.intro_window.show()
 
 if __name__ == "__main__":
