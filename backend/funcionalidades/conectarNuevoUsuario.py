@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QCompleter
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator, QValidator
 from backend.classes.usuario import adminUsuario
-# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
+# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 from backend.funcionalidades.conectarLogin import loginGUI
 
 import re
@@ -138,7 +138,16 @@ class nuevoUsuarioGUI(QMainWindow):
             return
         
         datos = self.capturarTexto()
-        actualizado = self.nuevoUsuario.actualizarUsuario(self.nuevoUsuario.ident, **datos)
+        actualizado = self.nuevoUsuario.actualizarUsuario(
+            self.nuevoUsuario.ident,
+            self.nuevoUsuario.nombre,
+            self.nuevoUsuario.usuario,
+            self.nuevoUsuario.contrasena,
+            self.nuevoUsuario.cedula,
+            self.nuevoUsuario.email,
+            self.nuevoUsuario.telefono,
+            self.nuevoUsuario.rol
+        )
         if actualizado:
             print(f"Usuario con ID {self.nuevoUsuario.ident} actualizado correctamente")
 
