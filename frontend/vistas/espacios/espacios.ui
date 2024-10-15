@@ -6,1377 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>612</width>
-    <height>445</height>
+    <width>1000</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>610</width>
-      <height>444</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QFrame{
-background-color: rgb(22,26,23);
-border-radius: 10px;
-}
-
-QLabel
-{
-	color: rgb(255, 255, 255);
-	font: 12pt &quot;Arial&quot;; 
-}</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QWidget" name="main_menu" native="true">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>10</y>
-       <width>461</width>
-       <height>431</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-background-color: 
-rgb(255, 255, 255)</string>
-     </property>
-     <widget class="QPushButton" name="bt_cerrarlistado_mm">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-    border-radius: 18px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../../imagenes/resources.qrc">
-        <normaloff>:/newPrefix/menu.svg</normaloff>:/newPrefix/menu.svg</iconset>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QFrame" name="frame_ingreso">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>441</width>
-        <height>171</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QFrame {
-    border: 1px solid #04b338;
-}
-
-QLabel {
-    border: none;
-}
-QLineEdit{
-color: rgb(0, 0, 0);
-font: 12pt &quot;Arial&quot;;
-}
-
-QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}
-</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QWidget" name="layoutWidget_8">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>261</width>
-         <height>141</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_7">
-        <item>
-         <widget class="QLineEdit" name="input_nombre">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string>Nombre</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="input_bloque">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}
-</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string>Bloque</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="input_capacidad">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string>Capacidad</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="input_tipo">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string>Tipo</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPushButton" name="crear_bt_usuario">
-       <property name="geometry">
-        <rect>
-         <x>360</x>
-         <y>10</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-    border-radius: 10px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Crear</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../imagenes/resources.qrc">
-         <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="crear_bt_usuario_3">
-       <property name="geometry">
-        <rect>
-         <x>360</x>
-         <y>40</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-    border-radius: 10px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Guardar</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../imagenes/resources.qrc">
-         <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
-       </property>
-      </widget>
-      <widget class="QLabel" name="error_label_contrasena">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>90</y>
-         <width>141</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>error label contrasena</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="error_label_correo">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>120</y>
-         <width>141</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>correo erroneo</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="error_campo_vacio">
-       <property name="geometry">
-        <rect>
-         <x>280</x>
-         <y>70</y>
-         <width>141</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>error campo vacio</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="layoutWidget_7">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>10</y>
-        <width>132</width>
-        <height>26</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="lb_indicador_mreservas_3">
-         <property name="styleSheet">
-          <string notr="true">QLabel {
-    color: rgba(0, 128, 0, 255);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../imagenes/resources.qrc">:/newPrefix/key.svg</pixmap>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="lb_indicador_mreservas_2">
-         <property name="styleSheet">
-          <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-         </property>
-         <property name="text">
-          <string>ESPACIOS</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>70</y>
-        <width>241</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}
-</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="crear_bt_usuario_2">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>70</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-    border-radius: 10px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-      </property>
-      <property name="text">
-       <string>Editar</string>
-      </property>
-      <property name="icon">
-       <iconset resource="../../imagenes/resources.qrc">
-        <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>16</x>
-        <y>70</y>
-        <width>111</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-      </property>
-      <property name="text">
-       <string>Buscar Espacio</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="icon_texto_widget_2" native="true">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>111</width>
-       <height>431</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-</string>
-     </property>
-     <widget class="QWidget" name="layoutWidget_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>290</y>
-        <width>111</width>
-        <height>112</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>28</width>
-           <height>88</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_logout_mm">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-</string>
-         </property>
-         <property name="text">
-          <string>Cerrar Sesión</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>20</y>
-        <width>31</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="minimumSize">
-          <size>
-           <width>10</width>
-           <height>10</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
-    background-color: rgb(255, 255, 255); /* Fondo blanco */
-    background-image: url(path/to/your/image.png); /* Imagen de fondo */
-    background-position: center; /* Centrar la imagen */
-    background-repeat: no-repeat; /* Evitar que la imagen se repita */
-    background-size: cover; /* Escalar la imagen para cubrir la QLabel */
-    
-    border-radius: 50px; /* Redondear las esquinas (50px es para un círculo si el tamaño es cuadrado) */
-    border: none; /* Sin borde */
-    margin: 0px; /* Sin margen */
-    padding: 0px; /* Sin padding */
-    
-    min-width: 10px;  /* Establecer tamaño mínimo */
-    min-height: 10px;
-    max-width: 100px;  /* Establecer tamaño máximo */
-    max-height: 100px;
-}
-</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>../../../Downloads/Captura de pantalla 2024-09-21 151950.jpg</pixmap>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>28</width>
-           <height>38</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="layoutWidget_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>110</y>
-        <width>113</width>
-        <height>171</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <property name="spacing">
-        <number>7</number>
-       </property>
-       <item>
-        <widget class="QPushButton" name="bt_home_mm">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-</string>
-         </property>
-         <property name="text">
-          <string>Principal</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_reservas__mm">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-         </property>
-         <property name="text">
-          <string>Reservas</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/bookmark.svg</normaloff>:/newPrefix/bookmark.svg</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_misreservas_mm">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-         </property>
-         <property name="text">
-          <string>Mis reservas</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/book-open.svg</normaloff>:/newPrefix/book-open.svg</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_configuraciones_mm">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-         </property>
-         <property name="text">
-          <string>Configuraciones</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/settings.svg</normaloff>:/newPrefix/settings.svg</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QWidget" name="widget" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout_9">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QPushButton" name="bt_usuarios_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-            </property>
-            <property name="text">
-             <string>Usuarios</string>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="bt_espacios_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-            </property>
-            <property name="text">
-             <string>Espacios</string>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="bt_utilera_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-            </property>
-            <property name="text">
-             <string>Utilería</string>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/shopping-bag.svg</normaloff>:/newPrefix/shopping-bag.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="icon_solamente_widget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>51</width>
-       <height>431</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <widget class="QWidget" name="layoutWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>290</y>
-        <width>34</width>
-        <height>112</height>
-       </rect>
-      </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>28</width>
-           <height>88</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_icono_logout_mm">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px;
-	text-align: left;
-}
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="layoutWidget_4">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>111</y>
-        <width>34</width>
-        <height>171</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <property name="spacing">
-        <number>7</number>
-       </property>
        <item>
         <widget class="QPushButton" name="bt_icono_home_mm">
          <property name="styleSheet">
@@ -1421,6 +62,12 @@ QLabel {
          <property name="icon">
           <iconset resource="../../imagenes/resources.qrc">
            <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1481,6 +128,12 @@ QLabel {
           <iconset resource="../../imagenes/resources.qrc">
            <normaloff>:/newPrefix/bookmark.svg</normaloff>:/newPrefix/bookmark.svg</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -1533,6 +186,12 @@ QLabel {
          <property name="icon">
           <iconset resource="../../imagenes/resources.qrc">
            <normaloff>:/newPrefix/book-open.svg</normaloff>:/newPrefix/book-open.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1587,365 +246,1494 @@ QLabel {
           <iconset resource="../../imagenes/resources.qrc">
            <normaloff>:/newPrefix/settings.svg</normaloff>:/newPrefix/settings.svg</iconset>
          </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
          <property name="autoExclusive">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="widget_2" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout_8">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QPushButton" name="bt_icono_usuarios_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px;
-	text-align: left;
-}
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="bt_icono_espacios_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px;
-	text-align: left;
-}
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="bt_icono_utileria_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px;
-	text-align: left;
-}
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/shopping-bag.svg</normaloff>:/newPrefix/shopping-bag.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="layoutWidget_6">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>31</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>10</width>
-           <height>10</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>100</height>
-          </size>
-         </property>
+        <widget class="QPushButton" name="bt_icono_espacios_mm">
          <property name="styleSheet">
-          <string notr="true">QLabel {
-    background-color: rgb(255, 255, 255); /* Fondo blanco */
-    background-image: url(path/to/your/image.png); /* Imagen de fondo */
-    background-position: center; /* Centrar la imagen */
-    background-repeat: no-repeat; /* Evitar que la imagen se repita */
-    background-size: cover; /* Escalar la imagen para cubrir la QLabel */
-    
-    border-radius: 50px; /* Redondear las esquinas (50px es para un círculo si el tamaño es cuadrado) */
-    border: none; /* Sin borde */
-    margin: 0px; /* Sin margen */
-    padding: 0px; /* Sin padding */
-    
-    min-width: 10px;  /* Establecer tamaño mínimo */
-    min-height: 10px;
-    max-width: 100px;  /* Establecer tamaño máximo */
-    max-height: 100px;
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+}
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
 }
 </string>
          </property>
          <property name="text">
           <string/>
          </property>
-         <property name="pixmap">
-          <pixmap>../../../Downloads/Captura de pantalla 2024-09-21 151950.jpg</pixmap>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_5">
+        <widget class="QPushButton" name="bt_icono_usuarios_mm">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+}
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_icono_utileria_mm">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+}
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/shopping-bag.svg</normaloff>:/newPrefix/shopping-bag.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>28</width>
-           <height>38</height>
+           <width>20</width>
+           <height>183</height>
           </size>
          </property>
         </spacer>
        </item>
+       <item>
+        <widget class="QPushButton" name="bt_icono_logout_mm">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+}
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
-    </widget>
-   </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QWidget" name="widget_2" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="bt_home_mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 0px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                       stop:0.369469 rgba(0,128,0,255), 
+                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
+    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
+    border: none; /* Sin borde, opcional */
+    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
+    border-radius: 18px; /* Si quieres bordes redondeados uniformes */
+}
+
+QPushButton:hover {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 0px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 24pt &quot;Arial&quot;;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Principal</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_reservas__mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                       stop:0.369469 rgba(0,128,0,255), 
+                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
+    
+    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
+    border: none; /* Sin borde, opcional */
+    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
+}
+
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 18pt &quot;Arial&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Reservas</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/bookmark.svg</normaloff>:/newPrefix/bookmark.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_misreservas_mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                       stop:0.369469 rgba(0,128,0,255), 
+                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
+    
+    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
+    border: none; /* Sin borde, opcional */
+    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
+}
+
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Mis reservas</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/book-open.svg</normaloff>:/newPrefix/book-open.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_configuraciones_mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                       stop:0.369469 rgba(0,128,0,255), 
+                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
+    
+    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
+    border: none; /* Sin borde, opcional */
+    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
+}
+
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Configuraciones</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/settings.svg</normaloff>:/newPrefix/settings.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_espacios_mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                       stop:0.369469 rgba(0,128,0,255), 
+                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
+    
+    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
+    border: none; /* Sin borde, opcional */
+    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
+}
+
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Espacios</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_usuarios_mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                       stop:0.369469 rgba(0,128,0,255), 
+                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
+    
+    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
+    border: none; /* Sin borde, opcional */
+    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
+}
+
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Usuarios</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_utilera_mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                       stop:0.369469 rgba(0,128,0,255), 
+                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
+    
+    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
+    border: none; /* Sin borde, opcional */
+    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
+}
+
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Utilería</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/shopping-bag.svg</normaloff>:/newPrefix/shopping-bag.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>183</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_logout_mm">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Cerrar Sesión</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QWidget" name="main_menu" native="true">
+      <property name="styleSheet">
+       <string notr="true">
+background-color: 
+rgb(255, 255, 255)</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="bt_cerrarlistado">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border-radius: 18px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/menu.svg</normaloff>:/newPrefix/menu.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="lb_indicador_mreservas_3">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: rgba(0, 128, 0, 255);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../../imagenes/resources.qrc">:/newPrefix/key.svg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lb_indicador_mreservas_2">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+           </property>
+           <property name="text">
+            <string>ESPACIOS</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Buscar Espacio</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QFrame" name="frame_ingreso">
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    border: 1px solid #04b338;
+}
+
+QLabel {
+    border: none;
+}
+QLineEdit{
+color: rgb(0, 0, 0);
+font: 12pt &quot;Arial&quot;;
+}
+
+QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}
+</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QWidget" name="layoutWidget_8">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>551</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QLineEdit" name="input_idespacio">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>ID Espacio</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="input_bloque">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>Bloque</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="input_capacidad">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>Capacidad</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="input_tipo">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>Tipo</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QLabel" name="error_label_contrasena">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>200</y>
+            <width>141</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+          </property>
+          <property name="text">
+           <string>error label contrasena</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="error_label_correo">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>230</y>
+            <width>141</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+          </property>
+          <property name="text">
+           <string>correo erroneo</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="error_label_capacidad">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>170</y>
+            <width>141</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>10</y>
+            <width>121</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QPushButton" name="editar_bt_espacio">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+             </property>
+             <property name="text">
+              <string>Editar</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../../imagenes/resources.qrc">
+               <normaloff>:/newPrefix/smartphone.svg</normaloff>:/newPrefix/smartphone.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="crear_bt_espacio">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+             </property>
+             <property name="text">
+              <string>Crear</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../../imagenes/resources.qrc">
+               <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="guardar_bt_espacio">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+             </property>
+             <property name="text">
+              <string>Guardar</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../../imagenes/resources.qrc">
+               <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources>
   <include location="../../imagenes/resources.qrc"/>
   <include location="../../imagenes/resources.qrc"/>
+  <include location="../../../../pooAPP - Porsi/frontend/imagenes/resources.qrc"/>
  </resources>
  <connections>
   <connection>
-   <sender>bt_cerrarlistado_mm</sender>
+   <sender>bt_cerrarlistado</sender>
    <signal>toggled(bool)</signal>
-   <receiver>icon_solamente_widget</receiver>
+   <receiver>widget</receiver>
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>162</x>
-     <y>32</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>26</x>
-     <y>101</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bt_cerrarlistado_mm</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>icon_texto_widget_2</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>174</x>
+     <x>308</x>
      <y>29</y>
     </hint>
     <hint type="destinationlabel">
-     <x>112</x>
-     <y>116</y>
+     <x>40</x>
+     <y>376</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>bt_icono_configuraciones_mm</sender>
+   <sender>bt_cerrarlistado</sender>
    <signal>toggled(bool)</signal>
    <receiver>widget_2</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>35</x>
-     <y>210</y>
+     <x>335</x>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
-     <x>23</x>
-     <y>250</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>bt_configuraciones_mm</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>widget</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>106</x>
-     <y>210</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>101</x>
-     <y>224</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>crear_bt_usuario_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>crear_bt_usuario</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>541</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>562</x>
-     <y>130</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>crear_bt_usuario</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>crear_bt_usuario_2</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>520</x>
-     <y>130</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>567</x>
-     <y>68</y>
+     <x>187</x>
+     <y>443</y>
     </hint>
    </hints>
   </connection>

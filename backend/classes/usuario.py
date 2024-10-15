@@ -80,11 +80,10 @@ class Usuario():
         try:
             query = """
             CREATE TABLE IF NOT EXISTS usuarios (
-                id SERIAL PRIMARY KEY,            -- ID auto-incrementable y clave primaria
                 nombre VARCHAR(255),     -- Nombre de usuario
                 usuario VARCHAR(255),     -- Nombre de usuario
                 contrasena VARCHAR(255), -- Contraseña
-                cedula VARCHAR(255),               -- Cédula o identificación del usuario
+                cedula VARCHAR(255) SERIAL PRIMARY KEY,               -- Cédula o identificación del usuario
                 email VARCHAR(255),               -- Correo electrónico
                 rol VARCHAR(255),             -- Rol (TRUE para admin, FALSE para usuario regular)
                 telefono VARCHAR(255)              -- Teléfono del usuario

@@ -24,6 +24,7 @@ class main(QMainWindow):
         # self.intro_window = nuevoUsuarioGUI()
         # self.intro_window = introGUI()
         # self.intro_window = reservasGUI()
+        self.intro_window = espaciosGUI()
         self.intro_window.show()
 
 if __name__ == "__main__":
