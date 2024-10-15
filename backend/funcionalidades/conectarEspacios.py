@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QCompleter
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.espacio import adminEspacio
@@ -8,7 +8,7 @@ from backend.classes.espacio import adminEspacio
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 
-class espacioGUI(QtWidgets.QMainWindow):
+class espaciosGUI(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/espacios/espacios.ui", self)
@@ -24,8 +24,8 @@ class espacioGUI(QtWidgets.QMainWindow):
         #Funcionalidades
         self.crear_bt_espacio.clicked.connect(self.crearEspacio)
         self.guardar_bt_espacio.clicked.connect(self.actualizarEspacio)
-        self.eliminar_bt_espacios.clicked.connect(self.eliminarEspacio)
-        self.editar_br_espacio.clicked.connect(self.habilitarEdicion)
+        self.eliminar_bt_espacio.clicked.connect(self.eliminarEspacio)
+        self.editar_bt_espacio.clicked.connect(self.habilitarEdicion)
 
         #configuracion del completador para la busqueda de espacios
         self.configurarCompleter()
