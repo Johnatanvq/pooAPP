@@ -19,11 +19,11 @@ class main(QMainWindow):
 
     def inicioAPP(self):
         # self.intro_window = nuevaReservaGUI()
-        self.intro_window = calendarioGUI()
+        # self.intro_window = calendarioGUI()
         # self.intro_window = menuPrincipalGUI()
         # self.intro_window = loginGUI()
         # self.intro_window = nuevoUsuarioGUI()
-        # self.intro_window = introGUI()
+        self.intro_window = introGUI()
         # self.intro_window = reservasGUI()
         # self.intro_window = espaciosGUI()
         self.intro_window.show()

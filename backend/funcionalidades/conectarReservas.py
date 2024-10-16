@@ -10,10 +10,15 @@ from backend.funcionalidades.conectarLogin import loginGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class reservasGUI(QMainWindow):
-    def __init__(self):
+    def __init__(self, cedula_usuario):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/reservas/reservas.ui", self)
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
+        
+        self.cedula_usuario = cedula_usuario
+        
+        # Aquí puedes agregar más lógica para trabajar con la cédula si es necesario.
+        print(f"Cédula del usuario autenticado: {self.cedula_usuario}")
         
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui

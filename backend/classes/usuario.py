@@ -34,25 +34,23 @@ class Usuario():
     def autenticarUsuario(self):
         if self.nombre and self.contrasena:
             try:
-                # Consulta para obtener el ID y verificar la contraseña
-                query = "SELECT id, contrasena FROM usuarios WHERE usuario = %s AND contrasena = %s"
+                # Consulta para obtener la cédula y verificar la contraseña
+                query = "SELECT contrasena, cedula FROM usuarios WHERE usuario = %s AND contrasena = %s"
                 values = (self.nombre, self.contrasena)
                 self.cursor.execute(query, values)
                 resultado = self.cursor.fetchone()  # Obtener el primer resultado coincidente
-                
+
                 if resultado:
-                    # Almacenar el ID del usuario autenticado
-                    self.ident = resultado[0]
-                    
-                    print(f"Autenticación exitosa. Bienvenido {self.nombre}. ID de usuario: {self.ident}")
+                    self.ident = resultado[0]  # ID del usuario
+                    self.cedula = resultado[1]  # Almacenar la cédula del usuario autenticado
+                    print(f"Autenticación exitosa. Bienvenido {self.nombre}. Cédula de usuario: {self.cedula}")
                     return True
-                    
                 else:
                     print("Autenticación fallida: Usuario o contraseña incorrectos")
                     return False
             except psycopg2.Error as e:
                 print(f"Error al consultar la base de datos: {e}")
-                self.conexion.rollback() 
+                self.conexion.rollback()
         else:
             print("No hay datos para autenticar")
             
@@ -83,7 +81,7 @@ class Usuario():
                 nombre VARCHAR(255),     -- Nombre de usuario
                 usuario VARCHAR(255),     -- Nombre de usuario
                 contrasena VARCHAR(255), -- Contraseña
-                cedula VARCHAR(255) SERIAL PRIMARY KEY,               -- Cédula o identificación del usuario
+                cedula VARCHAR(255) PRIMARY KEY,               -- Cédula o identificación del usuario
                 email VARCHAR(255),               -- Correo electrónico
                 rol VARCHAR(255),             -- Rol (TRUE para admin, FALSE para usuario regular)
                 telefono VARCHAR(255)              -- Teléfono del usuario
@@ -102,38 +100,25 @@ class Usuario():
 class adminUsuario(Usuario):
                     
     def crearUsuario(self, nombre, usuario, contrasena, cedula, email, rol, telefono):
-        #capturar datos recibidos de inputs
-        self.nombre = nombre
-        self.usuario = usuario
-        self.contrasena = contrasena
-        self.cedula = cedula
-        self.email = email
-        self.rol = rol 
-        self.telefono = telefono
-
-        #verificar si todos los campos tienen datos
+        # Verificar si todos los campos tienen datos
         if self.nombre and self.usuario and self.contrasena and self.cedula and self.email and self.telefono:
             try:
-                #SQL insertar datos
+                # SQL insertar datos
                 query = """
                 INSERT INTO usuarios (nombre, usuario, contrasena, cedula, email, rol, telefono)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
-                RETURNING id;
                 """
                 
-                #asigna valores capturados de entradas
+                # Asigna valores capturados de entradas
                 values = (self.nombre, self.usuario, self.contrasena, self.cedula, self.email, self.rol, self.telefono)
                 
-                #consulta y obtenemos el ID generado
+                # Ejecuta la consulta
                 self.cursor.execute(query, values)
-                
-                # recuperar ID del nuevo usuario
-                new_user_id = self.cursor.fetchone()[0]
 
-                #guardar los cambios
+                # Guardar los cambios
                 self.conexion.commit()
 
-                print(f"Usuario creado correctamente con ID: {new_user_id}")
+                print(f"Usuario creado correctamente con cédula: {self.cedula}")
                 return True
             except psycopg2.Error as e:
                 # Si hay un error, hacemos rollback para no aplicar cambios parciales
@@ -145,20 +130,19 @@ class adminUsuario(Usuario):
             return False
         
     # método para actualizar los datos del usuario en la base de datos
-    def actualizarUsuario(self, ident, nombre, usuario, contrasena, cedula, email, rol, telefono):
+    def actualizarUsuario(self, cedula, nombre, usuario, contrasena, email, rol, telefono):
         try:
             query = """
             UPDATE usuarios SET 
                 nombre = %s, 
                 usuario = %s, 
                 contrasena = %s, 
-                cedula = %s, 
                 email = %s, 
                 rol = %s, 
                 telefono = %s
-            WHERE id = %s
+            WHERE cedula = %s
             """
-            values = (nombre, usuario, contrasena, cedula, email, rol, telefono, ident)
+            values = (nombre, usuario, contrasena, email, rol, telefono, cedula)
             self.cursor.execute(query, values)
             self.conexion.commit()
             return True
@@ -167,17 +151,19 @@ class adminUsuario(Usuario):
             print(f"Error al actualizar usuario: {e}")
             return False
 
+
     #metodo para eliminar el usuario por completo
-    def eliminarUsuario(self, ident):
+    def eliminarUsuario(self, cedula):
         try:
-            query = "DELETE FROM usuarios WHERE id = %s"
-            self.cursor.execute(query, (ident,))
+            query = "DELETE FROM usuarios WHERE cedula = %s"
+            self.cursor.execute(query, (cedula,))
             self.conexion.commit()
             return True
         except psycopg2.Error as e:
             self.conexion.rollback()
             print(f"Error al eliminar usuario: {e}")
             return False
+
         
     #metodo para cargar los nombres existentes en la base de datos
     def cargarUsuarios(self):

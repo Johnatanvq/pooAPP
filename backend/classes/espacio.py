@@ -100,11 +100,9 @@ class adminEspacio(Espacio):
         else:
             print("Faltan datos para crear el espacio. Asegúrate de que todos los campos estén diligenciados")
             return False
-<<<<<<< HEAD
+
+
     #Metodo para actualizar los datos del espacio en la BD
-=======
-#Metodo para actualizar los datos del espacio en la BD
->>>>>>> origin/DanielaConexionEspacios
     def actualizarEspacio (self, nombre, bloque, capacidad, tipo):
         try:
             query = """

@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
-# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MPGUI
+# from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI asmenuPrincipalGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class loginGUI(QMainWindow):
@@ -30,7 +30,7 @@ class loginGUI(QMainWindow):
         # llama al método de autenticación de la clase Usuario
         if self.usuario.autenticarUsuario():
             self.limpiarError()
-            self.abrirMenuPrincipal()
+            self.abrirMenuPrincipal(self.usuario.cedula)
         else:
             self.mostrarError()
 
@@ -44,11 +44,11 @@ class loginGUI(QMainWindow):
         self.error_label.setText("")
         self.error_label.setStyleSheet("")
         
-    def abrirMenuPrincipal(self):
-        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MPGUI
+    def abrirMenuPrincipal(self, cedulaUsuario):
+        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 
         self.close()
-        self.login_window = MPGUI()
+        self.login_window = menuPrincipalGUI(cedulaUsuario)
         self.login_window.show()
         
     # def closeEvent(self, event):

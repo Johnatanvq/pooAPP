@@ -13,11 +13,11 @@ import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más 
 from backend import variablesGlobales
 
 class calendarioGUI(QMainWindow):
-    def __init__(self):
+    def __init__(self, cedula_usuario):  # Ahora acepta la cédula del usuario
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/calendario/calendario.ui", self)
         
-        
+        self.cedula_usuario = cedula_usuario
         locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
         self.calendario.selectionChanged.connect(self.capturarFecha)
         
@@ -40,7 +40,7 @@ class calendarioGUI(QMainWindow):
         print(type(variablesGlobales.fechaInicio))
         print(variablesGlobales.fechaInicio)
         self.close()
-        self.login_window = nuevaReservaGUI()  # Instanciar la ventana de login
+        self.login_window = nuevaReservaGUI(self.cedula_usuario)  # Instanciar la ventana de login
         self.login_window.show()
 
     def cerrarSesion(self): 

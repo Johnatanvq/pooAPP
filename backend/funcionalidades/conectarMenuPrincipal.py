@@ -13,9 +13,11 @@ from backend.funcionalidades.conectarLogin import loginGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class menuPrincipalGUI(QMainWindow):
-    def __init__(self):
+    def __init__(self, cedulaUsuario):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/menuPrincipal/menuPrincipal.ui", self)
+        
+        self.cedulaUsuario = cedulaUsuario  # Guardar la cédula del usuario autenticado
         
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         self.bt_reservas_mm.clicked.connect(self.reservasGUI)
@@ -32,14 +34,16 @@ class menuPrincipalGUI(QMainWindow):
         self.login_window.show()
         
     def reservasGUI(self):
+        from backend.funcionalidades.conectarCalendario import calendarioGUI
         self.close()
-        self.login_window = reservasGUI()
+        # Pasar la cédula del usuario al crear una nueva reserva
+        self.login_window = calendarioGUI(self.cedulaUsuario)
         self.login_window.show()
         
         
     def misReservasGUI(self):
         self.close()
-        self.login_window = misReservasGUI()
+        self.login_window = misReservasGUI(self.cedulaUsuario)
         self.login_window.show()
         
     def usuariosGUI(self):
