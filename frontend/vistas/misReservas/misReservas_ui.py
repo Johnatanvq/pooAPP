@@ -841,6 +841,47 @@ class Ui_MainWindow(object):
 "")
         self.gridLayout = QGridLayout(self.main_menu)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalSpacer = QSpacerItem(358, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.lb_indicador_mreservas_3 = QLabel(self.main_menu)
+        self.lb_indicador_mreservas_3.setObjectName(u"lb_indicador_mreservas_3")
+        self.lb_indicador_mreservas_3.setStyleSheet(u"QLabel {\n"
+"    color: rgba(0, 128, 0, 255);\n"
+"    font: 12pt \"Arial\";\n"
+"}")
+        self.lb_indicador_mreservas_3.setPixmap(QPixmap(u":/newPrefix/book-open.svg"))
+
+        self.horizontalLayout.addWidget(self.lb_indicador_mreservas_3)
+
+        self.lb_indicador_mreservas_2 = QLabel(self.main_menu)
+        self.lb_indicador_mreservas_2.setObjectName(u"lb_indicador_mreservas_2")
+        self.lb_indicador_mreservas_2.setStyleSheet(u"QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"    font: 12pt \"Arial\";\n"
+"}")
+
+        self.horizontalLayout.addWidget(self.lb_indicador_mreservas_2)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout, 0, 1, 1, 1)
+
+        self.TablaReservas = QTableWidget(self.main_menu)
+        if (self.TablaReservas.columnCount() < 5):
+            self.TablaReservas.setColumnCount(5)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.TablaReservas.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        if (self.TablaReservas.rowCount() < 10):
+            self.TablaReservas.setRowCount(10)
+        self.TablaReservas.setObjectName(u"TablaReservas")
+        self.TablaReservas.setRowCount(10)
+        self.TablaReservas.setColumnCount(5)
+
+        self.gridLayout.addWidget(self.TablaReservas, 1, 0, 1, 2)
+
         self.bt_cerrarlistado = QPushButton(self.main_menu)
         self.bt_cerrarlistado.setObjectName(u"bt_cerrarlistado")
         self.bt_cerrarlistado.setStyleSheet(u"QPushButton {\n"
@@ -876,45 +917,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.bt_cerrarlistado, 0, 0, 1, 1)
 
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalSpacer = QSpacerItem(358, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout.addItem(self.horizontalSpacer)
-
-        self.lb_indicador_mreservas_3 = QLabel(self.main_menu)
-        self.lb_indicador_mreservas_3.setObjectName(u"lb_indicador_mreservas_3")
-        self.lb_indicador_mreservas_3.setStyleSheet(u"QLabel {\n"
-"    color: rgba(0, 128, 0, 255);\n"
-"    font: 12pt \"Arial\";\n"
-"}")
-        self.lb_indicador_mreservas_3.setPixmap(QPixmap(u":/newPrefix/book-open.svg"))
-
-        self.horizontalLayout.addWidget(self.lb_indicador_mreservas_3)
-
-        self.lb_indicador_mreservas_2 = QLabel(self.main_menu)
-        self.lb_indicador_mreservas_2.setObjectName(u"lb_indicador_mreservas_2")
-        self.lb_indicador_mreservas_2.setStyleSheet(u"QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"    font: 12pt \"Arial\";\n"
-"}")
-
-        self.horizontalLayout.addWidget(self.lb_indicador_mreservas_2)
-
-
-        self.gridLayout.addLayout(self.horizontalLayout, 0, 1, 1, 1)
-
-        self.TablaReservas = QTableWidget(self.main_menu)
-        if (self.TablaReservas.columnCount() < 4):
-            self.TablaReservas.setColumnCount(4)
-        if (self.TablaReservas.rowCount() < 10):
-            self.TablaReservas.setRowCount(10)
-        self.TablaReservas.setObjectName(u"TablaReservas")
-        self.TablaReservas.setRowCount(10)
-        self.TablaReservas.setColumnCount(4)
-
-        self.gridLayout.addWidget(self.TablaReservas, 1, 0, 1, 2)
-
 
         self.gridLayout_2.addWidget(self.main_menu, 0, 2, 1, 1)
 
@@ -945,8 +947,10 @@ class Ui_MainWindow(object):
         self.bt_usuarios_mm.setText(QCoreApplication.translate("MainWindow", u"Usuarios", None))
         self.bt_utilera_mm.setText(QCoreApplication.translate("MainWindow", u"Utiler\u00eda", None))
         self.bt_logout_mm.setText(QCoreApplication.translate("MainWindow", u"Cerrar Sesi\u00f3n", None))
-        self.bt_cerrarlistado.setText("")
         self.lb_indicador_mreservas_3.setText("")
         self.lb_indicador_mreservas_2.setText(QCoreApplication.translate("MainWindow", u"MIS RESERVAS", None))
+        ___qtablewidgetitem = self.TablaReservas.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"5", None));
+        self.bt_cerrarlistado.setText("")
     # retranslateUi
 

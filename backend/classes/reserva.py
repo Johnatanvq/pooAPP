@@ -71,6 +71,23 @@ class Reservas():
         except psycopg2.Error as e:
             self.conexion.rollback()
             print(f"Error al crear la reserva: {e}")
+    
+    def eliminarReserva(self, cedula, descripcion, fecha_inicio, fecha_final):
+        """
+        Método para eliminar una reserva usando la cédula, la descripción y las fechas como claves.
+        """
+        try:
+            query = """
+            DELETE FROM reservas
+            WHERE cedula = %s AND descripcion = %s AND fecha_inicio = %s AND fecha_final = %s
+            """
+            self.cursor.execute(query, (cedula, descripcion, fecha_inicio, fecha_final))
+            self.conexion.commit()
+            print(f"Reserva eliminada correctamente para el usuario con cédula {cedula}.")
+        except psycopg2.Error as e:
+            self.conexion.rollback()
+            print(f"Error al eliminar la reserva: {e}")
+            raise Exception("Error al eliminar la reserva")
             
     def obtenerReservasPorUsuario(self, cedula):
         try:

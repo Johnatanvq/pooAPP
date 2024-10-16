@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-from PyQt5.QtCore import QRegularExpression
+from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox, QPushButton, QHBoxLayout, QWidget
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.reserva import Reservas
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
@@ -36,8 +36,38 @@ class misReservasGUI(QMainWindow):
                 self.TablaReservas.setItem(fila, 2, QTableWidgetItem(reserva['fecha_inicio'].strftime("%Y-%m-%d %H:%M")))  # Fecha_inicio
                 self.TablaReservas.setItem(fila, 3, QTableWidgetItem(reserva['fecha_final'].strftime("%Y-%m-%d %H:%M")))  # Fecha_final
 
+                # Agregar botón de eliminar
+                btn_eliminar = QPushButton('Eliminar')
+                btn_eliminar.clicked.connect(lambda ch, cedula=reserva['cedula'], descripcion=reserva['descripcion'], fecha_inicio=reserva['fecha_inicio'], fecha_final=reserva['fecha_final']: 
+                                            self.eliminarReserva(cedula, descripcion, fecha_inicio, fecha_final))
+
+                # Crear un widget para el botón
+                widget = QWidget()
+                layout = QHBoxLayout()
+                layout.addWidget(btn_eliminar)
+                layout.setAlignment(btn_eliminar, Qt.AlignCenter)
+                widget.setLayout(layout)
+
+                # Agregar el widget con el botón a la tabla
+                self.TablaReservas.setCellWidget(fila, 4, widget)
+
         except Exception as e:
             QMessageBox.critical(self, "Error", f"No se pudieron cargar las reservas: {str(e)}")
+
+    def eliminarReserva(self, cedula, descripcion, fecha_inicio, fecha_final):
+        """
+        Función para eliminar una reserva por sus valores únicos.
+        """
+        confirm = QMessageBox.question(self, "Confirmar eliminación", "¿Estás seguro de que deseas eliminar esta reserva?",
+                                    QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if confirm == QMessageBox.Yes:
+            try:
+                self.reserva.eliminarReserva(cedula, descripcion, fecha_inicio, fecha_final)
+                QMessageBox.information(self, "Éxito", "Reserva eliminada correctamente.")
+                self.cargarReservas()  # Recargar la tabla después de eliminar
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"No se pudo eliminar la reserva: {str(e)}")
 
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui

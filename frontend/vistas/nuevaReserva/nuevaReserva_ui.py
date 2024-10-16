@@ -359,10 +359,10 @@ class Ui_MainWindow(object):
         self.select_dia_final.setStyleSheet(u"QComboBox{\n"
 "	background: white;\n"
 "}")
-        self.crear_bt_reserva = QPushButton(self.contenedor_principal)
-        self.crear_bt_reserva.setObjectName(u"crear_bt_reserva")
-        self.crear_bt_reserva.setGeometry(QRect(420, 500, 141, 28))
-        self.crear_bt_reserva.setStyleSheet(u"QPushButton{\n"
+        self.pushButton = QPushButton(self.contenedor_principal)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(430, 480, 141, 28))
+        self.pushButton.setStyleSheet(u"QPushButton{\n"
 "	background: blue;\n"
 "}")
         self.comboBox = QComboBox(self.contenedor_principal)
@@ -635,7 +635,7 @@ class Ui_MainWindow(object):
         self.select_dia_final.setItemText(29, QCoreApplication.translate("MainWindow", u"30", None))
         self.select_dia_final.setItemText(30, QCoreApplication.translate("MainWindow", u"31", None))
 
-        self.crear_bt_reserva.setText(QCoreApplication.translate("MainWindow", u"CREAR RESERVA", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"CREAR RESERVA", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"SALON", None))
 
     # retranslateUi

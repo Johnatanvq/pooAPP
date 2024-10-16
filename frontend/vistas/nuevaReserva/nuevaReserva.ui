@@ -1473,11 +1473,11 @@ gray;
       </property>
      </item>
     </widget>
-    <widget class="QPushButton" name="crear_bt_reserva">
+    <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>500</y>
+       <x>430</x>
+       <y>480</y>
        <width>141</width>
        <height>28</height>
       </rect>
