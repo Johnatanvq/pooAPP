@@ -12,7 +12,7 @@ import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más 
 import psycopg2
 
 class nuevoUsuarioGUI(QMainWindow):
-    def __init__(self):
+    def __init__(self, cedula_usuario):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/nuevoUsuario/nuevoUsuario.ui", self)
         
@@ -22,7 +22,7 @@ class nuevoUsuarioGUI(QMainWindow):
         
         #se instancia la clase para hacer uso de sus respectivos métodos
         self.nuevoUsuario = adminUsuario()
-        
+        self.cedula_usuario = cedula_usuario
         #configuración para el filtrado en las búsquedas de usuarios
         self.configurarCompleter()
         
@@ -220,7 +220,7 @@ class nuevoUsuarioGUI(QMainWindow):
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
         self.close()
-        self.login_window = MenuPrincipalGui()
+        self.login_window = MenuPrincipalGui(self.cedula_usuario)
         self.login_window.show()
 
 if __name__ == '__main__':

@@ -13,16 +13,13 @@ class reservasGUI(QMainWindow):
     def __init__(self, cedula_usuario):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/reservas/reservas.ui", self)
+        
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
-        
         self.cedula_usuario = cedula_usuario
-        
-        # Aquí puedes agregar más lógica para trabajar con la cédula si es necesario.
         print(f"Cédula del usuario autenticado: {self.cedula_usuario}")
         
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
-
         self.close()
         self.login_window = MenuPrincipalGui()
         self.login_window.show()
@@ -34,10 +31,8 @@ class reservasGUI(QMainWindow):
         if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
             self.nuevoUsuario.conexion.close()
         print("Conexión a la base de datos cerrada")
-        
-        #redirigir login
         self.close()
-        self.login_window = loginGUI()  # Instanciar la ventana de login
+        self.login_window = loginGUI()
         self.login_window.show()
     
 if __name__ == '__main__':
