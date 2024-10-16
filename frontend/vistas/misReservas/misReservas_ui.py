@@ -312,52 +312,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.bt_icono_usuarios_mm)
 
-        self.bt_icono_utileria_mm = QPushButton(self.widget)
-        self.bt_icono_utileria_mm.setObjectName(u"bt_icono_utileria_mm")
-        self.bt_icono_utileria_mm.setStyleSheet(u"QPushButton{\n"
-"	border-top-left-radius: 0 px;\n"
-"	border-bottom-left-radius: 30px;\n"
-"	border-top-right-radius: 30px;\n"
-"	border-bottom-right-radius: 0px;\n"
-"	text-align: left;\n"
-"}\n"
-"QPushButton:hover{\n"
-"	border-top-left-radius: 0 px;\n"
-"	border-bottom-left-radius: 30px;\n"
-"	border-top-right-radius: 30px;\n"
-"	border-bottom-right-radius: 0px\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton {\n"
-"    border-radius: 18px;\n"
-"    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
-"                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
-"                                      stop:0.369469 rgba(0,128,0,255), \n"
-"                                      stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
-"                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
-"                              "
-                        "        stop:1 rgb(255,255,255)); /* Cian claro */\n"
-"}\n"
-"\n"
-"QLabel {\n"
-"    color: rgb(225, 225, 224);\n"
-"    font: 12pt \"Arial\";\n"
-"}\n"
-"")
-        icon6 = QIcon()
-        icon6.addFile(u":/newPrefix/shopping-bag.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_icono_utileria_mm.setIcon(icon6)
-        self.bt_icono_utileria_mm.setIconSize(QSize(40, 40))
-        self.bt_icono_utileria_mm.setCheckable(True)
-        self.bt_icono_utileria_mm.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.bt_icono_utileria_mm)
-
         self.verticalSpacer = QSpacerItem(20, 183, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
@@ -399,9 +353,9 @@ class Ui_MainWindow(object):
 "    font: 12pt \"Arial\";\n"
 "}\n"
 "")
-        icon7 = QIcon()
-        icon7.addFile(u":/newPrefix/log-out.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_icono_logout_mm.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u":/newPrefix/log-out.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_icono_logout_mm.setIcon(icon6)
         self.bt_icono_logout_mm.setIconSize(QSize(40, 40))
         self.bt_icono_logout_mm.setCheckable(True)
         self.bt_icono_logout_mm.setAutoExclusive(True)
@@ -728,60 +682,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.bt_usuarios_mm)
 
-        self.bt_utilera_mm = QPushButton(self.widget_2)
-        self.bt_utilera_mm.setObjectName(u"bt_utilera_mm")
-        self.bt_utilera_mm.setFont(font)
-        self.bt_utilera_mm.setStyleSheet(u"QPushButton{\n"
-"	border-top-left-radius: 0 px;\n"
-"	border-bottom-left-radius: 30px;\n"
-"	border-top-right-radius: 30px;\n"
-"	border-bottom-right-radius: 0px\n"
-"}\n"
-"QPushButton {\n"
-"    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
-"                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
-"                                       stop:0.369469 rgba(0,128,0,255), \n"
-"                                       stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
-"    \n"
-"    padding-left: 0px; /* Espacio a la izquierda para simular alineaci\u00f3n */\n"
-"    border: none; /* Sin borde, opcional */\n"
-"    text-align: left; /* Aunque esto no tendr\u00e1 efecto en QPushButton, lo incluimos para claridad */\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	border-top-left-radius: 0 px;\n"
-"	border-bottom-left-radius: 30px;\n"
-"	border-top-right-radius: 30px;\n"
-"	border-bottom-right-radius: 0px\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton {\n"
-"    border-radius: 18"
-                        "px;\n"
-"    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
-"                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
-"                                      stop:0.369469 rgba(0,128,0,255), \n"
-"                                      stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
-"                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
-"                                      stop:1 rgb(255,255,255)); /* Cian claro */\n"
-"}\n"
-"\n"
-"QLabel {\n"
-"    color: rgb(225, 225, 224);\n"
-"    font: 12pt \"Arial\";\n"
-"}")
-        self.bt_utilera_mm.setIcon(icon6)
-        self.bt_utilera_mm.setIconSize(QSize(40, 40))
-        self.bt_utilera_mm.setCheckable(True)
-        self.bt_utilera_mm.setAutoExclusive(True)
-
-        self.verticalLayout.addWidget(self.bt_utilera_mm)
-
         self.verticalSpacer_2 = QSpacerItem(20, 183, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
@@ -823,7 +723,7 @@ class Ui_MainWindow(object):
 "    font: 12pt \"Arial\";\n"
 "}\n"
 "")
-        self.bt_logout_mm.setIcon(icon7)
+        self.bt_logout_mm.setIcon(icon6)
         self.bt_logout_mm.setIconSize(QSize(40, 40))
         self.bt_logout_mm.setCheckable(True)
         self.bt_logout_mm.setAutoExclusive(True)
@@ -909,9 +809,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        icon8 = QIcon()
-        icon8.addFile(u":/newPrefix/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_cerrarlistado.setIcon(icon8)
+        icon7 = QIcon()
+        icon7.addFile(u":/newPrefix/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_cerrarlistado.setIcon(icon7)
         self.bt_cerrarlistado.setIconSize(QSize(40, 40))
         self.bt_cerrarlistado.setCheckable(True)
 
@@ -937,7 +837,6 @@ class Ui_MainWindow(object):
         self.bt_icono_configuraciones_mm.setText("")
         self.bt_icono_espacios_mm.setText("")
         self.bt_icono_usuarios_mm.setText("")
-        self.bt_icono_utileria_mm.setText("")
         self.bt_icono_logout_mm.setText("")
         self.bt_home_mm.setText(QCoreApplication.translate("MainWindow", u"Principal", None))
         self.bt_reservas__mm.setText(QCoreApplication.translate("MainWindow", u"Reservas", None))
@@ -945,7 +844,6 @@ class Ui_MainWindow(object):
         self.bt_configuraciones_mm.setText(QCoreApplication.translate("MainWindow", u"Configuraciones", None))
         self.bt_espacios_mm.setText(QCoreApplication.translate("MainWindow", u"Espacios", None))
         self.bt_usuarios_mm.setText(QCoreApplication.translate("MainWindow", u"Usuarios", None))
-        self.bt_utilera_mm.setText(QCoreApplication.translate("MainWindow", u"Utiler\u00eda", None))
         self.bt_logout_mm.setText(QCoreApplication.translate("MainWindow", u"Cerrar Sesi\u00f3n", None))
         self.lb_indicador_mreservas_3.setText("")
         self.lb_indicador_mreservas_2.setText(QCoreApplication.translate("MainWindow", u"MIS RESERVAS", None))

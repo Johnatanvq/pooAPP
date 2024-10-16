@@ -805,68 +805,6 @@ QLabel {
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QPushButton" name="bt_utilera_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-QPushButton {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                       stop:0.369469 rgba(0,128,0,255), 
-                                       stop:1 rgba(0,255,0,255)); /* Verde claro */
-    
-    padding-left: 0px; /* Espacio a la izquierda para simular alineación */
-    border: none; /* Sin borde, opcional */
-    text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-}
-
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-            </property>
-            <property name="text">
-             <string>Utilería</string>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/shopping-bag.svg</normaloff>:/newPrefix/shopping-bag.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -1306,59 +1244,6 @@ QLabel {
             <property name="icon">
              <iconset resource="../../imagenes/resources.qrc">
               <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="bt_icono_utileria_mm">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px;
-	text-align: left;
-}
-QPushButton:hover{
-	border-top-left-radius: 0 px;
-	border-bottom-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 0px
-}
-
-
-QPushButton {
-    border-radius: 18px;
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-
-QPushButton:hover {
-    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}
-</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../../imagenes/resources.qrc">
-              <normaloff>:/newPrefix/shopping-bag.svg</normaloff>:/newPrefix/shopping-bag.svg</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
