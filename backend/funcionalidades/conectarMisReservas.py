@@ -14,13 +14,13 @@ class misReservasGUI(QMainWindow):
         uic.loadUi("../pooAPP/frontend/vistas/misReservas/misReservas.ui", self)
         self.cedula_usuario = cedula_usuario  # La cédula del usuario logueado se recibe al inicializar
         self.reserva = Reservas()  # Instanciar la clase que gestiona las reservas
-        self.cargar_reservas()
+        self.cargarReservas()
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
 
-    def cargar_reservas(self):
+    def cargarReservas(self):
         try:
             # Obtener las reservas del usuario por su cédula
-            reservas = self.reserva.obtener_reservas_por_usuario(self.cedula_usuario)
+            reservas = self.reserva.obtenerReservasPorUsuario(self.cedula_usuario)
             
             # Refrescar la tabla
             self.TablaReservas.setRowCount(0)
@@ -43,7 +43,7 @@ class misReservasGUI(QMainWindow):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
         
         self.close()
-        self.menu_window = MenuPrincipalGui()
+        self.menu_window = MenuPrincipalGui(self.cedula_usuario)
         self.menu_window.show()
 
     # def cerrarSesion(self):

@@ -59,7 +59,7 @@ class Reservas():
             self.conexion.rollback()
             print(f"Error al crear la tabla: {e}")
 
-    def agregar_reserva(self, descripcion, fecha_inicio, fecha_final, cedula):
+    def crearReserva(self, descripcion, fecha_inicio, fecha_final, cedula):
         try:
             query = """
             INSERT INTO reservas (descripcion, fecha_inicio, fecha_final, cedula)
@@ -72,7 +72,7 @@ class Reservas():
             self.conexion.rollback()
             print(f"Error al crear la reserva: {e}")
             
-    def obtener_reservas_por_usuario(self, cedula):
+    def obtenerReservasPorUsuario(self, cedula):
         try:
             query = """
             SELECT descripcion, fecha_inicio, fecha_final, cedula

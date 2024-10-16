@@ -98,7 +98,7 @@ class nuevaReservaGUI(QMainWindow):
             fecha_final = datetime.strptime(fecha_final_str, "%Y-%B-%d %H:%M")
 
         # Guardar la reserva en la base de datos con la cédula del usuario
-        self.reservas.agregar_reserva(descripcion, fecha_inicio, fecha_final, self.cedula_usuario)
+        self.reservas.crearReserva(descripcion, fecha_inicio, fecha_final, self.cedula_usuario)
         print("Reserva creada correctamente")
 
     def cerrarSesion(self):
