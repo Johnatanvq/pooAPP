@@ -3,11 +3,14 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from backend.classes.usuario import Usuario
 from datetime import datetime
+import locale
+
 # from conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
 from backend.funcionalidades.conectarNuevaReserva import nuevaReservaGUI
 
 import time
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
+from backend import variablesGlobales
 
 class calendarioGUI(QMainWindow):
     def __init__(self):
@@ -15,14 +18,27 @@ class calendarioGUI(QMainWindow):
         uic.loadUi("../pooAPP/frontend/vistas/calendario/calendario.ui", self)
         
         
-        
+        locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
         self.calendario.selectionChanged.connect(self.capturarFecha)
         
     def capturarFecha(self):
         fechaSeleccionada = self.calendario.selectedDate().toPyDate()
         print(fechaSeleccionada)
-        fecha_ordenada = datetime.strftime(fechaSeleccionada, '%d-%m-%Y')
-        print(type(fecha_ordenada))
+        # Formatear la fecha como 'dd-mm-YYYY'
+        fechaOrdenada = datetime.strftime(fechaSeleccionada, '%d-%B-%Y')
+        
+        # Capturar la hora y minutos actuales
+        horaActual = datetime.now().strftime("%H:%M")
+        
+        # Concatenar la fecha y la hora en un string
+        fechaCompletaStr = f"{fechaOrdenada} {horaActual}"
+        
+        # Convertir el string a datetime usando strptime con el formato correcto
+        variablesGlobales.fechaInicio = datetime.strptime(fechaCompletaStr, "%d-%B-%Y %H:%M")
+        
+        # Verificar el tipo de fechaInicio (será un objeto datetime)
+        print(type(variablesGlobales.fechaInicio))
+        print(variablesGlobales.fechaInicio)
         self.close()
         self.login_window = nuevaReservaGUI()  # Instanciar la ventana de login
         self.login_window.show()

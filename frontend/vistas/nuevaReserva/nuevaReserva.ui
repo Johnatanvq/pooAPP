@@ -307,62 +307,62 @@ gray;
      </property>
      <item>
       <property name="text">
-       <string>Enero</string>
+       <string>enero</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Febrero</string>
+       <string>febrero</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Marzo</string>
+       <string>marzo</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Abril</string>
+       <string>abril</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Mayo</string>
+       <string>mayo</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Junio</string>
+       <string>junio</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Julio</string>
+       <string>julio</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Agosto</string>
+       <string>agosto</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Septiembre</string>
+       <string>septiembre</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Octubre</string>
+       <string>octubre</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Noviembre</string>
+       <string>noviembre</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Diciembre</string>
+       <string>diciembre</string>
       </property>
      </item>
     </widget>
@@ -813,62 +813,62 @@ gray;
      </property>
      <item>
       <property name="text">
-       <string>Enero</string>
+       <string>enero</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Febrero</string>
+       <string>febrero</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Marzo</string>
+       <string>marzo</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Abril</string>
+       <string>abril</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Mayo</string>
+       <string>mayo</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Junio</string>
+       <string>junio</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Julio</string>
+       <string>julio</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Agosto</string>
+       <string>agosto</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Septiembre</string>
+       <string>septiembre</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Octubre</string>
+       <string>octubre</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Noviembre</string>
+       <string>noviembre</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Diciembre</string>
+       <string>diciembre</string>
       </property>
      </item>
     </widget>
@@ -1512,7 +1512,7 @@ gray;
  </widget>
  <resources>
   <include location="../../imagenes/resources.qrc"/>
-  <include location="../../../../../../../imagenes/resources.qrc"/>
+  <include location="../../imagenes/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

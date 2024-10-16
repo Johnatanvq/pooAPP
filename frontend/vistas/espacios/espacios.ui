@@ -558,8 +558,8 @@ QLabel {
           <string>Principal</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/home.svg</normaloff>../../imagenes/home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>

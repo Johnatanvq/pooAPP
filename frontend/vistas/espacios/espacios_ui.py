@@ -450,7 +450,9 @@ class Ui_MainWindow(object):
 "    font: 24pt \"Arial\";\n"
 "}\n"
 "")
-        self.bt_home_mm.setIcon(icon)
+        icon8 = QIcon()
+        icon8.addFile(u"../../imagenes/home.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_home_mm.setIcon(icon8)
         self.bt_home_mm.setIconSize(QSize(40, 40))
         self.bt_home_mm.setCheckable(True)
         self.bt_home_mm.setAutoExclusive(True)
@@ -866,9 +868,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        icon8 = QIcon()
-        icon8.addFile(u":/newPrefix/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_cerrarlistado.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/newPrefix/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_cerrarlistado.setIcon(icon9)
         self.bt_cerrarlistado.setIconSize(QSize(40, 40))
         self.bt_cerrarlistado.setCheckable(True)
 
@@ -1147,9 +1149,9 @@ class Ui_MainWindow(object):
 "    color: rgb(225, 225, 224);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        icon9 = QIcon()
-        icon9.addFile(u":/newPrefix/smartphone.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.editar_bt_espacio.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/newPrefix/smartphone.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.editar_bt_espacio.setIcon(icon10)
         self.editar_bt_espacio.setIconSize(QSize(40, 40))
         self.editar_bt_espacio.setCheckable(True)
 
@@ -1213,9 +1215,9 @@ class Ui_MainWindow(object):
 "    color: rgb(225, 225, 224);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        icon10 = QIcon()
-        icon10.addFile(u":/newPrefix/save.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.guardar_bt_espacio.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u":/newPrefix/save.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.guardar_bt_espacio.setIcon(icon11)
         self.guardar_bt_espacio.setIconSize(QSize(40, 40))
 
         self.verticalLayout_3.addWidget(self.guardar_bt_espacio)
@@ -1246,7 +1248,7 @@ class Ui_MainWindow(object):
 "    color: rgb(225, 225, 224);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        self.eliminar_bt_espacio.setIcon(icon10)
+        self.eliminar_bt_espacio.setIcon(icon11)
         self.eliminar_bt_espacio.setIconSize(QSize(40, 40))
 
         self.verticalLayout_3.addWidget(self.eliminar_bt_espacio)

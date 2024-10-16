@@ -3,8 +3,10 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from backend.classes.usuario import Usuario
 from datetime import datetime
+import time
 from backend.classes.reserva import Reservas
 from backend.funcionalidades.conectarLogin import loginGUI
+from backend import variablesGlobales
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
 
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
@@ -14,7 +16,8 @@ class nuevaReservaGUI(QMainWindow):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/nuevaReserva/nuevaReserva.ui", self)
         
-        
+        self.separarCastearFechaInicio()
+        self.mostrarFechaInicio()
         self._toggle = True #Parámetro para manejar los checkboxes sin tener error de "recursividad infinita"
         self.no_duracion_checkbox.clicked.connect(self.unicoEstadoCheckbox)
         self.no_duracion_checkbox.stateChanged.connect(self.desabilitarInput)
@@ -43,7 +46,24 @@ class nuevaReservaGUI(QMainWindow):
             self.select_hora_final.setDisabled(False)
             self.select_minuto_final.setDisabled(False)
             
-
+    def separarCastearFechaInicio(self):
+        
+        self.dia = datetime.strftime(variablesGlobales.fechaInicio, "%d")
+        self.mes = datetime.strftime(variablesGlobales.fechaInicio, "%B")
+        print(self.mes)
+        self.ano = datetime.strftime(variablesGlobales.fechaInicio, "%Y")
+        
+        self.hora = datetime.strftime(variablesGlobales.fechaInicio, "%H")
+        self.minutos = datetime.strftime(variablesGlobales.fechaInicio, "%M")
+        # print("la hora de inicio es: ", (hora))
+        
+    def mostrarFechaInicio(self):
+        self.select_dia_inicio.setCurrentText(self.dia)
+        self.select_mes_inicio.setCurrentText(self.mes)
+        self.input_ano_inicio.setText(self.ano)
+        self.select_hora_inicio.setCurrentText(self.hora)
+        self.select_minutos_inicio.setCurrentText(self.minutos)        
+            
     def cerrarSesion(self):
         
         #se cierra la conexión a la base de datos desde la clase Usuario
