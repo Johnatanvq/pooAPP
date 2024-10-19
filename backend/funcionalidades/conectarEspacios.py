@@ -6,12 +6,11 @@ from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.espacio import adminEspacio
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
-
-
 class espaciosGUI(QtWidgets.QMainWindow):
-    def __init__(self):
+    def __init__(self, cedula_usuario):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/espacios/espacios.ui", self)
+        self.cedula_usuario = cedula_usuario
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
 
         #definición de las expresiones regulares
@@ -21,29 +20,24 @@ class espaciosGUI(QtWidgets.QMainWindow):
 
         self.espacio = adminEspacio()
 
-        #Funcionalidades
         self.crear_bt_espacio.clicked.connect(self.crearEspacio)
         self.guardar_bt_espacio.clicked.connect(self.actualizarEspacio)
         self.eliminar_bt_espacio.clicked.connect(self.eliminarEspacio)
         self.editar_bt_espacio.clicked.connect(self.habilitarEdicion)
 
-        #configuracion del completador para la busqueda de espacios
+        #configuracion del filtro para la busqueda de espacios
         self.configurarCompleter()
-
-        #metodo para capturar el texto
     def capturarTexto(self):
         self.espacio.nombre = self.input_idespacio.text()
         self.espacio.bloque = self.input_bloque.text()
         self.espacio.capacidad = self.input_capacidad.text()
         self.espacio.tipo = self.input_tipo.currentText().lower()
 
-        #metodo validar las expresiones regulares
     def validarTexto(self, regex):
         regularExpression = QRegularExpression(regex)
         regexValidated = QRegularExpressionValidator(regularExpression)
         return regexValidated
     
-    #metodo para crear el espacio
     def crearEspacio (self):
         self.capturarTexto()
         self.input_capacidad.setValidator(self.validarTexto(self.capacidadRegex))
@@ -51,7 +45,7 @@ class espaciosGUI(QtWidgets.QMainWindow):
 
         if not capacidad_valida:
             self.mostrarErrorCapacidad()
-            return #parar si la validación falla
+            return
         
         if self.espacio.crearEspacio(
             nombre=self.espacio.nombre,
@@ -86,7 +80,6 @@ class espaciosGUI(QtWidgets.QMainWindow):
             print(f"El espacio {self.espacio.nombre} ha sido actualizado correctamente")
             self.limpiarCampos()
         
-        #metodo para eliminar x espacio
     def eliminarEspacio(self):
         if self.espacio.nombre:
             eliminado = self.espacio.eliminarEspacio(self.espacio.nombre)
@@ -115,10 +108,8 @@ class espaciosGUI(QtWidgets.QMainWindow):
             self.espacio.ident = detalles_espacio[0]
             self.input_nombre.setText(detalles_espacio[1])
             self.input_bloque.setText(detalles_espacio[2])
-            self.input_capacidad.setText(str(detalles_espacio[3]))  # Convertir a string
+            self.input_capacidad.setText(str(detalles_espacio[3]))
             self.input_tipo.setCurrentText(detalles_espacio[4].capitalize())
-
-            # Desactivar edición
             self.desabilitarEdicion()
 
     def desabilitarEdicion(self):
@@ -132,11 +123,12 @@ class espaciosGUI(QtWidgets.QMainWindow):
         self.input_bloque.setReadOnly(False)
         self.input_capacidad.setReadOnly(False)
         self.input_tipo.setEnabled(True)
-           
+        
         
     def menuPrincipalGUI(self):
+        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        # self.login_window = menuPrincipalGUI()
+        self.login_window = menuPrincipalGUI(self.cedula_usuario)
         self.login_window.show()
         
     def cerrarSesion(self):
@@ -151,13 +143,10 @@ class espaciosGUI(QtWidgets.QMainWindow):
         self.close()
         #self.login_window = loginGUI()  # Instanciar la ventana de login
         self.login_window.show()
-    def inicioAPP(self):
-        self.intro_window = espacioGUI()
-        self.intro_window.show()
     
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
-    GUI = espacioGUI()
+    GUI = espaciosGUI()
     GUI.show()
     sys.exit(app.exec_())

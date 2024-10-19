@@ -50,7 +50,7 @@ class menuPrincipalGUI(QMainWindow):
         
     def espaciosGUI(self):
         self.close()
-        self.login_window = espaciosGUI()
+        self.login_window = espaciosGUI(self.cedula_usuario)
         self.login_window.show()
         
     def cerrarSesion(self):
