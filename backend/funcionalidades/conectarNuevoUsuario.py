@@ -137,7 +137,6 @@ class nuevoUsuarioGUI(QMainWindow):
             print("Error: No se ha especificado un ID de usuario.")
             return
         
-        datos = self.capturarTexto()
         actualizado = self.nuevoUsuario.actualizarUsuario(
             self.nuevoUsuario.ident,
             self.nuevoUsuario.nombre,

@@ -41,14 +41,12 @@ class misReservasGUI(QMainWindow):
                 btn_eliminar.clicked.connect(lambda ch, cedula=reserva['cedula'], descripcion=reserva['descripcion'], fecha_inicio=reserva['fecha_inicio'], fecha_final=reserva['fecha_final']: 
                                             self.eliminarReserva(cedula, descripcion, fecha_inicio, fecha_final))
 
-                # Crear un widget para el botón
+                # Se crea un widget para añadir el botón de eliminar a la tabla
                 widget = QWidget()
                 layout = QHBoxLayout()
                 layout.addWidget(btn_eliminar)
                 layout.setAlignment(btn_eliminar, Qt.AlignCenter)
                 widget.setLayout(layout)
-
-                # Agregar el widget con el botón a la tabla
                 self.TablaReservas.setCellWidget(fila, 4, widget)
 
         except Exception as e:
@@ -76,18 +74,18 @@ class misReservasGUI(QMainWindow):
         self.menu_window = MenuPrincipalGui(self.cedula_usuario)
         self.menu_window.show()
 
-    # def cerrarSesion(self):
-    #     #se cierra la conexión a la base de datos desde la clase Usuario
-    #     if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
-    #         self.nuevoUsuario.cursor.close()
-    #     if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
-    #         self.nuevoUsuario.conexion.close()
-    #     print("Conexión a la base de datos cerrada")
+    def cerrarSesion(self):
+        #se cierra la conexión a la base de datos desde la clase Usuario
+        if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
+            self.nuevoUsuario.cursor.close()
+        if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
+            self.nuevoUsuario.conexion.close()
+        print("Conexión a la base de datos cerrada")
         
-    #     #redirigir login
-    #     self.close()
-    #     self.login_window = loginGUI()  # Instanciar la ventana de login
-    #     self.login_window.show()
+        #redirigir login
+        self.close()
+        self.login_window = loginGUI()  # Instanciar la ventana de login
+        self.login_window.show()
     
 
 if __name__ == '__main__':
