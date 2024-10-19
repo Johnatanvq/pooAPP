@@ -75,7 +75,7 @@
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background: #04B338;
-	font-size: 15pt;
+	font-size: 13pt;
 	color: white;
 	font-weight: bold;
 	font-family:&quot;Courier New&quot;, monospace;

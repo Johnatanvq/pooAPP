@@ -46,7 +46,7 @@ class Ui_intro(object):
         self.intro_bt.setGeometry(QRect(180, 280, 271, 51))
         self.intro_bt.setStyleSheet(u"QPushButton{\n"
 "	background: #04B338;\n"
-"	font-size: 15pt;\n"
+"	font-size: 13pt;\n"
 "	color: white;\n"
 "	font-weight: bold;\n"
 "	font-family:\"Courier New\", monospace;\n"
