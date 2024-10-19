@@ -9,8 +9,6 @@ from backend.funcionalidades.conectarMisReservas import misReservasGUI
 from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
 from backend.funcionalidades.conectarEspacios import espaciosGUI
 from backend.funcionalidades.conectarLogin import loginGUI
-import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
-
 class menuPrincipalGUI(QMainWindow):
     def __init__(self, cedula_usuario):
         super().__init__()
