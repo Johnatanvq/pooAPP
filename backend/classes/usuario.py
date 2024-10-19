@@ -4,6 +4,7 @@ import psycopg2
 class Usuario():
     ident = ""
     nombre = ""
+    usuario = ""
     contrasena = ""
     cedula = None
     email = ""
@@ -13,6 +14,7 @@ class Usuario():
     def __init__(self):
         self.ident = None
         self.nombre = None
+        self.usuario = None
         self.contrasena = None
         self.cedula = None
         self.email = None

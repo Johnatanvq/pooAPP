@@ -1,9 +1,6 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5.QtCore import QRegularExpression
-from PyQt5.QtGui import QRegularExpressionValidator
-from backend.classes.usuario import Usuario, adminUsuario
 from backend.funcionalidades.conectarReservas import reservasGUI
 from backend.funcionalidades.conectarMisReservas import misReservasGUI
 from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
