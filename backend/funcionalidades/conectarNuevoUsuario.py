@@ -42,7 +42,7 @@ class nuevoUsuarioGUI(QMainWindow):
         self.nuevoUsuario.nombre = self.input_nombre.text()
         self.nuevoUsuario.usuario = self.input_usuario.text()
         self.nuevoUsuario.contrasena = self.input_contrasena.text()
-        self.nuevoUsuario.cedula = self.input_cedula.text()
+        self.nuevoUsuario.cedula = self.input_cedula.text().replace('.','')
         self.nuevoUsuario.email = self.input_correo.text()
         self.nuevoUsuario.telefono = self.input_telefono.text()
         self.nuevoUsuario.rol = self.input_rol.currentText().lower()
