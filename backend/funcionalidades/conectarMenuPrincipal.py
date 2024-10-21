@@ -32,7 +32,6 @@ class menuPrincipalGUI(QMainWindow):
         self.login_window = calendarioGUI(self.cedula_usuario)
         self.login_window.show()
         
-        
     def misReservasGUI(self):
         self.close()
         self.login_window = misReservasGUI(self.cedula_usuario)

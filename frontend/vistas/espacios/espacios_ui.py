@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 import resources_rc
 import resources_rc
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -366,34 +367,48 @@ class Ui_MainWindow(object):
 
         self.widget_2 = QWidget(self.centralwidget)
         self.widget_2.setObjectName(u"widget_2")
-        self.verticalLayout = QVBoxLayout(self.widget_2)
-        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.gridLayout_4 = QGridLayout(self.widget_2)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.bt_home_mm = QPushButton(self.widget_2)
         self.bt_home_mm.setObjectName(u"bt_home_mm")
         font = QFont()
         font.setPointSize(11)
         self.bt_home_mm.setFont(font)
-        self.bt_home_mm.setStyleSheet(u"QPushButton {\n"
-"    border-top-left-radius: 0px;\n"
-"    border-bottom-left-radius: 30px;\n"
-"    border-top-right-radius: 30px;\n"
-"    border-bottom-right-radius: 0px;\n"
+        self.bt_home_mm.setStyleSheet(u"QPushButton{\n"
+"	border-top-left-radius: 0 px;\n"
+"	border-bottom-left-radius: 30px;\n"
+"	border-top-right-radius: 30px;\n"
+"	border-bottom-right-radius: 0px\n"
+"}\n"
+"QPushButton {\n"
 "    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
 "                                       stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
 "                                       stop:0.369469 rgba(0,128,0,255), \n"
 "                                       stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
+"    \n"
 "    padding-left: 0px; /* Espacio a la izquierda para simular alineaci\u00f3n */\n"
 "    border: none; /* Sin borde, opcional */\n"
 "    text-align: left; /* Aunque esto no tendr\u00e1 efecto en QPushButton, lo incluimos para claridad */\n"
-"    border-radius: 18px; /* Si quieres bordes redondeados uniformes */\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border-top-left-radius: 0 px;\n"
+"	border-bottom-left-radius: 30px;\n"
+"	border-top-right-radius: 30px;\n"
+"	border-bottom-right-radius: 0px\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"    border-radius: 18"
+                        "px;\n"
+"    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
+"                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
+"                                      stop:0.369469 rgba(0,128,0,255), \n"
+"                                      stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    border-top-left-radius: 0px;\n"
-"    border-bottom-left-radius: 30px;\n"
-"    border-top-right-radius: 30px;\n"
-"    border-bottom-right-radi"
-                        "us: 0px;\n"
 "    background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
 "                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
 "                                      stop:1 rgb(255,255,255)); /* Cian claro */\n"
@@ -401,17 +416,14 @@ class Ui_MainWindow(object):
 "\n"
 "QLabel {\n"
 "    color: rgb(225, 225, 224);\n"
-"    font: 24pt \"Arial\";\n"
-"}\n"
-"")
-        icon7 = QIcon()
-        icon7.addFile(u"../../imagenes/home.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_home_mm.setIcon(icon7)
+"    font: 18pt \"Arial\";\n"
+"}")
+        self.bt_home_mm.setIcon(icon)
         self.bt_home_mm.setIconSize(QSize(40, 40))
         self.bt_home_mm.setCheckable(True)
         self.bt_home_mm.setAutoExclusive(True)
 
-        self.verticalLayout.addWidget(self.bt_home_mm)
+        self.gridLayout_4.addWidget(self.bt_home_mm, 0, 0, 1, 1)
 
         self.bt_reservas__mm = QPushButton(self.widget_2)
         self.bt_reservas__mm.setObjectName(u"bt_reservas__mm")
@@ -465,7 +477,7 @@ class Ui_MainWindow(object):
         self.bt_reservas__mm.setCheckable(True)
         self.bt_reservas__mm.setAutoExclusive(True)
 
-        self.verticalLayout.addWidget(self.bt_reservas__mm)
+        self.gridLayout_4.addWidget(self.bt_reservas__mm, 1, 0, 1, 1)
 
         self.bt_misreservas_mm = QPushButton(self.widget_2)
         self.bt_misreservas_mm.setObjectName(u"bt_misreservas_mm")
@@ -519,7 +531,7 @@ class Ui_MainWindow(object):
         self.bt_misreservas_mm.setCheckable(True)
         self.bt_misreservas_mm.setAutoExclusive(True)
 
-        self.verticalLayout.addWidget(self.bt_misreservas_mm)
+        self.gridLayout_4.addWidget(self.bt_misreservas_mm, 2, 0, 1, 1)
 
         self.bt_configuraciones_mm = QPushButton(self.widget_2)
         self.bt_configuraciones_mm.setObjectName(u"bt_configuraciones_mm")
@@ -573,7 +585,7 @@ class Ui_MainWindow(object):
         self.bt_configuraciones_mm.setCheckable(True)
         self.bt_configuraciones_mm.setAutoExclusive(True)
 
-        self.verticalLayout.addWidget(self.bt_configuraciones_mm)
+        self.gridLayout_4.addWidget(self.bt_configuraciones_mm, 3, 0, 1, 1)
 
         self.bt_espacios_mm = QPushButton(self.widget_2)
         self.bt_espacios_mm.setObjectName(u"bt_espacios_mm")
@@ -627,7 +639,7 @@ class Ui_MainWindow(object):
         self.bt_espacios_mm.setCheckable(True)
         self.bt_espacios_mm.setAutoExclusive(True)
 
-        self.verticalLayout.addWidget(self.bt_espacios_mm)
+        self.gridLayout_4.addWidget(self.bt_espacios_mm, 4, 0, 1, 1)
 
         self.bt_usuarios_mm = QPushButton(self.widget_2)
         self.bt_usuarios_mm.setObjectName(u"bt_usuarios_mm")
@@ -681,11 +693,11 @@ class Ui_MainWindow(object):
         self.bt_usuarios_mm.setCheckable(True)
         self.bt_usuarios_mm.setAutoExclusive(True)
 
-        self.verticalLayout.addWidget(self.bt_usuarios_mm)
+        self.gridLayout_4.addWidget(self.bt_usuarios_mm, 5, 0, 1, 1)
 
         self.verticalSpacer_2 = QSpacerItem(20, 183, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.verticalLayout.addItem(self.verticalSpacer_2)
+        self.gridLayout_4.addItem(self.verticalSpacer_2, 6, 0, 1, 1)
 
         self.bt_logout_mm = QPushButton(self.widget_2)
         self.bt_logout_mm.setObjectName(u"bt_logout_mm")
@@ -729,7 +741,7 @@ class Ui_MainWindow(object):
         self.bt_logout_mm.setCheckable(True)
         self.bt_logout_mm.setAutoExclusive(True)
 
-        self.verticalLayout.addWidget(self.bt_logout_mm)
+        self.gridLayout_4.addWidget(self.bt_logout_mm, 7, 0, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.widget_2, 0, 1, 1, 1)
@@ -768,9 +780,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        icon8 = QIcon()
-        icon8.addFile(u":/newPrefix/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_cerrarlistado.setIcon(icon8)
+        icon7 = QIcon()
+        icon7.addFile(u":/newPrefix/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_cerrarlistado.setIcon(icon7)
         self.bt_cerrarlistado.setIconSize(QSize(40, 40))
         self.bt_cerrarlistado.setCheckable(True)
 
@@ -876,188 +888,31 @@ class Ui_MainWindow(object):
 "")
         self.frame_ingreso.setFrameShape(QFrame.StyledPanel)
         self.frame_ingreso.setFrameShadow(QFrame.Raised)
-        self.layoutWidget_8 = QWidget(self.frame_ingreso)
-        self.layoutWidget_8.setObjectName(u"layoutWidget_8")
-        self.layoutWidget_8.setGeometry(QRect(10, 10, 551, 281))
-        self.verticalLayout_7 = QVBoxLayout(self.layoutWidget_8)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.input_idespacio = QLineEdit(self.layoutWidget_8)
-        self.input_idespacio.setObjectName(u"input_idespacio")
-        self.input_idespacio.setMinimumSize(QSize(0, 30))
-        self.input_idespacio.setMaximumSize(QSize(16777215, 16777215))
-        self.input_idespacio.setStyleSheet(u"QLineEdit {\n"
-"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
-"}\n"
-"\n"
-"QLineEdit:hover {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
-"}\n"
-"")
-        self.input_idespacio.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_7.addWidget(self.input_idespacio)
-
-        self.input_bloque = QLineEdit(self.layoutWidget_8)
-        self.input_bloque.setObjectName(u"input_bloque")
-        self.input_bloque.setMinimumSize(QSize(0, 30))
-        self.input_bloque.setMaximumSize(QSize(16777215, 16777215))
-        self.input_bloque.setStyleSheet(u"QLineEdit {\n"
-"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
-"}\n"
-"\n"
-"QLineEdit:hover {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
-"}\n"
-"")
-        self.input_bloque.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_7.addWidget(self.input_bloque)
-
-        self.input_capacidad = QLineEdit(self.layoutWidget_8)
-        self.input_capacidad.setObjectName(u"input_capacidad")
-        self.input_capacidad.setMinimumSize(QSize(0, 30))
-        self.input_capacidad.setMaximumSize(QSize(16777215, 16777215))
-        self.input_capacidad.setStyleSheet(u"QLineEdit {\n"
-"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
-"}\n"
-"\n"
-"QLineEdit:hover {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
-"}")
-        self.input_capacidad.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_7.addWidget(self.input_capacidad)
-
-        self.input_tipo = QLineEdit(self.layoutWidget_8)
-        self.input_tipo.setObjectName(u"input_tipo")
-        self.input_tipo.setMinimumSize(QSize(0, 30))
-        self.input_tipo.setMaximumSize(QSize(16777215, 16777215))
-        self.input_tipo.setStyleSheet(u"QLineEdit {\n"
-"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
-"}\n"
-"\n"
-"QLineEdit:hover {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
-"    border-radius: 10px;\n"
-"    font: 12pt \"Arial\";\n"
-"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
-"}")
-        self.input_tipo.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_7.addWidget(self.input_tipo)
-
-        self.error_label_contrasena = QLabel(self.frame_ingreso)
-        self.error_label_contrasena.setObjectName(u"error_label_contrasena")
-        self.error_label_contrasena.setGeometry(QRect(570, 200, 141, 31))
-        self.error_label_contrasena.setStyleSheet(u"QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"    font: 12pt \"Arial\";\n"
-"}")
+        self.gridLayout_6 = QGridLayout(self.frame_ingreso)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.gridLayout_5 = QGridLayout()
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.error_label_correo = QLabel(self.frame_ingreso)
         self.error_label_correo.setObjectName(u"error_label_correo")
-        self.error_label_correo.setGeometry(QRect(570, 230, 141, 20))
         self.error_label_correo.setStyleSheet(u"QLabel {\n"
 "    color: rgb(0, 0, 0);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        self.error_label_capacidad = QLabel(self.frame_ingreso)
-        self.error_label_capacidad.setObjectName(u"error_label_capacidad")
-        self.error_label_capacidad.setGeometry(QRect(570, 170, 141, 20))
-        self.error_label_capacidad.setStyleSheet(u"QLabel {\n"
+
+        self.gridLayout_5.addWidget(self.error_label_correo, 2, 0, 1, 1)
+
+        self.error_label_contrasena = QLabel(self.frame_ingreso)
+        self.error_label_contrasena.setObjectName(u"error_label_contrasena")
+        self.error_label_contrasena.setStyleSheet(u"QLabel {\n"
 "    color: rgb(0, 0, 0);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        self.layoutWidget = QWidget(self.frame_ingreso)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(570, 10, 121, 191))
-        self.verticalLayout_3 = QVBoxLayout(self.layoutWidget)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.editar_bt_espacio = QPushButton(self.layoutWidget)
-        self.editar_bt_espacio.setObjectName(u"editar_bt_espacio")
-        self.editar_bt_espacio.setFont(font)
-        self.editar_bt_espacio.setStyleSheet(u"QPushButton {\n"
-"    border-radius: 10px;\n"
-"     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
-"                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
-"                                      stop:1 rgb(255,255,255)); /* Cian claro */\n"
-"}   \n"
-"\n"
-"QPushButton:hover {\n"
-"	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
-"                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
-"                                      stop:0.369469 rgba(0,128,0,255), \n"
-"                                      stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
-"}\n"
-"   \n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */\n"
-"}\n"
-"\n"
-"QLabel {\n"
-"    color: rgb(225, 225, 224);\n"
-"    font: 12pt \"Arial\";\n"
-"}")
-        icon9 = QIcon()
-        icon9.addFile(u":/newPrefix/smartphone.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.editar_bt_espacio.setIcon(icon9)
-        self.editar_bt_espacio.setIconSize(QSize(40, 40))
-        self.editar_bt_espacio.setCheckable(True)
 
-        self.verticalLayout_3.addWidget(self.editar_bt_espacio)
+        self.gridLayout_5.addWidget(self.error_label_contrasena, 1, 0, 1, 1)
 
-        self.crear_bt_espacio = QPushButton(self.layoutWidget)
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.crear_bt_espacio = QPushButton(self.frame_ingreso)
         self.crear_bt_espacio.setObjectName(u"crear_bt_espacio")
         self.crear_bt_espacio.setFont(font)
         self.crear_bt_espacio.setStyleSheet(u"QPushButton {\n"
@@ -1087,9 +942,43 @@ class Ui_MainWindow(object):
         self.crear_bt_espacio.setIconSize(QSize(40, 40))
         self.crear_bt_espacio.setCheckable(True)
 
-        self.verticalLayout_3.addWidget(self.crear_bt_espacio)
+        self.horizontalLayout_2.addWidget(self.crear_bt_espacio)
 
-        self.guardar_bt_espacio = QPushButton(self.layoutWidget)
+        self.editar_bt_espacio = QPushButton(self.frame_ingreso)
+        self.editar_bt_espacio.setObjectName(u"editar_bt_espacio")
+        self.editar_bt_espacio.setFont(font)
+        self.editar_bt_espacio.setStyleSheet(u"QPushButton {\n"
+"    border-radius: 10px;\n"
+"     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, \n"
+"                                      stop:0 rgb(255,255,255), /* Cian oscuro */\n"
+"                                      stop:1 rgb(255,255,255)); /* Cian claro */\n"
+"}   \n"
+"\n"
+"QPushButton:hover {\n"
+"	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, \n"
+"                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */\n"
+"                                      stop:0.369469 rgba(0,128,0,255), \n"
+"                                      stop:1 rgba(0,255,0,255)); /* Verde claro */\n"
+"}\n"
+"   \n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: rgb(225, 225, 224);\n"
+"    font: 12pt \"Arial\";\n"
+"}")
+        icon8 = QIcon()
+        icon8.addFile(u":/newPrefix/smartphone.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.editar_bt_espacio.setIcon(icon8)
+        self.editar_bt_espacio.setIconSize(QSize(40, 40))
+        self.editar_bt_espacio.setCheckable(True)
+
+        self.horizontalLayout_2.addWidget(self.editar_bt_espacio)
+
+        self.guardar_bt_espacio = QPushButton(self.frame_ingreso)
         self.guardar_bt_espacio.setObjectName(u"guardar_bt_espacio")
         self.guardar_bt_espacio.setFont(font)
         self.guardar_bt_espacio.setStyleSheet(u"QPushButton {\n"
@@ -1115,14 +1004,14 @@ class Ui_MainWindow(object):
 "    color: rgb(225, 225, 224);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        icon10 = QIcon()
-        icon10.addFile(u":/newPrefix/save.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.guardar_bt_espacio.setIcon(icon10)
+        icon9 = QIcon()
+        icon9.addFile(u":/newPrefix/save.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.guardar_bt_espacio.setIcon(icon9)
         self.guardar_bt_espacio.setIconSize(QSize(40, 40))
 
-        self.verticalLayout_3.addWidget(self.guardar_bt_espacio)
+        self.horizontalLayout_2.addWidget(self.guardar_bt_espacio)
 
-        self.eliminar_bt_espacio = QPushButton(self.layoutWidget)
+        self.eliminar_bt_espacio = QPushButton(self.frame_ingreso)
         self.eliminar_bt_espacio.setObjectName(u"eliminar_bt_espacio")
         self.eliminar_bt_espacio.setFont(font)
         self.eliminar_bt_espacio.setStyleSheet(u"QPushButton {\n"
@@ -1148,10 +1037,146 @@ class Ui_MainWindow(object):
 "    color: rgb(225, 225, 224);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
+        icon10 = QIcon()
+        icon10.addFile(u":/newPrefix/trash-2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.eliminar_bt_espacio.setIcon(icon10)
         self.eliminar_bt_espacio.setIconSize(QSize(40, 40))
 
-        self.verticalLayout_3.addWidget(self.eliminar_bt_espacio)
+        self.horizontalLayout_2.addWidget(self.eliminar_bt_espacio)
+
+
+        self.gridLayout_5.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
+
+
+        self.gridLayout_6.addLayout(self.gridLayout_5, 3, 0, 1, 1)
+
+        self.error_label_capacidad = QLabel(self.frame_ingreso)
+        self.error_label_capacidad.setObjectName(u"error_label_capacidad")
+        self.error_label_capacidad.setStyleSheet(u"QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"    font: 12pt \"Arial\";\n"
+"}")
+
+        self.gridLayout_6.addWidget(self.error_label_capacidad, 1, 1, 1, 1)
+
+        self.gridLayout_3 = QGridLayout()
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.input_idespacio = QLineEdit(self.frame_ingreso)
+        self.input_idespacio.setObjectName(u"input_idespacio")
+        self.input_idespacio.setMinimumSize(QSize(0, 30))
+        self.input_idespacio.setMaximumSize(QSize(16777215, 16777215))
+        self.input_idespacio.setStyleSheet(u"QLineEdit {\n"
+"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
+"}\n"
+"")
+        self.input_idespacio.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.input_idespacio, 0, 0, 1, 1)
+
+        self.input_bloque = QLineEdit(self.frame_ingreso)
+        self.input_bloque.setObjectName(u"input_bloque")
+        self.input_bloque.setMinimumSize(QSize(0, 30))
+        self.input_bloque.setMaximumSize(QSize(16777215, 16777215))
+        self.input_bloque.setStyleSheet(u"QLineEdit {\n"
+"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
+"}\n"
+"")
+        self.input_bloque.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.input_bloque, 1, 0, 1, 1)
+
+        self.input_capacidad = QLineEdit(self.frame_ingreso)
+        self.input_capacidad.setObjectName(u"input_capacidad")
+        self.input_capacidad.setMinimumSize(QSize(0, 30))
+        self.input_capacidad.setMaximumSize(QSize(16777215, 16777215))
+        self.input_capacidad.setStyleSheet(u"QLineEdit {\n"
+"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
+"}")
+        self.input_capacidad.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.input_capacidad, 2, 0, 1, 1)
+
+        self.input_tipo = QLineEdit(self.frame_ingreso)
+        self.input_tipo.setObjectName(u"input_tipo")
+        self.input_tipo.setMinimumSize(QSize(0, 30))
+        self.input_tipo.setMaximumSize(QSize(16777215, 16777215))
+        self.input_tipo.setStyleSheet(u"QLineEdit {\n"
+"    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */\n"
+"    border-radius: 10px;\n"
+"    font: 12pt \"Arial\";\n"
+"    border: 2px solid rgb(0, 122, 204);    /* Color azul m\u00e1s oscuro cuando est\u00e1 en foco */\n"
+"}")
+        self.input_tipo.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.input_tipo, 3, 0, 1, 1)
+
+
+        self.gridLayout_6.addLayout(self.gridLayout_3, 0, 0, 3, 1)
 
 
         self.gridLayout.addWidget(self.frame_ingreso, 2, 0, 1, 3)
@@ -1187,7 +1212,15 @@ class Ui_MainWindow(object):
         self.bt_cerrarlistado.setText("")
         self.lb_indicador_mreservas_3.setText("")
         self.lb_indicador_mreservas_2.setText(QCoreApplication.translate("MainWindow", u"ESPACIOS", None))
+        self.input_filtro_espacios.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Escriba el ID o n\u00famero del espacio", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Buscar Espacio", None))
+        self.error_label_correo.setText(QCoreApplication.translate("MainWindow", u"correo erroneo", None))
+        self.error_label_contrasena.setText(QCoreApplication.translate("MainWindow", u"error label contrasena", None))
+        self.crear_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Crear", None))
+        self.editar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
+        self.guardar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
+        self.eliminar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
+        self.error_label_capacidad.setText("")
         self.input_idespacio.setText("")
         self.input_idespacio.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ID Espacio", None))
         self.input_bloque.setText("")
@@ -1195,12 +1228,5 @@ class Ui_MainWindow(object):
         self.input_capacidad.setText("")
         self.input_capacidad.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Capacidad", None))
         self.input_tipo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Tipo", None))
-        self.error_label_contrasena.setText(QCoreApplication.translate("MainWindow", u"error label contrasena", None))
-        self.error_label_correo.setText(QCoreApplication.translate("MainWindow", u"correo erroneo", None))
-        self.error_label_capacidad.setText("")
-        self.editar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
-        self.crear_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Crear", None))
-        self.guardar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
-        self.eliminar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
     # retranslateUi
 

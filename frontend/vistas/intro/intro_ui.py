@@ -15,35 +15,44 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QPushButton,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
+    QPushButton, QSizePolicy, QWidget)
 
 class Ui_intro(object):
     def setupUi(self, intro):
         if not intro.objectName():
             intro.setObjectName(u"intro")
-        intro.resize(646, 623)
+        intro.resize(912, 681)
         self.centralwidget = QWidget(intro)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.intro_gif = QLabel(self.centralwidget)
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.widget = QWidget(self.centralwidget)
+        self.widget.setObjectName(u"widget")
+        self.intro_gif = QLabel(self.widget)
         self.intro_gif.setObjectName(u"intro_gif")
-        self.intro_gif.setGeometry(QRect(0, 0, 641, 591))
+        self.intro_gif.setGeometry(QRect(20, 0, 781, 591))
         self.intro_gif.setMaximumSize(QSize(16777215, 16777215))
         self.intro_gif.setPixmap(QPixmap(u"../../imagenes/intro.gif"))
         self.intro_gif.setScaledContents(False)
         self.intro_gif.setAlignment(Qt.AlignCenter)
-        self.label = QLabel(self.centralwidget)
+        self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(220, 190, 221, 41))
+        self.label.setGeometry(QRect(310, 190, 221, 41))
         self.label.setStyleSheet(u"QLabel{\n"
 "	background: #000000;\n"
 "	color: #FFFFFF;\n"
 "	font-size: 20pt;\n"
 "	font-family:\"Courier New\", monospace;\n"
 "}")
-        self.intro_bt = QPushButton(self.centralwidget)
+        self.intro_bt = QPushButton(self.widget)
         self.intro_bt.setObjectName(u"intro_bt")
-        self.intro_bt.setGeometry(QRect(180, 280, 271, 51))
+        self.intro_bt.setGeometry(QRect(260, 280, 271, 51))
+        font = QFont()
+        font.setFamilies([u"Courier New"])
+        font.setPointSize(13)
+        font.setBold(True)
+        self.intro_bt.setFont(font)
         self.intro_bt.setStyleSheet(u"QPushButton{\n"
 "	background: #04B338;\n"
 "	font-size: 13pt;\n"
@@ -51,28 +60,28 @@ class Ui_intro(object):
 "	font-weight: bold;\n"
 "	font-family:\"Courier New\", monospace;\n"
 "}")
-        self.label_2 = QLabel(self.centralwidget)
+        self.label_2 = QLabel(self.widget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(360, 510, 211, 16))
+        self.label_2.setGeometry(QRect(490, 560, 211, 16))
         self.label_2.setStyleSheet(u"QLabel{\n"
 "	background: #000000;\n"
 "	color: #FFFFFF;\n"
 "	font-size: 8pt;\n"
 "	font-style: italic;\n"
 "}")
-        self.label_3 = QLabel(self.centralwidget)
+        self.label_3 = QLabel(self.widget)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(450, 0, 191, 31))
+        self.label_3.setGeometry(QRect(510, 0, 191, 31))
         self.label_3.setStyleSheet(u"QLabel{\n"
 "	background: #000000;\n"
 "	color: #FFFFFF;\n"
 "	font-size: 10pt;\n"
 "	font-style: italic;\n"
 "}")
+
+        self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
+
         intro.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(intro)
-        self.statusbar.setObjectName(u"statusbar")
-        intro.setStatusBar(self.statusbar)
 
         self.retranslateUi(intro)
 
