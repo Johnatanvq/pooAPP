@@ -455,8 +455,8 @@ QLabel {
     </item>
     <item row="0" column="1">
      <widget class="QWidget" name="widget_2" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
         <widget class="QPushButton" name="bt_home_mm">
          <property name="font">
           <font>
@@ -464,26 +464,40 @@ QLabel {
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">QPushButton {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 0px;
+          <string notr="true">QPushButton{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+QPushButton {
     background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
                                        stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
                                        stop:0.369469 rgba(0,128,0,255), 
                                        stop:1 rgba(0,255,0,255)); /* Verde claro */
+    
     padding-left: 0px; /* Espacio a la izquierda para simular alineación */
     border: none; /* Sin borde, opcional */
     text-align: left; /* Aunque esto no tendrá efecto en QPushButton, lo incluimos para claridad */
-    border-radius: 18px; /* Si quieres bordes redondeados uniformes */
+}
+
+QPushButton:hover{
+	border-top-left-radius: 0 px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 0px
+}
+
+
+QPushButton {
+    border-radius: 18px;
+    background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
 }
 
 QPushButton:hover {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 0px;
     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
                                       stop:0 rgb(255,255,255), /* Cian oscuro */
                                       stop:1 rgb(255,255,255)); /* Cian claro */
@@ -491,16 +505,15 @@ QPushButton:hover {
 
 QLabel {
     color: rgb(225, 225, 224);
-    font: 24pt &quot;Arial&quot;;
-}
-</string>
+    font: 18pt &quot;Arial&quot;;
+}</string>
          </property>
          <property name="text">
           <string>Principal</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>../../imagenes/home.svg</normaloff>../../imagenes/home.svg</iconset>
+          <iconset resource="../../imagenes/resources.qrc">
+           <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -516,7 +529,7 @@ QLabel {
          </property>
         </widget>
        </item>
-       <item>
+       <item row="1" column="0">
         <widget class="QPushButton" name="bt_reservas__mm">
          <property name="font">
           <font>
@@ -589,7 +602,7 @@ QLabel {
          </property>
         </widget>
        </item>
-       <item>
+       <item row="2" column="0">
         <widget class="QPushButton" name="bt_misreservas_mm">
          <property name="font">
           <font>
@@ -662,7 +675,7 @@ QLabel {
          </property>
         </widget>
        </item>
-       <item>
+       <item row="3" column="0">
         <widget class="QPushButton" name="bt_configuraciones_mm">
          <property name="font">
           <font>
@@ -735,7 +748,7 @@ QLabel {
          </property>
         </widget>
        </item>
-       <item>
+       <item row="4" column="0">
         <widget class="QPushButton" name="bt_espacios_mm">
          <property name="font">
           <font>
@@ -808,7 +821,7 @@ QLabel {
          </property>
         </widget>
        </item>
-       <item>
+       <item row="5" column="0">
         <widget class="QPushButton" name="bt_usuarios_mm">
          <property name="font">
           <font>
@@ -881,7 +894,7 @@ QLabel {
          </property>
         </widget>
        </item>
-       <item>
+       <item row="6" column="0">
         <spacer name="verticalSpacer_2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -894,7 +907,7 @@ QLabel {
          </property>
         </spacer>
        </item>
-       <item>
+       <item row="7" column="0">
         <widget class="QPushButton" name="bt_logout_mm">
          <property name="font">
           <font>
@@ -1086,6 +1099,9 @@ QLineEdit:focus {
 }
 </string>
          </property>
+         <property name="placeholderText">
+          <string>Escriba el ID o número del espacio</string>
+         </property>
         </widget>
        </item>
        <item row="1" column="0">
@@ -1144,32 +1160,266 @@ QLineEdit:focus {
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QWidget" name="layoutWidget_8">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>551</width>
-            <height>281</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
-           <item>
-            <widget class="QLineEdit" name="input_idespacio">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="3" column="0">
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="2" column="0">
+             <widget class="QLabel" name="error_label_correo">
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+              </property>
+              <property name="text">
+               <string>correo erroneo</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="error_label_contrasena">
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+              </property>
+              <property name="text">
+               <string>error label contrasena</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QPushButton" name="crear_bt_espacio">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Crear</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../imagenes/resources.qrc">
+                  <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="editar_bt_espacio">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Editar</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../imagenes/resources.qrc">
+                  <normaloff>:/newPrefix/smartphone.svg</normaloff>:/newPrefix/smartphone.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="guardar_bt_espacio">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Guardar</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../imagenes/resources.qrc">
+                  <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="eliminar_bt_espacio">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    border-radius: 10px;
+     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
+                                      stop:0 rgb(255,255,255), /* Cian oscuro */
+                                      stop:1 rgb(255,255,255)); /* Cian claro */
+}   
+
+QPushButton:hover {
+	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
+                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
+                                      stop:0.369469 rgba(0,128,0,255), 
+                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
+}
+   
+
+QPushButton:pressed {
+    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
+}
+
+QLabel {
+    color: rgb(225, 225, 224);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Eliminar</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../imagenes/resources.qrc">
+                  <normaloff>:/newPrefix/trash-2.svg</normaloff>:/newPrefix/trash-2.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="error_label_capacidad">
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: rgb(0, 0, 0);
+    font: 12pt &quot;Arial&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="3">
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QLineEdit" name="input_idespacio">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit {
     background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
     border-radius: 10px;
     font: 12pt &quot;Arial&quot;;
@@ -1190,34 +1440,34 @@ QLineEdit:focus {
     border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
 }
 </string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-             <property name="placeholderText">
-              <string>ID Espacio</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="input_bloque">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="placeholderText">
+               <string>ID Espacio</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLineEdit" name="input_bloque">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit {
     background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
     border-radius: 10px;
     font: 12pt &quot;Arial&quot;;
@@ -1238,34 +1488,34 @@ QLineEdit:focus {
     border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
 }
 </string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-             <property name="placeholderText">
-              <string>Bloque</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="input_capacidad">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="placeholderText">
+               <string>Bloque</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLineEdit" name="input_capacidad">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit {
     background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
     border-radius: 10px;
     font: 12pt &quot;Arial&quot;;
@@ -1285,34 +1535,34 @@ QLineEdit:focus {
     font: 12pt &quot;Arial&quot;;
     border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
 }</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-             <property name="placeholderText">
-              <string>Capacidad</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="input_tipo">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="placeholderText">
+               <string>Capacidad</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLineEdit" name="input_tipo">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit {
     background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
     border-radius: 10px;
     font: 12pt &quot;Arial&quot;;
@@ -1332,280 +1582,18 @@ QLineEdit:focus {
     font: 12pt &quot;Arial&quot;;
     border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
 }</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-             <property name="placeholderText">
-              <string>Tipo</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QLabel" name="error_label_contrasena">
-          <property name="geometry">
-           <rect>
-            <x>570</x>
-            <y>200</y>
-            <width>141</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-          </property>
-          <property name="text">
-           <string>error label contrasena</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="error_label_correo">
-          <property name="geometry">
-           <rect>
-            <x>570</x>
-            <y>230</y>
-            <width>141</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-          </property>
-          <property name="text">
-           <string>correo erroneo</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="error_label_capacidad">
-          <property name="geometry">
-           <rect>
-            <x>570</x>
-            <y>170</y>
-            <width>141</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLabel {
-    color: rgb(0, 0, 0);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>570</x>
-            <y>10</y>
-            <width>121</width>
-            <height>191</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <widget class="QPushButton" name="editar_bt_espacio">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-    border-radius: 10px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-             </property>
-             <property name="text">
-              <string>Editar</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../../imagenes/resources.qrc">
-               <normaloff>:/newPrefix/smartphone.svg</normaloff>:/newPrefix/smartphone.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>40</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="crear_bt_espacio">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-    border-radius: 10px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-             </property>
-             <property name="text">
-              <string>Crear</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../../imagenes/resources.qrc">
-               <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>40</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="guardar_bt_espacio">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-    border-radius: 10px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-             </property>
-             <property name="text">
-              <string>Guardar</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../../imagenes/resources.qrc">
-               <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>40</width>
-               <height>40</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="eliminar_bt_espacio">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-    border-radius: 10px;
-     background-color: qlineargradient(spread:reflect, x1:0, y1:0.562273, x2:0.949, y2:0.545455, 
-                                      stop:0 rgb(255,255,255), /* Cian oscuro */
-                                      stop:1 rgb(255,255,255)); /* Cian claro */
-}   
-
-QPushButton:hover {
-	  background-color: qlineargradient(spread:reflect, x1:0, y1:0.532273, x2:1, y2:0.5, 
-                                      stop:0.362832 rgba(0,128,0,255), /* Verde oscuro */
-                                      stop:0.369469 rgba(0,128,0,255), 
-                                      stop:1 rgba(0,255,0,255)); /* Verde claro */
-}
-   
-
-QPushButton:pressed {
-    background-color: rgba(0, 255, 0, 255); /* Verde claro cuando se presiona */
-}
-
-QLabel {
-    color: rgb(225, 225, 224);
-    font: 12pt &quot;Arial&quot;;
-}</string>
-             </property>
-             <property name="text">
-              <string>Eliminar</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../../imagenes/resources.qrc">
-               <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>40</width>
-               <height>40</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="placeholderText">
+               <string>Tipo</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -1617,6 +1605,7 @@ QLabel {
  <resources>
   <include location="../../imagenes/resources.qrc"/>
   <include location="../../imagenes/resources.qrc"/>
+  <include location="../../../../../../imagenes/resources.qrc"/>
  </resources>
  <connections>
   <connection>
