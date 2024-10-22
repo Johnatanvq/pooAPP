@@ -125,7 +125,7 @@ class adminUsuario(Usuario):
             except psycopg2.Error as e:
                 # Si hay un error, hacemos rollback para no aplicar cambios parciales
                 self.conexion.rollback()
-                print(f"Error al guardar los datos: {e}")
+                # print(f"Error al guardar los datos: {e}")
                 return False
         else:
             print("Faltan datos para crear el usuario. Asegúrate de que todos los campos estén llenos.")

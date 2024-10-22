@@ -116,7 +116,6 @@ class nuevaReservaGUI(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    cedula = "123456789"  # Aquí deberías pasar la cédula del usuario autenticado
-    GUI = nuevaReservaGUI(cedula)
+    GUI = nuevaReservaGUI()
     GUI.show()
     sys.exit(app.exec_())

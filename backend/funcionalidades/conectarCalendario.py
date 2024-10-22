@@ -36,7 +36,7 @@ class calendarioGUI(QMainWindow):
         self.login_window.show()
 
     def cerrarSesion(self): 
-        from conectarLogin import loginGUI
+        from backend.funcionalidades.conectarLogin import loginGUI
 
         #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:

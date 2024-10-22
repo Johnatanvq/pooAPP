@@ -74,9 +74,8 @@ class adminEspacio(Espacio):
             try:
                  #SQL insertar datos
                 query = """
-                INTERT INTO espacios (nombre, bloque, capacidad, tipo) 
-                 VALUES (%s, %s, %s, %s )
-                 RETURNING id;
+                INSERT INTO espacio (nombre, bloque, capacidad, tipo) 
+                VALUES (%s, %s, %s, %s )
                 """ # %s placeholders
 
                 #Asigna valores capturados de entradas
@@ -137,7 +136,7 @@ class adminEspacio(Espacio):
             query = "SELECT nombre FROM espacio"
             self.cursor.execute(query)
             espacios = self.cursor.fetchall()
-            return [espacios[0] for espacio in espacios]
+            return [espacio[0] for espacio in espacios]
         except psycopg2.Error as e:
             print(f"Error al cargar los espacios: {e}")
             return []

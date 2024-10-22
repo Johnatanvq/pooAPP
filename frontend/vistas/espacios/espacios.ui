@@ -1172,7 +1172,7 @@ QLineEdit:focus {
 }</string>
               </property>
               <property name="text">
-               <string>correo erroneo</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -1185,7 +1185,7 @@ QLineEdit:focus {
 }</string>
               </property>
               <property name="text">
-               <string>error label contrasena</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -1605,7 +1605,7 @@ QLineEdit:focus {
  <resources>
   <include location="../../imagenes/resources.qrc"/>
   <include location="../../imagenes/resources.qrc"/>
-  <include location="../../../../../../imagenes/resources.qrc"/>
+  <include location="../../imagenes/resources.qrc"/>
  </resources>
  <connections>
   <connection>

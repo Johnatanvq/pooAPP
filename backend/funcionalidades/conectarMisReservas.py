@@ -75,6 +75,7 @@ class misReservasGUI(QMainWindow):
         self.menu_window.show()
 
     def cerrarSesion(self):
+        from backend.funcionalidades.conectarLogin import loginGUI
         #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
             self.nuevoUsuario.cursor.close()

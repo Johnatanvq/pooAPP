@@ -19,7 +19,7 @@
      <widget class="QWidget" name="widget_3" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_10">
        <item>
-        <widget class="QPushButton" name="bt_icono_home_mm_2">
+        <widget class="QPushButton" name="bt_icono_home_mm">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-top-left-radius: 0 px;
@@ -60,8 +60,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/home.svg</normaloff>../../imagenes/home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -78,7 +78,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_icono_reservas_mm_2">
+        <widget class="QPushButton" name="bt_icono_reservas_mm">
          <property name="maximumSize">
           <size>
            <width>16777</width>
@@ -125,8 +125,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/bookmark.svg</normaloff>:/newPrefix/bookmark.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/bookmark.svg</normaloff>../../imagenes/bookmark.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -143,7 +143,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_icono_misreservas_mm_2">
+        <widget class="QPushButton" name="bt_icono_misreservas_mm">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-top-left-radius: 0 px;
@@ -184,8 +184,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/book-open.svg</normaloff>:/newPrefix/book-open.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/book-open.svg</normaloff>../../imagenes/book-open.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -202,7 +202,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_icono_configuraciones_mm_2">
+        <widget class="QPushButton" name="bt_icono_configuraciones_mm">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-top-left-radius: 0 px;
@@ -243,8 +243,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/settings.svg</normaloff>:/newPrefix/settings.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/settings.svg</normaloff>../../imagenes/settings.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -261,7 +261,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_icono_espacios_mm_2">
+        <widget class="QPushButton" name="bt_icono_espacios_mm">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-top-left-radius: 0 px;
@@ -302,8 +302,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/key.svg</normaloff>../../imagenes/key.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -320,7 +320,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_icono_usuarios_mm_2">
+        <widget class="QPushButton" name="bt_icono_usuarios_mm">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-top-left-radius: 0 px;
@@ -361,8 +361,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/users.svg</normaloff>../../imagenes/users.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -392,7 +392,7 @@ QLabel {
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_icono_logout_mm_2">
+        <widget class="QPushButton" name="bt_icono_logout_mm">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	border-top-left-radius: 0 px;
@@ -433,8 +433,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/log-out.svg</normaloff>../../imagenes/log-out.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -457,7 +457,7 @@ QLabel {
      <widget class="QWidget" name="widget_4" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_11">
        <item>
-        <widget class="QPushButton" name="bt_home_mm_2">
+        <widget class="QPushButton" name="bt_home_mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -517,7 +517,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_reservas__mm_2">
+        <widget class="QPushButton" name="bt_reservas__mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -572,8 +572,8 @@ QLabel {
           <string>Reservas</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/bookmark.svg</normaloff>:/newPrefix/bookmark.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/bookmark.svg</normaloff>../../imagenes/bookmark.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -590,7 +590,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_misreservas_mm_2">
+        <widget class="QPushButton" name="bt_misreservas_mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -645,8 +645,8 @@ QLabel {
           <string>Mis reservas</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/book-open.svg</normaloff>:/newPrefix/book-open.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/book-open.svg</normaloff>../../imagenes/book-open.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -663,7 +663,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_configuraciones_mm_2">
+        <widget class="QPushButton" name="bt_configuraciones_mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -718,8 +718,8 @@ QLabel {
           <string>Configuraciones</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/settings.svg</normaloff>:/newPrefix/settings.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/settings.svg</normaloff>../../imagenes/settings.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -736,7 +736,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_espacios_mm_2">
+        <widget class="QPushButton" name="bt_espacios_mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -791,8 +791,8 @@ QLabel {
           <string>Espacios</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/key.svg</normaloff>../../imagenes/key.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -864,8 +864,8 @@ QLabel {
           <string>Usuarios</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/users.svg</normaloff>../../imagenes/users.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -895,7 +895,7 @@ QLabel {
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_logout_mm_2">
+        <widget class="QPushButton" name="bt_logout_mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -940,8 +940,8 @@ QLabel {
           <string>Cerrar Sesión</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/log-out.svg</normaloff>../../imagenes/log-out.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1055,97 +1055,6 @@ QLineEdit:focus {
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="7" column="0">
-           <widget class="QLineEdit" name="input_telefono">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="placeholderText">
-             <string>Teléfono</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="0">
-           <widget class="QLineEdit" name="input_correo">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
-}
-
-QLineEdit:hover {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
-}
-
-QLineEdit:focus {
-    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
-    border-radius: 10px;
-    font: 12pt &quot;Arial&quot;;
-    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
-}</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="placeholderText">
-             <string>Correo</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QWidget" name="widget" native="true"/>
-          </item>
           <item row="9" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
@@ -1184,8 +1093,8 @@ QLabel {
                <string>Crear</string>
               </property>
               <property name="icon">
-               <iconset resource="../../imagenes/resources.qrc">
-                <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+               <iconset>
+                <normaloff>../../imagenes/key.svg</normaloff>../../imagenes/key.svg</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -1234,8 +1143,8 @@ QLabel {
                <string>Editar</string>
               </property>
               <property name="icon">
-               <iconset resource="../../imagenes/resources.qrc">
-                <normaloff>:/newPrefix/smartphone.svg</normaloff>:/newPrefix/smartphone.svg</iconset>
+               <iconset>
+                <normaloff>../../imagenes/smartphone.svg</normaloff>../../imagenes/smartphone.svg</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -1284,8 +1193,8 @@ QLabel {
                <string>Guardar</string>
               </property>
               <property name="icon">
-               <iconset resource="../../imagenes/resources.qrc">
-                <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
+               <iconset>
+                <normaloff>../../imagenes/save.svg</normaloff>../../imagenes/save.svg</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -1331,8 +1240,8 @@ QLabel {
                <string>Eliminar</string>
               </property>
               <property name="icon">
-               <iconset resource="../../imagenes/resources.qrc">
-                <normaloff>:/newPrefix/trash-2.svg</normaloff>:/newPrefix/trash-2.svg</iconset>
+               <iconset>
+                <normaloff>../../imagenes/trash-2.svg</normaloff>../../imagenes/trash-2.svg</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -1439,6 +1348,53 @@ QLineEdit:focus {
             </property>
            </widget>
           </item>
+          <item row="8" column="0">
+           <widget class="QLineEdit" name="input_correo">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="placeholderText">
+             <string>Correo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QWidget" name="widget" native="true"/>
+          </item>
           <item row="2" column="0">
            <widget class="QLineEdit" name="input_nombre">
             <property name="minimumSize">
@@ -1487,6 +1443,13 @@ QLineEdit:focus {
             </property>
            </widget>
           </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="error_label_contrasena">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item row="1" column="0">
            <spacer name="verticalSpacer_3">
             <property name="orientation">
@@ -1499,6 +1462,70 @@ QLineEdit:focus {
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLineEdit" name="input_cedula">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+    background-color: rgb(245, 245, 245);  /* Fondo gris claro para destacar en un fondo blanco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(180, 180, 180);  /* Borde gris claro */
+}
+
+QLineEdit:hover {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando se pasa el mouse por encima */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(100, 149, 237);  /* Color azul claro en hover */
+}
+
+QLineEdit:focus {
+    background-color: rgb(255, 255, 255);  /* Blanco puro cuando tiene el foco */
+    border-radius: 10px;
+    font: 12pt &quot;Arial&quot;;
+    border: 2px solid rgb(0, 122, 204);    /* Color azul más oscuro cuando está en foco */
+}</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="placeholderText">
+             <string>Cédula</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="0">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="11" column="0">
+           <widget class="QLabel" name="error_label_correo">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
           </item>
           <item row="5" column="0">
            <widget class="QComboBox" name="input_rol">
@@ -1547,8 +1574,8 @@ QComboBox:focus {
             </item>
            </widget>
           </item>
-          <item row="6" column="0">
-           <widget class="QLineEdit" name="input_cedula">
+          <item row="7" column="0">
+           <widget class="QLineEdit" name="input_telefono">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1587,22 +1614,16 @@ QLineEdit:focus {
              <set>Qt::AlignCenter</set>
             </property>
             <property name="placeholderText">
-             <string>Cédula</string>
+             <string>Teléfono</string>
             </property>
            </widget>
           </item>
-          <item row="10" column="0">
-           <spacer name="verticalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
+          <item row="12" column="0">
+           <widget class="QLabel" name="error_campo_vacio">
+            <property name="text">
+             <string/>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -1634,7 +1655,7 @@ QLineEdit:focus {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../imagenes/resources.qrc">:/newPrefix/users.svg</pixmap>
+            <pixmap>../../imagenes/users.svg</pixmap>
            </property>
           </widget>
          </item>
@@ -1686,8 +1707,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/menu.svg</normaloff>:/newPrefix/menu.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/menu.svg</normaloff>../../imagenes/menu.svg</iconset>
          </property>
          <property name="iconSize">
           <size>

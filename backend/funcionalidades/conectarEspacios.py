@@ -31,7 +31,7 @@ class espaciosGUI(QtWidgets.QMainWindow):
         self.espacio.nombre = self.input_idespacio.text()
         self.espacio.bloque = self.input_bloque.text()
         self.espacio.capacidad = self.input_capacidad.text()
-        self.espacio.tipo = self.input_tipo.currentText().lower()
+        self.espacio.tipo = self.input_tipo.text().lower()
 
     def validarTexto(self, regex):
         regularExpression = QRegularExpression(regex)
@@ -58,7 +58,7 @@ class espaciosGUI(QtWidgets.QMainWindow):
     #metodo para mostrar errores
     def mostrarErrorCapacidad(self):
         self.error_label_capacidad.setText("La capacidad debe ser un número válido")
-        self.error_label_capadidad.setStyleSheet("color:red;font-size: 8pt;")
+        self.error_label_capacidad.setStyleSheet("color:red;font-size: 8pt;")
     def limpiarErrorCapacidad(self):
         self.error_label_capacidad.setText("")
         self.error_label_capacidad.setStyleSheet("")
@@ -89,10 +89,10 @@ class espaciosGUI(QtWidgets.QMainWindow):
                 self.configurarCompleter()
 
     def limpiarCampos(self):
-        self.input_nombre.clear()
+        self.input_idespacio.clear()
         self.input_bloque.clear()
         self.input_capacidad.clear()
-        self.input_tipo.setCurrentIndex(0)
+        self.input_tipo.clear()
         self.espacio.nombre = None
 
     def configurarCompleter(self):
