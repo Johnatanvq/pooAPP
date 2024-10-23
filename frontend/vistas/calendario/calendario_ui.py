@@ -423,10 +423,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.bt_home_mm, 0, 0, 1, 1)
 
-        self.bt_reservas__mm = QPushButton(self.widget_2)
-        self.bt_reservas__mm.setObjectName(u"bt_reservas__mm")
-        self.bt_reservas__mm.setFont(font)
-        self.bt_reservas__mm.setStyleSheet(u"QPushButton{\n"
+        self.bt_reservas_mm = QPushButton(self.widget_2)
+        self.bt_reservas_mm.setObjectName(u"bt_reservas_mm")
+        self.bt_reservas_mm.setFont(font)
+        self.bt_reservas_mm.setStyleSheet(u"QPushButton{\n"
 "	border-top-left-radius: 0 px;\n"
 "	border-bottom-left-radius: 30px;\n"
 "	border-top-right-radius: 30px;\n"
@@ -470,12 +470,12 @@ class Ui_MainWindow(object):
 "    color: rgb(225, 225, 224);\n"
 "    font: 18pt \"Arial\";\n"
 "}")
-        self.bt_reservas__mm.setIcon(icon1)
-        self.bt_reservas__mm.setIconSize(QSize(40, 40))
-        self.bt_reservas__mm.setCheckable(True)
-        self.bt_reservas__mm.setAutoExclusive(True)
+        self.bt_reservas_mm.setIcon(icon1)
+        self.bt_reservas_mm.setIconSize(QSize(40, 40))
+        self.bt_reservas_mm.setCheckable(True)
+        self.bt_reservas_mm.setAutoExclusive(True)
 
-        self.gridLayout_4.addWidget(self.bt_reservas__mm, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.bt_reservas_mm, 1, 0, 1, 1)
 
         self.bt_misreservas_mm = QPushButton(self.widget_2)
         self.bt_misreservas_mm.setObjectName(u"bt_misreservas_mm")
@@ -838,7 +838,7 @@ class Ui_MainWindow(object):
         self.bt_icono_usuarios_mm.setText("")
         self.bt_icono_logout_mm.setText("")
         self.bt_home_mm.setText(QCoreApplication.translate("MainWindow", u"Principal", None))
-        self.bt_reservas__mm.setText(QCoreApplication.translate("MainWindow", u"Reservas", None))
+        self.bt_reservas_mm.setText(QCoreApplication.translate("MainWindow", u"Reservas", None))
         self.bt_misreservas_mm.setText(QCoreApplication.translate("MainWindow", u"Mis reservas", None))
         self.bt_configuraciones_mm.setText(QCoreApplication.translate("MainWindow", u"Configuraciones", None))
         self.bt_espacios_mm.setText(QCoreApplication.translate("MainWindow", u"Espacios", None))
