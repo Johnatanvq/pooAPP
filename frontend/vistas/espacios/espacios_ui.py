@@ -22,12 +22,12 @@ import resources_rc
 import resources_rc
 import resources_rc
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1000, 590)
-        self.centralwidget = QWidget(MainWindow)
+class Ui_Espacios(object):
+    def setupUi(self, Espacios):
+        if not Espacios.objectName():
+            Espacios.setObjectName(u"Espacios")
+        Espacios.resize(1000, 590)
+        self.centralwidget = QWidget(Espacios)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -1184,17 +1184,17 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.main_menu, 0, 2, 1, 1)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        Espacios.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(Espacios)
         self.bt_cerrarlistado.toggled.connect(self.widget.setHidden)
         self.bt_cerrarlistado.toggled.connect(self.widget_2.setVisible)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(Espacios)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+    def retranslateUi(self, Espacios):
+        Espacios.setWindowTitle(QCoreApplication.translate("Espacios", u"MainWindow", None))
         self.bt_icono_home_mm.setText("")
         self.bt_icono_reservas_mm.setText("")
         self.bt_icono_misreservas_mm.setText("")
@@ -1202,31 +1202,31 @@ class Ui_MainWindow(object):
         self.bt_icono_espacios_mm.setText("")
         self.bt_icono_usuarios_mm.setText("")
         self.bt_icono_logout_mm.setText("")
-        self.bt_home_mm.setText(QCoreApplication.translate("MainWindow", u"Principal", None))
-        self.bt_reservas__mm.setText(QCoreApplication.translate("MainWindow", u"Reservas", None))
-        self.bt_misreservas_mm.setText(QCoreApplication.translate("MainWindow", u"Mis reservas", None))
-        self.bt_configuraciones_mm.setText(QCoreApplication.translate("MainWindow", u"Configuraciones", None))
-        self.bt_espacios_mm.setText(QCoreApplication.translate("MainWindow", u"Espacios", None))
-        self.bt_usuarios_mm.setText(QCoreApplication.translate("MainWindow", u"Usuarios", None))
-        self.bt_logout_mm.setText(QCoreApplication.translate("MainWindow", u"Cerrar Sesi\u00f3n", None))
+        self.bt_home_mm.setText(QCoreApplication.translate("Espacios", u"Principal", None))
+        self.bt_reservas__mm.setText(QCoreApplication.translate("Espacios", u"Reservas", None))
+        self.bt_misreservas_mm.setText(QCoreApplication.translate("Espacios", u"Mis reservas", None))
+        self.bt_configuraciones_mm.setText(QCoreApplication.translate("Espacios", u"Configuraciones", None))
+        self.bt_espacios_mm.setText(QCoreApplication.translate("Espacios", u"Espacios", None))
+        self.bt_usuarios_mm.setText(QCoreApplication.translate("Espacios", u"Usuarios", None))
+        self.bt_logout_mm.setText(QCoreApplication.translate("Espacios", u"Cerrar Sesi\u00f3n", None))
         self.bt_cerrarlistado.setText("")
         self.lb_indicador_mreservas_3.setText("")
-        self.lb_indicador_mreservas_2.setText(QCoreApplication.translate("MainWindow", u"ESPACIOS", None))
-        self.input_filtro_espacios.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Escriba el ID o n\u00famero del espacio", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Buscar Espacio", None))
+        self.lb_indicador_mreservas_2.setText(QCoreApplication.translate("Espacios", u"ESPACIOS", None))
+        self.input_filtro_espacios.setPlaceholderText(QCoreApplication.translate("Espacios", u"Escriba el ID o n\u00famero del espacio", None))
+        self.label.setText(QCoreApplication.translate("Espacios", u"Buscar Espacio", None))
         self.error_label_correo.setText("")
         self.error_label_contrasena.setText("")
-        self.crear_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Crear", None))
-        self.editar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
-        self.guardar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
-        self.eliminar_bt_espacio.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
+        self.crear_bt_espacio.setText(QCoreApplication.translate("Espacios", u"Crear", None))
+        self.editar_bt_espacio.setText(QCoreApplication.translate("Espacios", u"Editar", None))
+        self.guardar_bt_espacio.setText(QCoreApplication.translate("Espacios", u"Guardar", None))
+        self.eliminar_bt_espacio.setText(QCoreApplication.translate("Espacios", u"Eliminar", None))
         self.error_label_capacidad.setText("")
         self.input_idespacio.setText("")
-        self.input_idespacio.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ID Espacio", None))
+        self.input_idespacio.setPlaceholderText(QCoreApplication.translate("Espacios", u"ID Espacio", None))
         self.input_bloque.setText("")
-        self.input_bloque.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Bloque", None))
+        self.input_bloque.setPlaceholderText(QCoreApplication.translate("Espacios", u"Bloque", None))
         self.input_capacidad.setText("")
-        self.input_capacidad.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Capacidad", None))
-        self.input_tipo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Tipo", None))
+        self.input_capacidad.setPlaceholderText(QCoreApplication.translate("Espacios", u"Capacidad", None))
+        self.input_tipo.setPlaceholderText(QCoreApplication.translate("Espacios", u"Tipo", None))
     # retranslateUi
 
