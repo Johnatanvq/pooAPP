@@ -1591,7 +1591,7 @@ QLabel {
  </widget>
  <resources>
   <include location="../../imagenes/resources.qrc"/>
-  <include location="../../../../../Dirección/3. Universidad/5. Semestre/8-2024/Poo/ejemploENV3/ejemploENV3/Lib/imagenes/resources.qrc"/>
+  <include location="../../imagenes/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

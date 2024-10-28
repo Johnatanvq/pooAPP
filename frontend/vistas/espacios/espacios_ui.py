@@ -73,7 +73,7 @@ class Ui_Espacios(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u":/newPrefix/home.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u"../../imagenes/home.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_icono_home_mm.setIcon(icon)
         self.bt_icono_home_mm.setIconSize(QSize(40, 40))
         self.bt_icono_home_mm.setCheckable(True)
@@ -120,7 +120,7 @@ class Ui_Espacios(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u":/newPrefix/bookmark.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u"../../imagenes/bookmark.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_icono_reservas_mm.setIcon(icon1)
         self.bt_icono_reservas_mm.setIconSize(QSize(40, 40))
         self.bt_icono_reservas_mm.setCheckable(True)
@@ -166,7 +166,7 @@ class Ui_Espacios(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u":/newPrefix/book-open.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u"../../imagenes/book-open.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_icono_misreservas_mm.setIcon(icon2)
         self.bt_icono_misreservas_mm.setIconSize(QSize(40, 40))
         self.bt_icono_misreservas_mm.setCheckable(True)
@@ -212,7 +212,7 @@ class Ui_Espacios(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u":/newPrefix/settings.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u"../../imagenes/settings.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_icono_configuraciones_mm.setIcon(icon3)
         self.bt_icono_configuraciones_mm.setIconSize(QSize(40, 40))
         self.bt_icono_configuraciones_mm.setCheckable(True)
@@ -258,7 +258,7 @@ class Ui_Espacios(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u":/newPrefix/key.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u"../../imagenes/key.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_icono_espacios_mm.setIcon(icon4)
         self.bt_icono_espacios_mm.setIconSize(QSize(40, 40))
         self.bt_icono_espacios_mm.setCheckable(True)
@@ -304,7 +304,7 @@ class Ui_Espacios(object):
 "}\n"
 "")
         icon5 = QIcon()
-        icon5.addFile(u":/newPrefix/users.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u"../../imagenes/users.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_icono_usuarios_mm.setIcon(icon5)
         self.bt_icono_usuarios_mm.setIconSize(QSize(40, 40))
         self.bt_icono_usuarios_mm.setCheckable(True)
@@ -354,7 +354,7 @@ class Ui_Espacios(object):
 "}\n"
 "")
         icon6 = QIcon()
-        icon6.addFile(u":/newPrefix/log-out.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon6.addFile(u"../../imagenes/log-out.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_icono_logout_mm.setIcon(icon6)
         self.bt_icono_logout_mm.setIconSize(QSize(40, 40))
         self.bt_icono_logout_mm.setCheckable(True)
@@ -781,7 +781,7 @@ class Ui_Espacios(object):
 "\n"
 "")
         icon7 = QIcon()
-        icon7.addFile(u":/newPrefix/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon7.addFile(u"../../imagenes/menu.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_cerrarlistado.setIcon(icon7)
         self.bt_cerrarlistado.setIconSize(QSize(40, 40))
         self.bt_cerrarlistado.setCheckable(True)
@@ -800,7 +800,7 @@ class Ui_Espacios(object):
 "    color: rgba(0, 128, 0, 255);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        self.lb_indicador_mreservas_3.setPixmap(QPixmap(u":/newPrefix/key.svg"))
+        self.lb_indicador_mreservas_3.setPixmap(QPixmap(u"../../imagenes/key.svg"))
 
         self.horizontalLayout.addWidget(self.lb_indicador_mreservas_3)
 
@@ -971,7 +971,7 @@ class Ui_Espacios(object):
 "    font: 12pt \"Arial\";\n"
 "}")
         icon8 = QIcon()
-        icon8.addFile(u":/newPrefix/smartphone.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon8.addFile(u"../../imagenes/smartphone.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.editar_bt_espacio.setIcon(icon8)
         self.editar_bt_espacio.setIconSize(QSize(40, 40))
         self.editar_bt_espacio.setCheckable(True)
@@ -1005,7 +1005,7 @@ class Ui_Espacios(object):
 "    font: 12pt \"Arial\";\n"
 "}")
         icon9 = QIcon()
-        icon9.addFile(u":/newPrefix/save.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon9.addFile(u"../../imagenes/save.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.guardar_bt_espacio.setIcon(icon9)
         self.guardar_bt_espacio.setIconSize(QSize(40, 40))
 
@@ -1038,7 +1038,7 @@ class Ui_Espacios(object):
 "    font: 12pt \"Arial\";\n"
 "}")
         icon10 = QIcon()
-        icon10.addFile(u":/newPrefix/trash-2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon10.addFile(u"../../imagenes/trash-2.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.eliminar_bt_espacio.setIcon(icon10)
         self.eliminar_bt_espacio.setIconSize(QSize(40, 40))
 

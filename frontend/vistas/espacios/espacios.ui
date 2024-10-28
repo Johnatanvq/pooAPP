@@ -60,8 +60,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/home.svg</normaloff>../../imagenes/home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -125,8 +125,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/bookmark.svg</normaloff>:/newPrefix/bookmark.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/bookmark.svg</normaloff>../../imagenes/bookmark.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -184,8 +184,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/book-open.svg</normaloff>:/newPrefix/book-open.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/book-open.svg</normaloff>../../imagenes/book-open.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -243,8 +243,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/settings.svg</normaloff>:/newPrefix/settings.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/settings.svg</normaloff>../../imagenes/settings.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -302,8 +302,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/key.svg</normaloff>../../imagenes/key.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -361,8 +361,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/users.svg</normaloff>../../imagenes/users.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -433,8 +433,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/log-out.svg</normaloff>../../imagenes/log-out.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -512,8 +512,8 @@ QLabel {
           <string>Principal</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/home.svg</normaloff>:/newPrefix/home.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/home.svg</normaloff>../../imagenes/home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -585,8 +585,8 @@ QLabel {
           <string>Reservas</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/bookmark.svg</normaloff>:/newPrefix/bookmark.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/bookmark.svg</normaloff>../../imagenes/bookmark.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -658,8 +658,8 @@ QLabel {
           <string>Mis reservas</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/book-open.svg</normaloff>:/newPrefix/book-open.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/book-open.svg</normaloff>../../imagenes/book-open.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -731,8 +731,8 @@ QLabel {
           <string>Configuraciones</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/settings.svg</normaloff>:/newPrefix/settings.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/settings.svg</normaloff>../../imagenes/settings.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -804,8 +804,8 @@ QLabel {
           <string>Espacios</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/key.svg</normaloff>../../imagenes/key.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -877,8 +877,8 @@ QLabel {
           <string>Usuarios</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/users.svg</normaloff>:/newPrefix/users.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/users.svg</normaloff>../../imagenes/users.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -953,8 +953,8 @@ QLabel {
           <string>Cerrar Sesión</string>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/log-out.svg</normaloff>:/newPrefix/log-out.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/log-out.svg</normaloff>../../imagenes/log-out.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1014,8 +1014,8 @@ QLabel {
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../imagenes/resources.qrc">
-           <normaloff>:/newPrefix/menu.svg</normaloff>:/newPrefix/menu.svg</iconset>
+          <iconset>
+           <normaloff>../../imagenes/menu.svg</normaloff>../../imagenes/menu.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1055,7 +1055,7 @@ QLabel {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../imagenes/resources.qrc">:/newPrefix/key.svg</pixmap>
+            <pixmap>../../imagenes/key.svg</pixmap>
            </property>
           </widget>
          </item>
@@ -1227,8 +1227,8 @@ QLabel {
                  <string>Crear</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../imagenes/resources.qrc">
-                  <normaloff>:/newPrefix/key.svg</normaloff>:/newPrefix/key.svg</iconset>
+                 <iconset>
+                  <normaloff>../../imagenes/key.svg</normaloff>../../imagenes/key.svg</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1277,8 +1277,8 @@ QLabel {
                  <string>Editar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../imagenes/resources.qrc">
-                  <normaloff>:/newPrefix/smartphone.svg</normaloff>:/newPrefix/smartphone.svg</iconset>
+                 <iconset>
+                  <normaloff>../../imagenes/smartphone.svg</normaloff>../../imagenes/smartphone.svg</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1327,8 +1327,8 @@ QLabel {
                  <string>Guardar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../imagenes/resources.qrc">
-                  <normaloff>:/newPrefix/save.svg</normaloff>:/newPrefix/save.svg</iconset>
+                 <iconset>
+                  <normaloff>../../imagenes/save.svg</normaloff>../../imagenes/save.svg</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -1374,8 +1374,8 @@ QLabel {
                  <string>Eliminar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../imagenes/resources.qrc">
-                  <normaloff>:/newPrefix/trash-2.svg</normaloff>:/newPrefix/trash-2.svg</iconset>
+                 <iconset>
+                  <normaloff>../../imagenes/trash-2.svg</normaloff>../../imagenes/trash-2.svg</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
