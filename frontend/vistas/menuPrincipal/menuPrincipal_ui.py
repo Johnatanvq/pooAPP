@@ -531,10 +531,10 @@ class Ui_Menu_Principal(object):
 
         self.gridLayout_4.addWidget(self.bt_misreservas_mm, 2, 0, 1, 1)
 
-        self.bt_configuraciones_mm = QPushButton(self.widget_2)
-        self.bt_configuraciones_mm.setObjectName(u"bt_configuraciones_mm")
-        self.bt_configuraciones_mm.setFont(font)
-        self.bt_configuraciones_mm.setStyleSheet(u"QPushButton{\n"
+        self.bt_materias_mm = QPushButton(self.widget_2)
+        self.bt_materias_mm.setObjectName(u"bt_materias_mm")
+        self.bt_materias_mm.setFont(font)
+        self.bt_materias_mm.setStyleSheet(u"QPushButton{\n"
 "	border-top-left-radius: 0 px;\n"
 "	border-bottom-left-radius: 30px;\n"
 "	border-top-right-radius: 30px;\n"
@@ -578,12 +578,12 @@ class Ui_Menu_Principal(object):
 "    color: rgb(225, 225, 224);\n"
 "    font: 12pt \"Arial\";\n"
 "}")
-        self.bt_configuraciones_mm.setIcon(icon3)
-        self.bt_configuraciones_mm.setIconSize(QSize(40, 40))
-        self.bt_configuraciones_mm.setCheckable(True)
-        self.bt_configuraciones_mm.setAutoExclusive(True)
+        self.bt_materias_mm.setIcon(icon3)
+        self.bt_materias_mm.setIconSize(QSize(40, 40))
+        self.bt_materias_mm.setCheckable(True)
+        self.bt_materias_mm.setAutoExclusive(True)
 
-        self.gridLayout_4.addWidget(self.bt_configuraciones_mm, 3, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.bt_materias_mm, 3, 0, 1, 1)
 
         self.bt_espacios_mm = QPushButton(self.widget_2)
         self.bt_espacios_mm.setObjectName(u"bt_espacios_mm")
@@ -854,7 +854,7 @@ class Ui_Menu_Principal(object):
         self.bt_home_mm.setText(QCoreApplication.translate("Menu_Principal", u"Principal", None))
         self.bt_reservas_mm.setText(QCoreApplication.translate("Menu_Principal", u"Reservas", None))
         self.bt_misreservas_mm.setText(QCoreApplication.translate("Menu_Principal", u"Mis reservas", None))
-        self.bt_configuraciones_mm.setText(QCoreApplication.translate("Menu_Principal", u"Configuraciones", None))
+        self.bt_materias_mm.setText(QCoreApplication.translate("Menu_Principal", u"Materias", None))
         self.bt_espacios_mm.setText(QCoreApplication.translate("Menu_Principal", u"Espacios", None))
         self.bt_usuarios_mm.setText(QCoreApplication.translate("Menu_Principal", u"Usuarios", None))
         self.bt_logout_mm.setText(QCoreApplication.translate("Menu_Principal", u"Cerrar Sesi\u00f3n", None))

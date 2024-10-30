@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QCompleter
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator, QValidator
 from backend.classes.usuario import adminUsuario
+from backend.classes.materia import adminMateria
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 from backend.funcionalidades.conectarLogin import loginGUI
 
@@ -12,7 +13,7 @@ import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más 
 import psycopg2
 
 class nuevoUsuarioGUI(QMainWindow):
-    def __init__(self, cedula_usuario):
+    def __init__(self, cedula_usuario, id_materia):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/nuevoUsuario/nuevoUsuario.ui", self)
         
@@ -23,6 +24,8 @@ class nuevoUsuarioGUI(QMainWindow):
         #se instancia la clase para hacer uso de sus respectivos métodos
         self.nuevoUsuario = adminUsuario()
         self.cedula_usuario = cedula_usuario
+        self.materia = adminMateria()
+        self.id_materia = id_materia
         #configuración para el filtrado en las búsquedas de usuarios
         self.configurarCompleter()
         
@@ -219,7 +222,7 @@ class nuevoUsuarioGUI(QMainWindow):
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
         self.close()
-        self.login_window = MenuPrincipalGui(self.cedula_usuario)
+        self.login_window = MenuPrincipalGui(self.cedula_usuario, self.id_materia)
         self.login_window.show()
 
 if __name__ == '__main__':

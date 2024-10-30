@@ -1010,15 +1010,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5 = QGridLayout()
         self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.error_label_correo = QLabel(self.frame_ingreso)
-        self.error_label_correo.setObjectName(u"error_label_correo")
-        self.error_label_correo.setStyleSheet(u"QLabel {\n"
-"    color: rgb(0, 0, 0);\n"
-"    font: 12pt \"Arial\";\n"
-"}")
-
-        self.gridLayout_5.addWidget(self.error_label_correo, 2, 0, 1, 1)
-
         self.error_label_contrasena = QLabel(self.frame_ingreso)
         self.error_label_contrasena.setObjectName(u"error_label_contrasena")
         self.error_label_contrasena.setStyleSheet(u"QLabel {\n"
@@ -1027,6 +1018,15 @@ class Ui_MainWindow(object):
 "}")
 
         self.gridLayout_5.addWidget(self.error_label_contrasena, 1, 0, 1, 1)
+
+        self.error_label_correo = QLabel(self.frame_ingreso)
+        self.error_label_correo.setObjectName(u"error_label_correo")
+        self.error_label_correo.setStyleSheet(u"QLabel {\n"
+"    color: rgb(0, 0, 0);\n"
+"    font: 12pt \"Arial\";\n"
+"}")
+
+        self.gridLayout_5.addWidget(self.error_label_correo, 2, 0, 1, 1)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -1165,6 +1165,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
 
+        self.label_2 = QLabel(self.frame_ingreso)
+        self.label_2.setObjectName(u"label_2")
+
+        self.gridLayout_5.addWidget(self.label_2, 3, 0, 1, 1)
+
 
         self.gridLayout_6.addLayout(self.gridLayout_5, 2, 0, 1, 1)
 
@@ -1209,11 +1214,12 @@ class Ui_MainWindow(object):
         self.input_intensidadhoraria.setText("")
         self.input_intensidadhoraria.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Intensidad horaria", None))
         self.input_nombremateria.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nombre de la materia", None))
-        self.error_label_correo.setText("")
         self.error_label_contrasena.setText("")
+        self.error_label_correo.setText("")
         self.crear_bt_materia.setText(QCoreApplication.translate("MainWindow", u"Crear", None))
         self.editar_bt_materia.setText(QCoreApplication.translate("MainWindow", u"Editar", None))
         self.guardar_bt_materia.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
         self.eliminar_bt_materia.setText(QCoreApplication.translate("MainWindow", u"Eliminar", None))
+        self.label_2.setText("")
     # retranslateUi
 

@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
+from backend.classes.materia import adminMateria
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class loginGUI(QMainWindow):
@@ -12,6 +13,7 @@ class loginGUI(QMainWindow):
         uic.loadUi("../pooAPP/frontend/vistas/login/login.ui", self)
         
         self.usuario = Usuario()
+        self.materia = adminMateria()
         self.login_bt_ingresar.clicked.connect(self.autenticar)
         self.login_in_usuario.textChanged.connect(self.limpiarError)
         self.login_in_contrasena.textChanged.connect(self.limpiarError)
@@ -28,7 +30,7 @@ class loginGUI(QMainWindow):
         self.capturarTexto()
         if self.usuario.autenticarUsuario():
             self.limpiarError()
-            self.abrirMenuPrincipal(self.usuario.cedula)
+            self.abrirMenuPrincipal(self.usuario.cedula, self.materia.id_materia)
         else:
             self.mostrarError()
 
@@ -42,10 +44,10 @@ class loginGUI(QMainWindow):
         self.error_label.setText("")
         self.error_label.setStyleSheet("")
         
-    def abrirMenuPrincipal(self, cedula_usuario):
+    def abrirMenuPrincipal(self, cedula_usuario, id_materia):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        self.login_window = menuPrincipalGUI(cedula_usuario)
+        self.login_window = menuPrincipalGUI(cedula_usuario, id_materia)
         self.login_window.show()
         
     # def closeEvent(self, event):

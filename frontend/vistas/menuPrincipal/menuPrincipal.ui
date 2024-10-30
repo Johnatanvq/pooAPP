@@ -676,7 +676,7 @@ QLabel {
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QPushButton" name="bt_configuraciones_mm">
+        <widget class="QPushButton" name="bt_materias_mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -728,7 +728,7 @@ QLabel {
 }</string>
          </property>
          <property name="text">
-          <string>Configuraciones</string>
+          <string>Materias</string>
          </property>
          <property name="icon">
           <iconset>

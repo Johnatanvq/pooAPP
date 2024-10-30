@@ -1354,8 +1354,8 @@ QLineEdit:focus {
           </item>
           <item row="2" column="0">
            <layout class="QGridLayout" name="gridLayout_5">
-            <item row="2" column="0">
-             <widget class="QLabel" name="error_label_correo">
+            <item row="1" column="0">
+             <widget class="QLabel" name="error_label_contrasena">
               <property name="styleSheet">
                <string notr="true">QLabel {
     color: rgb(0, 0, 0);
@@ -1367,8 +1367,8 @@ QLineEdit:focus {
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="error_label_contrasena">
+            <item row="2" column="0">
+             <widget class="QLabel" name="error_label_correo">
               <property name="styleSheet">
                <string notr="true">QLabel {
     color: rgb(0, 0, 0);
@@ -1577,6 +1577,13 @@ QLabel {
                </widget>
               </item>
              </layout>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="error_label_intensidad">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
