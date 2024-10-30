@@ -4,15 +4,24 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QCompleter
 from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.espacio import adminEspacio
+from backend.classes.reserva import Reservas
+from backend.funcionalidades.conectarEspacios import espaciosGUI
+from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
+from backend.funcionalidades.conectarMaterias import materiaGUI
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 class espaciosGUI(QtWidgets.QMainWindow):
-    def __init__(self, cedula_usuario):
+    def __init__(self, cedula_usuario, id_materia):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/espacios/espacios.ui", self)
         self.cedula_usuario = cedula_usuario
+        self.id_materia = id_materia
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
-
+        self.bt_reservas_mm.clicked.connect(self.misReservas)
+        self.bt_espacios_mm.clicked.connect(self.espacios)
+        self.bt_usuarios_mm.clicked.connect(self.usuarios)
+        self.bt_configuraciones_mm.clicked.connect(self.materias)
+                                                   
         #definición de las expresiones regulares
         self.idespacioRegex = r'^[A-Za-z0-9]+$' #Letras y numeros
         self.bloqueRegex = r'^[A-Za-z0-9]+$' #Letras
@@ -128,7 +137,28 @@ class espaciosGUI(QtWidgets.QMainWindow):
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        self.login_window = menuPrincipalGUI(self.cedula_usuario)
+        self.login_window = menuPrincipalGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
+    def misReservas(self):
+        from backend.funcionalidades.conectarCalendario import calendarioGUI
+        self.close()
+        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+    
+    def espacios(self):
+        self.close()
+        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
+    def usuarios(self):
+        self.close()
+        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+
+    def materias(self):
+        self.close()
+        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
         
     def cerrarSesion(self):

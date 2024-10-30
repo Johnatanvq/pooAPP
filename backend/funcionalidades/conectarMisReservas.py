@@ -6,21 +6,24 @@ from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.reserva import Reservas
 from backend.funcionalidades.conectarEspacios import espaciosGUI
 from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
+from backend.funcionalidades.conectarMaterias import materiaGUI
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
 # from conectarLogin import loginGUI
 #import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class misReservasGUI(QMainWindow):
-    def __init__(self, cedula_usuario):
+    def __init__(self, cedula_usuario, id_materia):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/misReservas/misReservas.ui", self)
         self.cedula_usuario = cedula_usuario  # La cédula del usuario logueado se recibe al inicializar
+        self.id_materia = id_materia
         self.reserva = Reservas()  # Instanciar la clase que gestiona las reservas
         self.cargarReservas()
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         self.bt_reservas_mm.clicked.connect(self.misReservas)
         self.bt_espacios_mm.clicked.connect(self.espacios)
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
+        self.bt_configuraciones_mm.clicked.connect(self.materias)
 
     def cargarReservas(self):
         try:
@@ -71,34 +74,32 @@ class misReservasGUI(QMainWindow):
                 self.cargarReservas()  # Recargar la tabla después de eliminar
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"No se pudo eliminar la reserva: {str(e)}")
-
-    def menuPrincipalGUI(self):
-        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
-        
-        self.close()
-        self.menu_window = MenuPrincipalGui(self.cedula_usuario)
-        self.menu_window.show()
-        
+       
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        self.login_window = menuPrincipalGUI(self.cedula_usuario)
+        self.login_window = menuPrincipalGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
         
     def misReservas(self):
         from backend.funcionalidades.conectarCalendario import calendarioGUI
         self.close()
-        self.login_window = calendarioGUI(self.cedula_usuario)
+        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
     
     def espacios(self):
         self.close()
-        self.login_window = espaciosGUI(self.cedula_usuario)
+        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
         
     def usuarios(self):
         self.close()
-        self.login_window = nuevoUsuarioGUI(self.cedula_usuario)
+        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+
+    def materias(self):
+        self.close()
+        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
 
     def cerrarSesion(self):

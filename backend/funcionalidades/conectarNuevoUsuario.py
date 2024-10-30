@@ -5,6 +5,9 @@ from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator, QValidator
 from backend.classes.usuario import adminUsuario
 from backend.classes.materia import adminMateria
+from backend.funcionalidades.conectarEspacios import espaciosGUI
+from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
+from backend.funcionalidades.conectarMaterias import materiaGUI
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 from backend.funcionalidades.conectarLogin import loginGUI
 
@@ -39,7 +42,11 @@ class nuevoUsuarioGUI(QMainWindow):
         self.crear_bt_usuario.clicked.connect(self.crearUsuario)
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
-        
+        elf.bt_reservas_mm.clicked.connect(self.misReservas)
+        self.bt_espacios_mm.clicked.connect(self.espacios)
+        self.bt_usuarios_mm.clicked.connect(self.usuarios)
+        self.bt_configuraciones_mm.clicked.connect(self.materias)
+
     #se asocian atributos de la clase Usuario a las capturas de inputs en la UI
     def capturarTexto(self):
         self.nuevoUsuario.nombre = self.input_nombre.text()
@@ -224,7 +231,27 @@ class nuevoUsuarioGUI(QMainWindow):
         self.close()
         self.login_window = MenuPrincipalGui(self.cedula_usuario, self.id_materia)
         self.login_window.show()
+    def misReservas(self):
+        from backend.funcionalidades.conectarCalendario import calendarioGUI
+        self.close()
+        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+    
+    def espacios(self):
+        self.close()
+        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
+    def usuarios(self):
+        self.close()
+        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
 
+    def materias(self):
+        self.close()
+        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     GUI = nuevoUsuarioGUI()
