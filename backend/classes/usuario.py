@@ -102,37 +102,34 @@ class Usuario():
 class adminUsuario(Usuario):
                     
     def crearUsuario(self, nombre, usuario, contrasena, cedula, email, rol, telefono):
-        # Verificar si todos los campos tienen datos
-        if self.nombre and self.usuario and self.contrasena and self.cedula and self.email and self.telefono:
+        if nombre and usuario and contrasena and cedula and email and telefono:
             try:
-                # SQL insertar datos
                 query = """
                 INSERT INTO usuarios (nombre, usuario, contrasena, cedula, email, rol, telefono)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
                 """
-                
-                # Asigna valores capturados de entradas
-                values = (self.nombre, self.usuario, self.contrasena, self.cedula, self.email, self.rol, self.telefono)
-                
-                # Ejecuta la consulta
+                values = (nombre, usuario, contrasena, cedula, email, rol, telefono)
                 self.cursor.execute(query, values)
-
-                # Guardar los cambios
                 self.conexion.commit()
-
-                print(f"Usuario creado correctamente con cédula: {self.cedula}")
+                print(f"Usuario creado correctamente con cédula: {cedula}")
                 return True
-            except psycopg2.Error as e:
-                # Si hay un error, hacemos rollback para no aplicar cambios parciales
+            except psycopg2.IntegrityError:
                 self.conexion.rollback()
-                # print(f"Error al guardar los datos: {e}")
+                print("Error: Un usuario con esta cédula ya existe.")
+                return False
+            except psycopg2.Error as e:
+                self.conexion.rollback()
+                print(f"Error al guardar el usuario: {e}")
                 return False
         else:
             print("Faltan datos para crear el usuario. Asegúrate de que todos los campos estén llenos.")
             return False
-        
-    # método para actualizar los datos del usuario en la base de datos
+
     def actualizarUsuario(self, cedula, nombre, usuario, contrasena, email, rol, telefono):
+        if not cedula:
+            print("Error: No se ha especificado una cédula válida.")
+            return False
+
         try:
             query = """
             UPDATE usuarios SET 
@@ -147,19 +144,22 @@ class adminUsuario(Usuario):
             values = (nombre, usuario, contrasena, email, rol, telefono, cedula)
             self.cursor.execute(query, values)
             self.conexion.commit()
+            print(f"Usuario con cédula {cedula} actualizado correctamente.")
             return True
         except psycopg2.Error as e:
             self.conexion.rollback()
             print(f"Error al actualizar usuario: {e}")
             return False
 
-
-    #metodo para eliminar el usuario por completo
     def eliminarUsuario(self, cedula):
+        if not cedula:
+            print("Error: No se ha especificado una cédula válida.")
+            return False
         try:
             query = "DELETE FROM usuarios WHERE cedula = %s"
             self.cursor.execute(query, (cedula,))
             self.conexion.commit()
+            print(f"Usuario con cédula {cedula} eliminado correctamente.")
             return True
         except psycopg2.Error as e:
             self.conexion.rollback()
@@ -181,7 +181,7 @@ class adminUsuario(Usuario):
     #metodo para cargar los datos de cada usuario existentes en la base de datos
     def cargarDetallesUsuario(self, nombre_usuario):
         try:
-            query = "SELECT id, nombre, usuario, contrasena, cedula, email, rol, telefono FROM usuarios WHERE nombre = %s"
+            query = "SELECT nombre, usuario, contrasena, cedula, email, rol, telefono FROM usuarios WHERE nombre = %s"
             self.cursor.execute(query, (nombre_usuario,))
             return self.cursor.fetchone()
         except psycopg2.Error as e:

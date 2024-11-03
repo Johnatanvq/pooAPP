@@ -144,31 +144,30 @@ class nuevoUsuarioGUI(QMainWindow):
         self.error_campo_vacio.setStyleSheet("")
         
     def actualizarUsuario(self):
-        if not self.nuevoUsuario.ident:
-            print("Error: No se ha especificado un ID de usuario.")
-            return
-        
+        # Captura de texto antes de actualizar
+        self.capturarTexto()
         actualizado = self.nuevoUsuario.actualizarUsuario(
-            self.nuevoUsuario.ident,
-            self.nuevoUsuario.nombre,
-            self.nuevoUsuario.usuario,
-            self.nuevoUsuario.contrasena,
-            self.nuevoUsuario.cedula,
-            self.nuevoUsuario.email,
-            self.nuevoUsuario.telefono,
-            self.nuevoUsuario.rol
+            cedula=self.nuevoUsuario.cedula,
+            nombre=self.nuevoUsuario.nombre,
+            usuario=self.nuevoUsuario.usuario,
+            contrasena=self.nuevoUsuario.contrasena,
+            email=self.nuevoUsuario.email,
+            rol=self.nuevoUsuario.rol,
+            telefono=self.nuevoUsuario.telefono
         )
         if actualizado:
-            print(f"Usuario con ID {self.nuevoUsuario.ident} actualizado correctamente")
+            print(f"Usuario con cédula {self.nuevoUsuario.cedula} actualizado correctamente")
 
-    #método para eliminar el usuario, limpia los campos de los input y actualiza el filtro de búsqueda
     def eliminarUsuario(self):
-        if self.nuevoUsuario.ident:
-            eliminado = self.nuevoUsuario.eliminarUsuario(self.nuevoUsuario.ident)
+        # Captura de texto antes de eliminar
+        self.capturarTexto()
+        if self.nuevoUsuario.cedula:
+            eliminado = self.nuevoUsuario.eliminarUsuario(self.nuevoUsuario.cedula)
             if eliminado:
-                print(f"Usuario con ID {self.nuevoUsuario.ident} eliminado correctamente")
+                print(f"Usuario con cédula {self.nuevoUsuario.cedula} eliminado correctamente")
                 self.limpiarCampos()
                 self.configurarCompleter()
+
 
     def limpiarCampos(self):
         self.input_nombre.clear()
@@ -190,14 +189,13 @@ class nuevoUsuarioGUI(QMainWindow):
     def mostrarUsuarioSeleccionado(self, nombre_usuario):
         detalles_usuario = self.nuevoUsuario.cargarDetallesUsuario(nombre_usuario)
         if detalles_usuario:
-            self.nuevoUsuario.ident = detalles_usuario[0]
-            self.input_nombre.setText(detalles_usuario[1])
-            self.input_usuario.setText(detalles_usuario[2])
-            self.input_contrasena.setText(detalles_usuario[3])
-            self.input_cedula.setText(detalles_usuario[4])
-            self.input_correo.setText(detalles_usuario[5])
-            self.input_rol.setCurrentText(detalles_usuario[6].capitalize())
-            self.input_telefono.setText(detalles_usuario[7])
+            self.input_nombre.setText(detalles_usuario[0])
+            self.input_usuario.setText(detalles_usuario[1])
+            self.input_contrasena.setText(detalles_usuario[2])
+            self.input_cedula.setText(detalles_usuario[3])
+            self.input_correo.setText(detalles_usuario[4])
+            self.input_rol.setCurrentText(detalles_usuario[5].capitalize())
+            self.input_telefono.setText(detalles_usuario[6])
 
             # Desactivar edición
             self.desabilitarEdicion()
