@@ -72,7 +72,7 @@ class adminEspacio(Espacio):
     #verificar si todos los datos tienen campos
         if self.nombre and self.bloque and self.capacidad and self.tipo:
             try:
-                 #SQL insertar datos
+                #SQL insertar datos
                 query = """
                 INSERT INTO espacio (nombre, bloque, capacidad, tipo) 
                 VALUES (%s, %s, %s, %s )

@@ -5,7 +5,6 @@ from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.espacio import adminEspacio
 from backend.classes.reserva import Reservas
-from backend.funcionalidades.conectarEspacios import espaciosGUI
 from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
 from backend.funcionalidades.conectarMaterias import materiaGUI
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
@@ -21,7 +20,8 @@ class espaciosGUI(QtWidgets.QMainWindow):
         self.bt_espacios_mm.clicked.connect(self.espacios)
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
-                                                   
+        self.bt_misreservas_mm.clicked.connect(self.reservados)        
+                                                     
         #definición de las expresiones regulares
         self.idespacioRegex = r'^[A-Za-z0-9]+$' #Letras y numeros
         self.bloqueRegex = r'^[A-Za-z0-9]+$' #Letras
@@ -145,8 +145,15 @@ class espaciosGUI(QtWidgets.QMainWindow):
         self.close()
         self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
+        
+    def reservados(self):
+        from backend.funcionalidades.conectarMisReservas import misReservasGUI
+        self.close()
+        self.login_window = misReservasGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
     
     def espacios(self):
+        from backend.funcionalidades.conectarEspacios import espaciosGUI
         self.close()
         self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()

@@ -517,7 +517,7 @@ QLabel {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="bt_reservas__mm">
+        <widget class="QPushButton" name="bt_reservas_mm">
          <property name="font">
           <font>
            <pointsize>11</pointsize>

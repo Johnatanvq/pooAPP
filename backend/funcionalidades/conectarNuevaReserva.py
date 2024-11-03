@@ -1,23 +1,31 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 from backend.classes.usuario import Usuario
 from datetime import datetime, timedelta
 import time
 from backend.classes.reserva import Reservas
 from backend.funcionalidades.conectarLogin import loginGUI
+from backend.funcionalidades.conectarMaterias import materiaGUI
 from backend import variablesGlobales
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
 
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class nuevaReservaGUI(QMainWindow):
-    def __init__(self, cedula_usuario):
+    def __init__(self, cedula_usuario, id_materia):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/nuevaReserva/nuevaReserva.ui", self)
+        self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
+        self.bt_reservas_mm.clicked.connect(self.misReservas)
+        self.bt_espacios_mm.clicked.connect(self.espacios)
+        self.bt_usuarios_mm.clicked.connect(self.usuarios)
+        self.bt_configuraciones_mm.clicked.connect(self.materias)
+        self.bt_misreservas_mm.clicked.connect(self.reservados)
         
         self.reservas = Reservas()  # Instancia de la clase Reservas
         self.cedula_usuario = cedula_usuario
+        self.id_materia = id_materia
 
         self.separarCastearFechaInicio()
         self.mostrarFechaInicio()
@@ -97,10 +105,48 @@ class nuevaReservaGUI(QMainWindow):
             fecha_final_str = f"{ano_final}-{mes_final}-{dia_final} {hora_final}:{minuto_final}"
             fecha_final = datetime.strptime(fecha_final_str, "%Y-%B-%d %H:%M")
 
-        # Guardar la reserva en la base de datos con la cédula del usuario
-        self.reservas.crearReserva(descripcion, fecha_inicio, fecha_final, self.cedula_usuario)
-        print("Reserva creada correctamente")
+        try:
+            # Intentar crear la reserva
+            self.reservas.crearReserva(descripcion, fecha_inicio, fecha_final, self.cedula_usuario)
+            QMessageBox.information(self, "Reserva Creada", "La reserva se ha creado correctamente.")
+        except Exception as e:
+            # Mostrar mensaje de error si ocurre un conflicto de reserva
+            QMessageBox.warning(self, "Conflicto de Reserva", str(e))
 
+    def menuPrincipalGUI(self):
+        from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
+        self.close()
+        self.login_window = menuPrincipalGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+
+    def misReservas(self):
+        from backend.funcionalidades.conectarCalendario import calendarioGUI
+        self.close()
+        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
+    def reservados(self):
+        from backend.funcionalidades.conectarMisReservas import misReservasGUI
+        self.close()
+        self.login_window = misReservasGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+    
+    def espacios(self):
+        from backend.funcionalidades.conectarEspacios import espaciosGUI
+        self.close()
+        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
+    def usuarios(self):
+        from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
+        self.close()
+        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
+    def materias(self):
+        self.close()
+        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
     def cerrarSesion(self):
         # Cerrar la sesión y volver al login
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:

@@ -7,7 +7,7 @@ class Materia():
     programa = ""
     intensidad_horaria = ""
     
-    def _init_(self):
+    def __init__(self):
         self.id_materia = None
         self.nombre_materia = None
         self.programa = None
@@ -29,7 +29,7 @@ class Materia():
             self.cursor.execute("""
                 SELECT EXISTS (
                     SELECT FROM pg_tables
-                    WHERE tablename = 'materia'
+                    WHERE tablename = 'materias'
                 );
             """)
             tabla_existe = self.cursor.fetchone()[0]
@@ -45,7 +45,7 @@ class Materia():
     def crearTablaMateria(self):
         try:
             query = """
-            CREATE TABLE IF NOT EXISTS materia (
+            CREATE TABLE IF NOT EXISTS materias (
                 id_materia VARCHAR(10) PRIMARY KEY,  -- Identificador de la materia y clave primaria
                 nombre_materia VARCHAR(255),         -- nombre
                 programa VARCHAR(255),               -- facultad
@@ -94,14 +94,14 @@ class adminMateria(Materia):
         
     def eliminarMateria (self, id_materia):
         try:
-            query = "DELETE FROM materias EHERE id_materia = %s"
+            query = "DELETE FROM materias WHERE id_materia = %s"
             self.cursor.execute(query, (id_materia,))
             self.conexion.commit()
             print(f"Materia con ID {id_materia} eliminada correctamente")
             return True
         except psycopg2.Error as e:
             self.conexion.rollback()
-            print(f"Error al aeliminar la materia: {e}")
+            print(f"Error al eliminar la materia: {e}")
             return False
         
     def cargarMaterias(self):

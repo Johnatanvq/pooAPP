@@ -5,8 +5,7 @@ from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator, QValidator
 from backend.classes.usuario import adminUsuario
 from backend.classes.materia import adminMateria
-from backend.funcionalidades.conectarEspacios import espaciosGUI
-from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
+# from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
 from backend.funcionalidades.conectarMaterias import materiaGUI
 # from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
 from backend.funcionalidades.conectarLogin import loginGUI
@@ -42,10 +41,12 @@ class nuevoUsuarioGUI(QMainWindow):
         self.crear_bt_usuario.clicked.connect(self.crearUsuario)
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
-        elf.bt_reservas_mm.clicked.connect(self.misReservas)
+        self.bt_reservas_mm.clicked.connect(self.misReservas)
         self.bt_espacios_mm.clicked.connect(self.espacios)
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
+        self.bt_misreservas_mm.clicked.connect(self.reservados)
+
 
     #se asocian atributos de la clase Usuario a las capturas de inputs en la UI
     def capturarTexto(self):
@@ -237,7 +238,14 @@ class nuevoUsuarioGUI(QMainWindow):
         self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
     
+    def reservados(self):
+        from backend.funcionalidades.conectarMisReservas import misReservasGUI
+        self.close()
+        self.login_window = misReservasGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+    
     def espacios(self):
+        from backend.funcionalidades.conectarEspacios import espaciosGUI
         self.close()
         self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()

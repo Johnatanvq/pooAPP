@@ -61,16 +61,34 @@ class Reservas():
 
     def crearReserva(self, descripcion, fecha_inicio, fecha_final, cedula):
         try:
-            query = """
+            # Comprobar si ya existe una reserva en el mismo rango de fecha y hora
+            query_check = """
+            SELECT COUNT(*)
+            FROM reservas
+            WHERE cedula = %s AND (
+                (fecha_inicio <= %s AND fecha_final >= %s) OR
+                (fecha_inicio <= %s AND fecha_final >= %s)
+            )
+            """
+            self.cursor.execute(query_check, (cedula, fecha_inicio, fecha_inicio, fecha_final, fecha_final))
+            (reserva_conflictiva,) = self.cursor.fetchone()
+
+            if reserva_conflictiva > 0:
+                raise Exception("Ya existe una reserva en este rango de fecha y hora.")
+
+            # Insertar la nueva reserva
+            query_insert = """
             INSERT INTO reservas (descripcion, fecha_inicio, fecha_final, cedula)
             VALUES (%s, %s, %s, %s)
             """
-            self.cursor.execute(query, (descripcion, fecha_inicio, fecha_final, cedula))
+            self.cursor.execute(query_insert, (descripcion, fecha_inicio, fecha_final, cedula))
             self.conexion.commit()
             print("Reserva creada correctamente.")
-        except psycopg2.Error as e:
+
+        except Exception as e:
             self.conexion.rollback()
             print(f"Error al crear la reserva: {e}")
+            raise  # Permite que la excepción sea manejada en la interfaz de usuario
     
     def eliminarReserva(self, cedula, descripcion, fecha_inicio, fecha_final):
         """
