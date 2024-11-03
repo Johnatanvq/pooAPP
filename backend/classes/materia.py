@@ -49,55 +49,57 @@ class Materia():
                 id_materia VARCHAR(10) PRIMARY KEY,  -- Identificador de la materia y clave primaria
                 nombre_materia VARCHAR(255),         -- nombre
                 programa VARCHAR(255),               -- facultad
-                intesidad_horaria INT                -- Instensidad horaria
+                intensidad_horaria INT               -- Intensidad horaria corregida
             );
             """
-            #consulta para crear la tabla
             self.cursor.execute(query)
             self.conexion.commit()
             print("Tabla 'materia' creada correctamente.")
-
         except psycopg2.Error as e:
             self.conexion.rollback()
             print(f"Error al crear la tabla: {e}")
-
 class adminMateria(Materia):
-    def crearMateria (self, id_materia, nombre_materia, programa, intensidad_horaria):
-        if self.id_materia and self.nombre_materia and self.programa and self.intensidad_horaria:
-            try: 
-                query = """
-                INSERT INTO materias(id_materia, nombre_materia, programa, intensidad_horaria)
-                VALUES (%s, %s, %s, %s)
-                """
-            except psycopg2.Error as e:
-                self.conexion.rollback()
-                print(f"Error al crear la materia: {e}")
-                return False
-    def actualizarMateria (self, id_materia, nombre_materia, programa, intensidad_horaria):
+    def crearMateria(self, id_materia, nombre_materia, programa, intensidad_horaria):
+        try:
+            query = """
+            INSERT INTO materias (id_materia, nombre_materia, programa, intensidad_horaria)
+            VALUES (%s, %s, %s, %s)
+            """
+            values = (id_materia, nombre_materia, programa, intensidad_horaria)
+            self.cursor.execute(query, values)
+            self.conexion.commit()
+            print(f"Materia {id_materia} creada correctamente")
+            return True
+        except psycopg2.Error as e:
+            self.conexion.rollback()
+            print(f"Error al crear la materia: {e}")
+            return False
+
+    def actualizarMateria(self, id_materia, nombre_materia, programa, intensidad_horaria):
         try:
             query = """
             UPDATE materias SET
                 nombre_materia = %s,
                 programa = %s,
-                intensidad_horaria = %s,
+                intensidad_horaria = %s
             WHERE id_materia = %s
             """
             values = (nombre_materia, programa, intensidad_horaria, id_materia)
             self.cursor.execute(query, values)
             self.conexion.commit()
-            print(f"Materia con ID{id_materia} actualizada correctamente")
+            print(f"Materia {id_materia} actualizada correctamente")
             return True
         except psycopg2.Error as e:
             self.conexion.rollback()
             print(f"Error al actualizar la materia: {e}")
             return False
-        
-    def eliminarMateria (self, id_materia):
+
+    def eliminarMateria(self, id_materia):
         try:
             query = "DELETE FROM materias WHERE id_materia = %s"
             self.cursor.execute(query, (id_materia,))
             self.conexion.commit()
-            print(f"Materia con ID {id_materia} eliminada correctamente")
+            print(f"Materia {id_materia} eliminada correctamente")
             return True
         except psycopg2.Error as e:
             self.conexion.rollback()
@@ -114,11 +116,11 @@ class adminMateria(Materia):
             print(f"Error al cargar las materias: {e}")
             return []
     
-    def cargarDetallerMaterias (self, id_materia):
+    def cargarDetallesMaterias(self, nombre_materia):
         try:
-            query = "SELECT id_materia, nombre_materia, programa, intensidad_horaria FROM materias WHERE id_materia = %s"
-            self.cursor.execute(query, (id_materia,))
-            return self.cursor.fetchone() 
+            query = "SELECT id_materia, nombre_materia, programa, intensidad_horaria FROM materias WHERE nombre_materia = %s"
+            self.cursor.execute(query, (nombre_materia,))
+            return self.cursor.fetchone()
         except psycopg2.Error as e:
             print(f"Error al cargar detalles de la materia: {e}")
             return None
