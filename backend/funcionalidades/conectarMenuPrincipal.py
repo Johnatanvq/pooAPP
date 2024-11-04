@@ -17,7 +17,7 @@ class menuPrincipalGUI(QMainWindow):
         self.cedula_usuario = cedula_usuario
         self.id_materia = id_materia
         
-        self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
+        # self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         self.bt_reservas_mm.clicked.connect(self.reservasGUI)
         self.bt_misreservas_mm.clicked.connect(self.misReservasGUI)
         self.bt_usuarios_mm.clicked.connect(self.usuariosGUI)

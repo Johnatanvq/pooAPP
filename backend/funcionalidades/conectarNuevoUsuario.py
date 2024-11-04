@@ -39,11 +39,12 @@ class nuevoUsuarioGUI(QMainWindow):
         self.eliminar_bt_usuario.clicked.connect(self.eliminarUsuario)
         self.editar_bt_usuario.clicked.connect(self.habilitarEdicion)
         self.crear_bt_usuario.clicked.connect(self.crearUsuario)
+        
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         self.bt_reservas_mm.clicked.connect(self.misReservas)
         self.bt_espacios_mm.clicked.connect(self.espacios)
-        self.bt_usuarios_mm.clicked.connect(self.usuarios)
+        # self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
         self.bt_misreservas_mm.clicked.connect(self.reservados)
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)

@@ -17,7 +17,7 @@ class materiaGUI(QMainWindow):
         self.bt_reservas_mm.clicked.connect(self.misReservas)
         self.bt_espacios_mm.clicked.connect(self.espacios)
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
-        self.bt_configuraciones_mm.clicked.connect(self.materias)
+        # self.bt_configuraciones_mm.clicked.connect(self.materias)
         self.bt_misreservas_mm.clicked.connect(self.reservados)
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
         

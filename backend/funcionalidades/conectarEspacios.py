@@ -17,7 +17,7 @@ class espaciosGUI(QtWidgets.QMainWindow):
         self.id_materia = id_materia
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         self.bt_reservas_mm.clicked.connect(self.misReservas)
-        self.bt_espacios_mm.clicked.connect(self.espacios)
+        # self.bt_espacios_mm.clicked.connect(self.espacios)
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
         self.bt_misreservas_mm.clicked.connect(self.reservados)
