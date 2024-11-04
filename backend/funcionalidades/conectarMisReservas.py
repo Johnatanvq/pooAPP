@@ -24,6 +24,7 @@ class misReservasGUI(QMainWindow):
         self.bt_espacios_mm.clicked.connect(self.espacios)
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
+        self.bt_logout_mm.clicked.connect(self.cerrarSesion)
 
     def cargarReservas(self):
         try:
@@ -105,10 +106,10 @@ class misReservasGUI(QMainWindow):
     def cerrarSesion(self):
         from backend.funcionalidades.conectarLogin import loginGUI
         #se cierra la conexión a la base de datos desde la clase Usuario
-        if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
-            self.nuevoUsuario.cursor.close()
-        if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
-            self.nuevoUsuario.conexion.close()
+        if hasattr(self.reserva, 'cursor') and self.reserva.cursor:
+            self.reserva.cursor.close()
+        if hasattr(self.reserva, 'conexion') and self.reserva.conexion:
+            self.reserva.conexion.close()
         print("Conexión a la base de datos cerrada")
         
         #redirigir login

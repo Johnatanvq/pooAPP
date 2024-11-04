@@ -115,7 +115,6 @@ class adminMateria(Materia):
         except psycopg2.Error as e:
             print(f"Error al cargar las materias: {e}")
             return []
-    
     def cargarDetallesMaterias(self, nombre_materia):
         try:
             query = "SELECT id_materia, nombre_materia, programa, intensidad_horaria FROM materias WHERE nombre_materia = %s"

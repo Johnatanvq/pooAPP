@@ -22,6 +22,7 @@ class nuevaReservaGUI(QMainWindow):
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
         self.bt_misreservas_mm.clicked.connect(self.reservados)
+        self.bt_logout_mm.clicked.connect(self.cerrarSesion)
         
         self.reservas = Reservas()  # Instancia de la clase Reservas
         self.cedula_usuario = cedula_usuario
@@ -149,10 +150,10 @@ class nuevaReservaGUI(QMainWindow):
         self.login_window.show()
     def cerrarSesion(self):
         # Cerrar la sesión y volver al login
-        if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
-            self.nuevoUsuario.cursor.close()
-        if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
-            self.nuevoUsuario.conexion.close()
+        if hasattr(self.reservas, 'cursor') and self.reservas.cursor:
+            self.reservas.cursor.close()
+        if hasattr(self.reservas, 'conexion') and self.reservas.conexion:
+            self.reservas.conexion.close()
         print("Conexión a la base de datos cerrada")
 
         self.close()

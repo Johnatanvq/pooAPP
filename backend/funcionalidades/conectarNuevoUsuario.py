@@ -46,7 +46,7 @@ class nuevoUsuarioGUI(QMainWindow):
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
         self.bt_misreservas_mm.clicked.connect(self.reservados)
-
+        self.bt_logout_mm.clicked.connect(self.cerrarSesion)
 
     #se asocian atributos de la clase Usuario a las capturas de inputs en la UI
     def capturarTexto(self):
@@ -256,6 +256,17 @@ class nuevoUsuarioGUI(QMainWindow):
     def materias(self):
         self.close()
         self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
+        self.login_window.show()
+        
+    def cerrarSesion(self):
+        if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
+            self.nuevoUsuario.cursor.close()
+        if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
+            self.nuevoUsuario.conexion.close()
+        print("Conexión a la base de datos cerrada")
+
+        self.close()
+        self.login_window = loginGUI()  # Instanciar la ventana de login
         self.login_window.show()
         
 if __name__ == '__main__':

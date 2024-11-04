@@ -7,11 +7,13 @@ from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
 from backend.funcionalidades.conectarEspacios import espaciosGUI
 from backend.funcionalidades.conectarLogin import loginGUI
 from backend.funcionalidades.conectarMaterias import materiaGUI
+from backend.classes.usuario import Usuario
 class menuPrincipalGUI(QMainWindow):
     def __init__(self, cedula_usuario, id_materia):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/menuPrincipal/menuPrincipal.ui", self)
         
+        self.usuario = Usuario()
         self.cedula_usuario = cedula_usuario
         self.id_materia = id_materia
         
@@ -55,18 +57,15 @@ class menuPrincipalGUI(QMainWindow):
         self.login_window.show()
         
     def cerrarSesion(self):
-        # from conectarLogin import loginGUI
+        from backend.funcionalidades.conectarLogin import loginGUI
         
-        #se cierra la conexión a la base de datos desde la clase Usuario
-        if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
-            self.nuevoUsuario.cursor.close()
-        if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
-            self.nuevoUsuario.conexion.close()
+        if hasattr(self.usuario, 'cursor') and self.usuario.cursor:
+            self.usuario.cursor.close()
+        if hasattr(self.usuario, 'conexion') and self.usuario.conexion:
+            self.usuario.conexion.close()
         print("Conexión a la base de datos cerrada")
-        
-        #redirigir login
         self.close()
-        self.login_window = loginGUI()  # Instanciar la ventana de login
+        self.login_window = loginGUI()
         self.login_window.show()
     
 

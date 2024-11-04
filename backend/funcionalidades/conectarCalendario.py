@@ -10,12 +10,14 @@ from backend.funcionalidades.conectarEspacios import espaciosGUI
 from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
 from backend.funcionalidades.conectarMaterias import materiaGUI
 from backend import variablesGlobales
+from backend.classes.usuario import Usuario
 
 class calendarioGUI(QMainWindow):
     def __init__(self, cedula_usuario, id_materia):  # Ahora acepta la cédula del usuario
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/calendario/calendario.ui", self)
         
+        self.nuevoUsuario = Usuario()
         self.cedula_usuario = cedula_usuario
         self.id_materia = id_materia
         locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8') 
@@ -74,15 +76,13 @@ class calendarioGUI(QMainWindow):
 
     def cerrarSesion(self): 
         from backend.funcionalidades.conectarLogin import loginGUI
-
-        #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
             self.nuevoUsuario.cursor.close()
         if hasattr(self.nuevoUsuario, 'conexion') and self.nuevoUsuario.conexion:
             self.nuevoUsuario.conexion.close()
         print("Conexión a la base de datos cerrada")
         self.close()
-        self.login_window = loginGUI()  # Instanciar la ventana de login
+        self.login_window = loginGUI()
         self.login_window.show()
     
 
