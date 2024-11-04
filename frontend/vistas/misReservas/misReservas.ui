@@ -715,7 +715,7 @@ QLabel {
 }</string>
          </property>
          <property name="text">
-          <string>Configuraciones</string>
+          <string>Materias</string>
          </property>
          <property name="icon">
           <iconset>
