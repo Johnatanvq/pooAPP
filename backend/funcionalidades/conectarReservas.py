@@ -54,7 +54,7 @@ class reservasGUI(QMainWindow):
         self.close()
         self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
         self.login_window.show()
-           
+        
     def cerrarSesion(self):
         #se cierra la conexión a la base de datos desde la clase Usuario
         if hasattr(self.nuevoUsuario, 'cursor') and self.nuevoUsuario.cursor:
@@ -65,9 +65,3 @@ class reservasGUI(QMainWindow):
         self.close()
         self.login_window = loginGUI()
         self.login_window.show()
-    
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    GUI = reservasGUI()
-    GUI.show()
-    sys.exit(app.exec_())

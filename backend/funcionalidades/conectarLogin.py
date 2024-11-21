@@ -5,7 +5,6 @@ from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QRegularExpressionValidator
 from backend.classes.usuario import Usuario, adminUsuario
 from backend.classes.materia import adminMateria
-import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class loginGUI(QMainWindow):
     def __init__(self):
@@ -30,24 +29,29 @@ class loginGUI(QMainWindow):
         self.capturarTexto()
         if self.usuario.autenticarUsuario():
             self.limpiarError()
-            self.abrirMenuPrincipal(self.usuario.cedula, self.materia.id_materia)
+            self.abrirMenuPrincipal(self.usuario.cedula, self.materia.id_materia, self.usuario.es_admin)
         else:
             self.mostrarError()
+
 
     def mostrarError(self):
         # Cambiar texto y estilos
         self.error_label.setText("Usuario o contraseña\n incorrectos.\nPor favor, inténtelo de nuevo.")
-        self.error_label.setStyleSheet("color: red")
+        self.error_label.setStyleSheet("""
+            color: red;
+            font-size: 14pt;
+            font-weight: bold;
+        """)
 
     def limpiarError(self):
         # Limpiar texto y estilos
         self.error_label.setText("")
         self.error_label.setStyleSheet("")
         
-    def abrirMenuPrincipal(self, cedula_usuario, id_materia):
+    def abrirMenuPrincipal(self, cedula_usuario, id_materia, es_admin):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        self.login_window = menuPrincipalGUI(cedula_usuario, id_materia)
+        self.login_window = menuPrincipalGUI(cedula_usuario, id_materia, es_admin)
         self.login_window.show()
         
     # def closeEvent(self, event):
@@ -57,9 +61,3 @@ class loginGUI(QMainWindow):
     #     if self.conexion:
     #         self.conexion.close()
     #     print("Conexión a la base de datos cerrada")
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    GUI = loginGUI()
-    GUI.show()
-    sys.exit(app.exec_())

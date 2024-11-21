@@ -12,18 +12,31 @@ from backend.funcionalidades.conectarMaterias import materiaGUI
 #import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class misReservasGUI(QMainWindow):
-    def __init__(self, cedula_usuario, id_materia):
+    def __init__(self, cedula_usuario, id_materia, es_admin):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/misReservas/misReservas.ui", self)
-        self.cedula_usuario = cedula_usuario  # La cédula del usuario logueado se recibe al inicializar
+        self.cedula_usuario = cedula_usuario  # La cédula del usuario logueado
         self.id_materia = id_materia
+        self.es_admin = es_admin  # True si es admin, False si no
+
         self.reserva = Reservas()  # Instanciar la clase que gestiona las reservas
         self.cargarReservas()
+
+        # Solo visible para admin
+        self.bt_usuarios_mm.setVisible(self.es_admin)
+        self.bt_espacios_mm.setVisible(self.es_admin)
+        self.bt_configuraciones_mm.setVisible(self.es_admin)
+
+        # Conectar botones visibles para todos
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         self.bt_reservas_mm.clicked.connect(self.misReservas)
+
+        # Conectar botones exclusivos del admin
         self.bt_espacios_mm.clicked.connect(self.espacios)
         self.bt_usuarios_mm.clicked.connect(self.usuarios)
         self.bt_configuraciones_mm.clicked.connect(self.materias)
+
+        # Botón de cerrar sesión
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
 
     def cargarReservas(self):
@@ -79,28 +92,28 @@ class misReservasGUI(QMainWindow):
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        self.login_window = menuPrincipalGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = menuPrincipalGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
         
     def misReservas(self):
         from backend.funcionalidades.conectarCalendario import calendarioGUI
         self.close()
-        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
     
     def espacios(self):
         self.close()
-        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
         
     def usuarios(self):
         self.close()
-        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
 
     def materias(self):
         self.close()
-        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
 
     def cerrarSesion(self):
@@ -116,10 +129,3 @@ class misReservasGUI(QMainWindow):
         self.close()
         self.login_window = loginGUI()  # Instanciar la ventana de login
         self.login_window.show()
-    
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    GUI = misReservasGUI()
-    GUI.show()
-    sys.exit(app.exec_())

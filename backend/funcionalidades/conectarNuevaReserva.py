@@ -13,7 +13,7 @@ from backend import variablesGlobales
 import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más adelante
 
 class nuevaReservaGUI(QMainWindow):
-    def __init__(self, cedula_usuario, id_materia):
+    def __init__(self, cedula_usuario, id_materia, es_admin):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/nuevaReserva/nuevaReserva.ui", self)
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
@@ -23,13 +23,19 @@ class nuevaReservaGUI(QMainWindow):
         self.bt_configuraciones_mm.clicked.connect(self.materias)
         self.bt_misreservas_mm.clicked.connect(self.reservados)
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
-        
+
         self.reservas = Reservas()  # Instancia de la clase Reservas
         self.cedula_usuario = cedula_usuario
         self.id_materia = id_materia
+        self.es_admin = es_admin  # True si es admin, False si no
 
         self.separarCastearFechaInicio()
         self.mostrarFechaInicio()
+
+        # Solo visible para admin
+        self.bt_usuarios_mm.setVisible(self.es_admin)
+        self.bt_espacios_mm.setVisible(self.es_admin) 
+        self.bt_configuraciones_mm.setVisible(self.es_admin)
 
         # Inicializar checkboxes y botones
         self._toggle = True
@@ -79,7 +85,7 @@ class nuevaReservaGUI(QMainWindow):
         # Capturar la descripción del evento
         descripcion = self.input_descripcion_evento.text()
 
-        # Construir la fecha de inicio con los datos del UI
+        # Construir la fecha de inicio con los datos de la UI
         dia_inicio = self.select_dia_inicio.currentText()
         mes_inicio = self.select_mes_inicio.currentText()
         ano_inicio = self.input_ano_inicio.text()
@@ -117,36 +123,36 @@ class nuevaReservaGUI(QMainWindow):
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI
         self.close()
-        self.login_window = menuPrincipalGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = menuPrincipalGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
 
     def misReservas(self):
         from backend.funcionalidades.conectarCalendario import calendarioGUI
         self.close()
-        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
         
     def reservados(self):
         from backend.funcionalidades.conectarMisReservas import misReservasGUI
         self.close()
-        self.login_window = misReservasGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = misReservasGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
     
     def espacios(self):
         from backend.funcionalidades.conectarEspacios import espaciosGUI
         self.close()
-        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
         
     def usuarios(self):
         from backend.funcionalidades.conectarNuevoUsuario import nuevoUsuarioGUI
         self.close()
-        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
         
     def materias(self):
         self.close()
-        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
     def cerrarSesion(self):
         # Cerrar la sesión y volver al login
@@ -159,10 +165,3 @@ class nuevaReservaGUI(QMainWindow):
         self.close()
         self.login_window = loginGUI()  # Instanciar la ventana de login
         self.login_window.show()
-
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    GUI = nuevaReservaGUI()
-    GUI.show()
-    sys.exit(app.exec_())

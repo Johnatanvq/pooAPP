@@ -1,16 +1,7 @@
 from backend.database import Database
 import psycopg2
 
-class Usuario():
-    ident = ""
-    nombre = ""
-    usuario = ""
-    contrasena = ""
-    cedula = None
-    email = ""
-    rol = None
-    telefono = None
-    
+class Usuario:
     def __init__(self):
         self.ident = None
         self.nombre = None
@@ -20,32 +11,35 @@ class Usuario():
         self.email = None
         self.rol = None
         self.telefono = None
+        self.es_admin = False  # Atributo para identificar si es admin
 
-        self.db = Database(dbname = "pooDATABASE" , user = "postgres", password = "poo1234", host = "localhost", port = 5432)
+        self.db = Database(dbname="pooDATABASE", user="postgres", password="poo1234", host="localhost", port=5432)
         self.conexion = self.db.conectar()
-        
-        #objeto que representa la conexion a la base de datos
+
         if self.conexion:
             self.cursor = self.conexion.cursor()
-        else: 
+        else:
             print('Sin conexión')
-        
+
         self.verificarCrearTablaUsuarios()
-            
-    #método para autenticar el usuario y contraseña
+
     def autenticarUsuario(self):
         if self.nombre and self.contrasena:
             try:
-                # Consulta para obtener la cédula y verificar la contraseña
-                query = "SELECT contrasena, cedula FROM usuarios WHERE usuario = %s AND contrasena = %s"
+                # Consulta para verificar credenciales
+                query = "SELECT contrasena, cedula, usuario FROM usuarios WHERE usuario = %s AND contrasena = %s"
                 values = (self.nombre, self.contrasena)
                 self.cursor.execute(query, values)
-                resultado = self.cursor.fetchone()  # Obtener el primer resultado coincidente
+                resultado = self.cursor.fetchone()
 
                 if resultado:
-                    self.ident = resultado[0]  # ID del usuario
-                    self.cedula = resultado[1]  # Almacenar la cédula del usuario autenticado
-                    print(f"Autenticación exitosa. Bienvenido {self.nombre}. Cédula de usuario: {self.cedula}")
+                    self.ident = resultado[0]  # Contraseña
+                    self.cedula = resultado[1]  # Cédula
+                    self.usuario = resultado[2]  # Nombre
+
+                    # Verificar si es admin
+                    self.es_admin = self.nombre == "admin" and self.contrasena == "Admin1!"
+                    print(f"Autenticación exitosa. Usuario: {self.nombre}, Es admin: {self.es_admin}")
                     return True
                 else:
                     print("Autenticación fallida: Usuario o contraseña incorrectos")
@@ -55,6 +49,7 @@ class Usuario():
                 self.conexion.rollback()
         else:
             print("No hay datos para autenticar")
+        return False
             
             
     #método para verificar si la tabla de 'usuarios' existe en la base de datos
@@ -78,25 +73,51 @@ class Usuario():
     #metodo para crear la tabla 'usuarios' en la base de datos
     def crearTablaUsuarios(self):
         try:
-            query = """
+            # Crear la tabla si no existe
+            query_tabla = """
             CREATE TABLE IF NOT EXISTS usuarios (
-                nombre VARCHAR(255),     -- Nombre de usuario
-                usuario VARCHAR(255),     -- Nombre de usuario
+                nombre VARCHAR(255),     -- Nombre completo del usuario
+                usuario VARCHAR(255), -- Nombre de usuario (único)
                 contrasena VARCHAR(255), -- Contraseña
-                cedula VARCHAR(255) PRIMARY KEY,               -- Cédula o identificación del usuario
-                email VARCHAR(255),               -- Correo electrónico
-                rol VARCHAR(255),             -- Rol (TRUE para admin, FALSE para usuario regular)
-                telefono VARCHAR(255)              -- Teléfono del usuario
+                cedula VARCHAR(255) PRIMARY KEY,     -- Cédula o identificación
+                email VARCHAR(255),      -- Correo electrónico
+                rol VARCHAR(255),        -- Rol (puede ser "admin" o "usuario")
+                telefono VARCHAR(255)    -- Teléfono
             );
             """
-            #consulta para crear la tabla
-            self.cursor.execute(query)
+            self.cursor.execute(query_tabla)
             self.conexion.commit()
             print("Tabla 'usuarios' creada correctamente.")
 
+            # Verificar si ya existe un usuario admin
+            query_verificar_admin = "SELECT COUNT(*) FROM usuarios WHERE usuario = 'admin'"
+            self.cursor.execute(query_verificar_admin)
+            existe_admin = self.cursor.fetchone()[0]
+
+            if not existe_admin:
+                # Insertar el usuario admin si no existe
+                query_admin = """
+                INSERT INTO usuarios (nombre, usuario, contrasena, cedula, email, rol, telefono) 
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """
+                values_admin = (
+                    "Administrador",         # Nombre
+                    "admin",                 # Usuario
+                    "Admin1!",               # Contraseña
+                    "0000000001",            # Cédula
+                    "admin@pooapp.com",      # Email
+                    "admin",                 # Rol
+                    "0000000000"             # Teléfono
+                )
+                self.cursor.execute(query_admin, values_admin)
+                self.conexion.commit()
+                print("Usuario 'admin' creado con todos los campos.")
+            else:
+                print("El usuario 'admin' ya existe.")
+
         except psycopg2.Error as e:
             self.conexion.rollback()
-            print(f"Error al crear la tabla: {e}")
+            print(f"Error al crear la tabla o insertar el usuario admin: {e}")
 
 
 class adminUsuario(Usuario):

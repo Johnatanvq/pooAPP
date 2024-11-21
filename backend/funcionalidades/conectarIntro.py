@@ -19,9 +19,3 @@ class introGUI(QMainWindow):
         self.close()
         self.login_window = loginGUI()
         self.login_window.show()
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = introGUI()
-    window.show()
-    sys.exit(app.exec_())

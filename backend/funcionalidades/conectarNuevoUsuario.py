@@ -15,7 +15,7 @@ import bcrypt #hashes para encriptar las contraseñas, se puede dejar para más 
 import psycopg2
 
 class nuevoUsuarioGUI(QMainWindow):
-    def __init__(self, cedula_usuario, id_materia):
+    def __init__(self, cedula_usuario, id_materia, es_admin):
         super().__init__()
         uic.loadUi("../pooAPP/frontend/vistas/nuevoUsuario/nuevoUsuario.ui", self)
         
@@ -28,19 +28,15 @@ class nuevoUsuarioGUI(QMainWindow):
         self.cedula_usuario = cedula_usuario
         self.materia = adminMateria()
         self.id_materia = id_materia
-        #configuración para el filtrado en las búsquedas de usuarios
+        self.es_admin = es_admin  # True si es admin, False si no
         self.configurarCompleter()
-        
-        #se asocia cada elementos con sus funcionalidades
-        self.input_correo.textChanged.connect(self.limpiarErrorCorreo)
-        self.input_contrasena.textChanged.connect(self.limpiarErrorContrasena)
-        self.crear_bt_usuario.clicked.connect(self.crearUsuario)
-        self.guardar_bt_usuario.clicked.connect(self.actualizarUsuario)
-        self.eliminar_bt_usuario.clicked.connect(self.eliminarUsuario)
-        self.editar_bt_usuario.clicked.connect(self.habilitarEdicion)
-        self.crear_bt_usuario.clicked.connect(self.crearUsuario)
-        
-        self.bt_logout_mm.clicked.connect(self.cerrarSesion)
+
+        # solo visibles para admin
+        self.bt_usuarios_mm.setVisible(self.es_admin)
+        self.bt_espacios_mm.setVisible(self.es_admin)
+        self.bt_configuraciones_mm.setVisible(self.es_admin) 
+
+        # Conectar botones
         self.bt_home_mm.clicked.connect(self.menuPrincipalGUI)
         self.bt_reservas_mm.clicked.connect(self.misReservas)
         self.bt_espacios_mm.clicked.connect(self.espacios)
@@ -48,7 +44,13 @@ class nuevoUsuarioGUI(QMainWindow):
         self.bt_configuraciones_mm.clicked.connect(self.materias)
         self.bt_misreservas_mm.clicked.connect(self.reservados)
         self.bt_logout_mm.clicked.connect(self.cerrarSesion)
-
+        self.input_correo.textChanged.connect(self.limpiarErrorCorreo)
+        self.input_contrasena.textChanged.connect(self.limpiarErrorContrasena)
+        self.guardar_bt_usuario.clicked.connect(self.actualizarUsuario)
+        self.editar_bt_usuario.clicked.connect(self.habilitarEdicion)
+        self.eliminar_bt_usuario.clicked.connect(self.eliminarUsuario)
+        self.crear_bt_usuario.clicked.connect(self.crearUsuario)
+        
     #se asocian atributos de la clase Usuario a las capturas de inputs en la UI
     def capturarTexto(self):
         self.nuevoUsuario.nombre = self.input_nombre.text()
@@ -108,27 +110,30 @@ class nuevoUsuarioGUI(QMainWindow):
             ):
             self.limpiarErrorCorreo()
             self.limpiarErrorContrasena()
+            self.limpiarErrorCampoVacio
+            self.configurarCompleter()
             
     # métodos para cambiar el texto y el color del label de error a rojo
     def mostrarErrorCorreo(self):
         self.error_label_correo.setText("Ingrese un correo válido")
         self.error_label_correo.setStyleSheet(("""
                                                     color: red;
-                                                    font-size: 8pt;
+                                                    font-size: 12pt;
                                                 """))
     
     def mostrarErrorContrasena(self):
-        self.error_label_contrasena.setText("La contraseña debe\n contener mayúsculas,\n minúsculas y carácteres\n especiales: @#$%^&+=")
+        self.error_label_contrasena.setText("La contraseña debe contener mayúsculas, minúsculas y carácteres especiales:\n @#$%^&+=")
         self.error_label_contrasena.setStyleSheet("""
                                                     color: red;
-                                                    font-size: 8pt;
+                                                    font-size: 12pt;
                                                 """)
     
     def mostrarErrorCampoVacio(self):
-        self.error_campo_vacio.setText("Debe llenar todos los campos")
+        self.error_campo_vacio.setText("Debe llenar todos los campos!")
         self.error_campo_vacio.setStyleSheet("""
-                                                color: yellow;
+                                                color: orange;
                                                 text-decoration: bold;
+                                                font-size: 12pt;
                                             """)
         
     #métodos para limpiar el texto y el estilo del label de error
@@ -229,34 +234,34 @@ class nuevoUsuarioGUI(QMainWindow):
     def menuPrincipalGUI(self):
         from backend.funcionalidades.conectarMenuPrincipal import menuPrincipalGUI as MenuPrincipalGui
         self.close()
-        self.login_window = MenuPrincipalGui(self.cedula_usuario, self.id_materia)
+        self.login_window = MenuPrincipalGui(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
     def misReservas(self):
         from backend.funcionalidades.conectarCalendario import calendarioGUI
         self.close()
-        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = calendarioGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
     
     def reservados(self):
         from backend.funcionalidades.conectarMisReservas import misReservasGUI
         self.close()
-        self.login_window = misReservasGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = misReservasGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
     
     def espacios(self):
         from backend.funcionalidades.conectarEspacios import espaciosGUI
         self.close()
-        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = espaciosGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
         
     def usuarios(self):
         self.close()
-        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = nuevoUsuarioGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
 
     def materias(self):
         self.close()
-        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia)
+        self.login_window = materiaGUI(self.cedula_usuario, self.id_materia, self.es_admin)
         self.login_window.show()
         
     def cerrarSesion(self):
@@ -269,9 +274,3 @@ class nuevoUsuarioGUI(QMainWindow):
         self.close()
         self.login_window = loginGUI()  # Instanciar la ventana de login
         self.login_window.show()
-        
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    GUI = nuevoUsuarioGUI()
-    GUI.show()
-    sys.exit(app.exec_())

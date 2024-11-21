@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>912</width>
-    <height>681</height>
+    <width>665</width>
+    <height>608</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,9 +20,9 @@
       <widget class="QLabel" name="intro_gif">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>-150</x>
          <y>0</y>
-         <width>781</width>
+         <width>951</width>
          <height>591</height>
         </rect>
        </property>
@@ -48,8 +48,8 @@
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>190</y>
+         <x>230</x>
+         <y>180</y>
          <width>221</width>
          <height>41</height>
         </rect>
@@ -69,7 +69,7 @@
       <widget class="QPushButton" name="intro_bt">
        <property name="geometry">
         <rect>
-         <x>260</x>
+         <x>180</x>
          <y>280</y>
          <width>271</width>
          <height>51</height>
@@ -99,8 +99,8 @@
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>490</x>
-         <y>560</y>
+         <x>340</x>
+         <y>510</y>
          <width>211</width>
          <height>16</height>
         </rect>
@@ -120,7 +120,7 @@
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>510</x>
+         <x>450</x>
          <y>0</y>
          <width>191</width>
          <height>31</height>

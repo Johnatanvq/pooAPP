@@ -10,6 +10,7 @@ class Espacio():
     
     def __init__(self):
         self.ident = None
+        self.nombre = None
         self.bloque = None
         self.ocupantes = None
         self.sector = None
@@ -105,13 +106,13 @@ class adminEspacio(Espacio):
     def actualizarEspacio (self, nombre, bloque, capacidad, tipo):
         try:
             query = """
-            UPDATE espacios SET
+            UPDATE espacio SET
                 bloque = %s,
                 capacidad = %s,
                 tipo = %s
             WHERE nombre = %s
             """
-            values = (bloque, capacidad, tipo, nombre) # nombre para identificar el espacio
+            values = (nombre, bloque, capacidad, tipo) # nombre para identificar el espacio
             self.cursor.execute(query, values)
             self.conexion.commit()
             return True
@@ -144,7 +145,7 @@ class adminEspacio(Espacio):
     #Metodo para cargar los datos de cada espacio existente en la BD
     def cargarDetallesEspacio(self, nombre_espacio):
         try:
-            query ="SELEC nombre, bloque, capacidad, tipo FRON espacio WHERE nombre = %s"
+            query ="SELECT nombre, bloque, capacidad, tipo FROM espacio WHERE nombre = %s"
             self.cursor.execute(query, (nombre_espacio,))
             return self.cursor.fetchone()
         except psycopg2.Error as e:
