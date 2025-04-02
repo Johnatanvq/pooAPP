@@ -1,9 +1,4 @@
 # pooAPP
-Proyecto de POO
+Proyecto de Programación Orientada a Objetos
 
-CAMBIOS:
-
--cambios masivos para completar el alcance de la aplicación
-
-_______________________________________________________________
 APLICACIÓN FINALIZADA EN BASE A SUS REQUISITOS Y ALCANCE.
